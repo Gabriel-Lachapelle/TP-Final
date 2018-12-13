@@ -33,10 +33,10 @@ namespace TP_Final
             }
             catch (Exception SQL)
             {
-                if (SQL.Message.ToString() == "ORA-01017: invalid username/password; logon denied")
+                if (SQL.Message == "ORA-01017: invalid username/password; logon denied")
                     MessageBox.Show("La combinaison du nom d'usager et du mot de passe est invalide.", "Érreur");
                 else
-                    MessageBox.Show(SQL.Message.ToString(), "Érreur");
+                    MessageBox.Show(SQL.Message, "Érreur");
             }
         }
 

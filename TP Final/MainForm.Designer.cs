@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBX_Circuits = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CBX_Meilleur = new System.Windows.Forms.CheckBox();
             this.CBX_Tous = new System.Windows.Forms.CheckBox();
             this.CBX_Monument = new System.Windows.Forms.CheckBox();
             this.TBX_Monument = new System.Windows.Forms.TextBox();
@@ -38,6 +40,7 @@
             this.TBX_Prix = new System.Windows.Forms.TextBox();
             this.TBX_VilleDepart = new System.Windows.Forms.TextBox();
             this.CBX_VilleDepart = new System.Windows.Forms.CheckBox();
+            this.FB_Circuit_Show = new Calculator.FlashButton();
             this.BTN_Rechercher = new System.Windows.Forms.Button();
             this.LBL_Recherche = new System.Windows.Forms.Label();
             this.DGV_Circuit = new System.Windows.Forms.DataGridView();
@@ -45,6 +48,9 @@
             this.VilleDepart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VilleArrivee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrixCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cotation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FB_Circuit_Modif = new Calculator.FlashButton();
+            this.FB_Circuit_Ajout = new Calculator.FlashButton();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.TSMI_Connexion = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,12 +66,7 @@
             this.MI_Monument_Meilleur = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.CBX_Meilleur = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FB_Circuit_Show = new Calculator.FlashButton();
-            this.FB_Circuit_Modif = new Calculator.FlashButton();
-            this.FB_Circuit_Ajout = new Calculator.FlashButton();
-            this.Cotation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.GBX_Circuits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // GBX_Circuits
             // 
+            this.GBX_Circuits.Controls.Add(this.label2);
             this.GBX_Circuits.Controls.Add(this.label1);
             this.GBX_Circuits.Controls.Add(this.CBX_Meilleur);
             this.GBX_Circuits.Controls.Add(this.CBX_Tous);
@@ -89,13 +91,36 @@
             this.GBX_Circuits.Controls.Add(this.FB_Circuit_Modif);
             this.GBX_Circuits.Controls.Add(this.FB_Circuit_Ajout);
             this.GBX_Circuits.Location = new System.Drawing.Point(16, 33);
-            this.GBX_Circuits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GBX_Circuits.Margin = new System.Windows.Forms.Padding(4);
             this.GBX_Circuits.Name = "GBX_Circuits";
-            this.GBX_Circuits.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GBX_Circuits.Padding = new System.Windows.Forms.Padding(4);
             this.GBX_Circuits.Size = new System.Drawing.Size(609, 384);
             this.GBX_Circuits.TabIndex = 1;
             this.GBX_Circuits.TabStop = false;
             this.GBX_Circuits.Text = "Circuits";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(138, 262);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "-> À intégrer";
+            // 
+            // CBX_Meilleur
+            // 
+            this.CBX_Meilleur.AutoSize = true;
+            this.CBX_Meilleur.Enabled = false;
+            this.CBX_Meilleur.Location = new System.Drawing.Point(8, 261);
+            this.CBX_Meilleur.Margin = new System.Windows.Forms.Padding(5);
+            this.CBX_Meilleur.Name = "CBX_Meilleur";
+            this.CBX_Meilleur.Size = new System.Drawing.Size(113, 20);
+            this.CBX_Meilleur.TabIndex = 18;
+            this.CBX_Meilleur.Text = "Meilleur Circuit";
+            this.CBX_Meilleur.UseVisualStyleBackColor = true;
+            this.CBX_Meilleur.CheckedChanged += new System.EventHandler(this.CBX_Meilleur_CheckedChanged);
             // 
             // CBX_Tous
             // 
@@ -129,7 +154,7 @@
             // 
             this.TBX_Monument.Enabled = false;
             this.TBX_Monument.Location = new System.Drawing.Point(132, 349);
-            this.TBX_Monument.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBX_Monument.Margin = new System.Windows.Forms.Padding(4);
             this.TBX_Monument.Name = "TBX_Monument";
             this.TBX_Monument.Size = new System.Drawing.Size(200, 22);
             this.TBX_Monument.TabIndex = 12;
@@ -151,7 +176,7 @@
             // 
             this.TBX_Prix.Enabled = false;
             this.TBX_Prix.Location = new System.Drawing.Point(132, 319);
-            this.TBX_Prix.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBX_Prix.Margin = new System.Windows.Forms.Padding(4);
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(200, 22);
             this.TBX_Prix.TabIndex = 11;
@@ -160,7 +185,7 @@
             // 
             this.TBX_VilleDepart.Enabled = false;
             this.TBX_VilleDepart.Location = new System.Drawing.Point(132, 289);
-            this.TBX_VilleDepart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TBX_VilleDepart.Margin = new System.Windows.Forms.Padding(4);
             this.TBX_VilleDepart.Name = "TBX_VilleDepart";
             this.TBX_VilleDepart.Size = new System.Drawing.Size(200, 22);
             this.TBX_VilleDepart.TabIndex = 10;
@@ -178,11 +203,30 @@
             this.CBX_VilleDepart.UseVisualStyleBackColor = true;
             this.CBX_VilleDepart.CheckedChanged += new System.EventHandler(this.CBX_Other_CheckedChanged);
             // 
+            // FB_Circuit_Show
+            // 
+            this.FB_Circuit_Show.BackgroundImage = global::TP_Final.Properties.Resources.Show_Neutral;
+            this.FB_Circuit_Show.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Circuit_Show.ClickedImage = global::TP_Final.Properties.Resources.Show_Clicked;
+            this.FB_Circuit_Show.DisabledImage = global::TP_Final.Properties.Resources.Show_Disabled;
+            this.FB_Circuit_Show.Enabled = false;
+            this.FB_Circuit_Show.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Show.Image")));
+            this.FB_Circuit_Show.Location = new System.Drawing.Point(559, 119);
+            this.FB_Circuit_Show.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Circuit_Show.Name = "FB_Circuit_Show";
+            this.FB_Circuit_Show.NeutralImage = global::TP_Final.Properties.Resources.Show_Neutral;
+            this.FB_Circuit_Show.OverImage = global::TP_Final.Properties.Resources.Show_Hover;
+            this.FB_Circuit_Show.Size = new System.Drawing.Size(40, 40);
+            this.FB_Circuit_Show.TabIndex = 13;
+            this.FB_Circuit_Show.Text = "Afficher les monuments du circuit";
+            this.FB_Circuit_Show.UseVisualStyleBackColor = true;
+            this.FB_Circuit_Show.Click += new System.EventHandler(this.FB_Circuit_Show_Click);
+            // 
             // BTN_Rechercher
             // 
             this.BTN_Rechercher.Enabled = false;
             this.BTN_Rechercher.Location = new System.Drawing.Point(512, 343);
-            this.BTN_Rechercher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTN_Rechercher.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_Rechercher.Name = "BTN_Rechercher";
             this.BTN_Rechercher.Size = new System.Drawing.Size(87, 28);
             this.BTN_Rechercher.TabIndex = 9;
@@ -213,7 +257,7 @@
             this.Cotation});
             this.DGV_Circuit.Enabled = false;
             this.DGV_Circuit.Location = new System.Drawing.Point(8, 23);
-            this.DGV_Circuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGV_Circuit.Margin = new System.Windows.Forms.Padding(4);
             this.DGV_Circuit.MultiSelect = false;
             this.DGV_Circuit.Name = "DGV_Circuit";
             this.DGV_Circuit.ReadOnly = true;
@@ -245,6 +289,50 @@
             this.PrixCircuit.HeaderText = "Prix";
             this.PrixCircuit.Name = "PrixCircuit";
             this.PrixCircuit.ReadOnly = true;
+            // 
+            // Cotation
+            // 
+            this.Cotation.HeaderText = "Cotation";
+            this.Cotation.Name = "Cotation";
+            this.Cotation.ReadOnly = true;
+            // 
+            // FB_Circuit_Modif
+            // 
+            this.FB_Circuit_Modif.BackgroundImage = global::TP_Final.Properties.Resources.Edit_Neutral;
+            this.FB_Circuit_Modif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Circuit_Modif.ClickedImage = global::TP_Final.Properties.Resources.Edit_Clicked;
+            this.FB_Circuit_Modif.DisabledImage = global::TP_Final.Properties.Resources.Edit_Disabled;
+            this.FB_Circuit_Modif.Enabled = false;
+            this.FB_Circuit_Modif.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Modif.Image")));
+            this.FB_Circuit_Modif.Location = new System.Drawing.Point(559, 71);
+            this.FB_Circuit_Modif.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Circuit_Modif.Name = "FB_Circuit_Modif";
+            this.FB_Circuit_Modif.NeutralImage = global::TP_Final.Properties.Resources.Edit_Neutral;
+            this.FB_Circuit_Modif.OverImage = global::TP_Final.Properties.Resources.Edit_Hover;
+            this.FB_Circuit_Modif.Size = new System.Drawing.Size(40, 40);
+            this.FB_Circuit_Modif.TabIndex = 1;
+            this.FB_Circuit_Modif.Text = "Modifier le prix du circuit";
+            this.FB_Circuit_Modif.UseVisualStyleBackColor = true;
+            this.FB_Circuit_Modif.Click += new System.EventHandler(this.FB_Circuit_Modif_Click);
+            // 
+            // FB_Circuit_Ajout
+            // 
+            this.FB_Circuit_Ajout.BackgroundImage = global::TP_Final.Properties.Resources.Add_Neutral;
+            this.FB_Circuit_Ajout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Circuit_Ajout.ClickedImage = global::TP_Final.Properties.Resources.Add_Clicked;
+            this.FB_Circuit_Ajout.DisabledImage = global::TP_Final.Properties.Resources.Add_Disabled;
+            this.FB_Circuit_Ajout.Enabled = false;
+            this.FB_Circuit_Ajout.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Ajout.Image")));
+            this.FB_Circuit_Ajout.Location = new System.Drawing.Point(560, 23);
+            this.FB_Circuit_Ajout.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Circuit_Ajout.Name = "FB_Circuit_Ajout";
+            this.FB_Circuit_Ajout.NeutralImage = global::TP_Final.Properties.Resources.Add_Neutral;
+            this.FB_Circuit_Ajout.OverImage = global::TP_Final.Properties.Resources.Add_Hover;
+            this.FB_Circuit_Ajout.Size = new System.Drawing.Size(40, 40);
+            this.FB_Circuit_Ajout.TabIndex = 0;
+            this.FB_Circuit_Ajout.Text = "Ajouter un circuit";
+            this.FB_Circuit_Ajout.UseVisualStyleBackColor = true;
+            this.FB_Circuit_Ajout.Click += new System.EventHandler(this.FB_Circuit_Ajout_Click);
             // 
             // MenuStrip
             // 
@@ -356,91 +444,15 @@
             this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
             this.TSMI_APropos.Text = "À propos";
             // 
-            // CBX_Meilleur
+            // label2
             // 
-            this.CBX_Meilleur.AutoSize = true;
-            this.CBX_Meilleur.Enabled = false;
-            this.CBX_Meilleur.Location = new System.Drawing.Point(8, 261);
-            this.CBX_Meilleur.Margin = new System.Windows.Forms.Padding(5);
-            this.CBX_Meilleur.Name = "CBX_Meilleur";
-            this.CBX_Meilleur.Size = new System.Drawing.Size(113, 20);
-            this.CBX_Meilleur.TabIndex = 18;
-            this.CBX_Meilleur.Text = "Meilleur Circuit";
-            this.CBX_Meilleur.UseVisualStyleBackColor = true;
-            this.CBX_Meilleur.CheckedChanged += new System.EventHandler(this.CBX_Meilleur_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(129, 262);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "-> À intégrer";
-            // 
-            // FB_Circuit_Show
-            // 
-            this.FB_Circuit_Show.BackgroundImage = global::TP_Final.Properties.Resources.Show_Neutral;
-            this.FB_Circuit_Show.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Circuit_Show.ClickedImage = global::TP_Final.Properties.Resources.Show_Clicked;
-            this.FB_Circuit_Show.DisabledImage = global::TP_Final.Properties.Resources.Show_Disabled;
-            this.FB_Circuit_Show.Enabled = false;
-            this.FB_Circuit_Show.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Show.Image")));
-            this.FB_Circuit_Show.Location = new System.Drawing.Point(559, 119);
-            this.FB_Circuit_Show.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Circuit_Show.Name = "FB_Circuit_Show";
-            this.FB_Circuit_Show.NeutralImage = global::TP_Final.Properties.Resources.Show_Neutral;
-            this.FB_Circuit_Show.OverImage = global::TP_Final.Properties.Resources.Show_Hover;
-            this.FB_Circuit_Show.Size = new System.Drawing.Size(40, 40);
-            this.FB_Circuit_Show.TabIndex = 13;
-            this.FB_Circuit_Show.Text = "Afficher les monuments du circuit";
-            this.FB_Circuit_Show.UseVisualStyleBackColor = true;
-            this.FB_Circuit_Show.Click += new System.EventHandler(this.FB_Circuit_Show_Click);
-            // 
-            // FB_Circuit_Modif
-            // 
-            this.FB_Circuit_Modif.BackgroundImage = global::TP_Final.Properties.Resources.Edit_Neutral;
-            this.FB_Circuit_Modif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Circuit_Modif.ClickedImage = global::TP_Final.Properties.Resources.Edit_Clicked;
-            this.FB_Circuit_Modif.DisabledImage = global::TP_Final.Properties.Resources.Edit_Disabled;
-            this.FB_Circuit_Modif.Enabled = false;
-            this.FB_Circuit_Modif.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Modif.Image")));
-            this.FB_Circuit_Modif.Location = new System.Drawing.Point(559, 71);
-            this.FB_Circuit_Modif.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Circuit_Modif.Name = "FB_Circuit_Modif";
-            this.FB_Circuit_Modif.NeutralImage = global::TP_Final.Properties.Resources.Edit_Neutral;
-            this.FB_Circuit_Modif.OverImage = global::TP_Final.Properties.Resources.Edit_Hover;
-            this.FB_Circuit_Modif.Size = new System.Drawing.Size(40, 40);
-            this.FB_Circuit_Modif.TabIndex = 1;
-            this.FB_Circuit_Modif.Text = "Modifier le prix du circuit";
-            this.FB_Circuit_Modif.UseVisualStyleBackColor = true;
-            this.FB_Circuit_Modif.Click += new System.EventHandler(this.FB_Circuit_Modif_Click);
-            // 
-            // FB_Circuit_Ajout
-            // 
-            this.FB_Circuit_Ajout.BackgroundImage = global::TP_Final.Properties.Resources.Add_Neutral;
-            this.FB_Circuit_Ajout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Circuit_Ajout.ClickedImage = global::TP_Final.Properties.Resources.Add_Clicked;
-            this.FB_Circuit_Ajout.DisabledImage = global::TP_Final.Properties.Resources.Add_Disabled;
-            this.FB_Circuit_Ajout.Enabled = false;
-            this.FB_Circuit_Ajout.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Ajout.Image")));
-            this.FB_Circuit_Ajout.Location = new System.Drawing.Point(560, 23);
-            this.FB_Circuit_Ajout.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Circuit_Ajout.Name = "FB_Circuit_Ajout";
-            this.FB_Circuit_Ajout.NeutralImage = global::TP_Final.Properties.Resources.Add_Neutral;
-            this.FB_Circuit_Ajout.OverImage = global::TP_Final.Properties.Resources.Add_Hover;
-            this.FB_Circuit_Ajout.Size = new System.Drawing.Size(40, 40);
-            this.FB_Circuit_Ajout.TabIndex = 0;
-            this.FB_Circuit_Ajout.Text = "Ajouter un circuit";
-            this.FB_Circuit_Ajout.UseVisualStyleBackColor = true;
-            this.FB_Circuit_Ajout.Click += new System.EventHandler(this.FB_Circuit_Ajout_Click);
-            // 
-            // Cotation
-            // 
-            this.Cotation.HeaderText = "Cotation";
-            this.Cotation.Name = "Cotation";
-            this.Cotation.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(138, 352);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 16);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "-> À intégrer";
             // 
             // MainForm
             // 
@@ -450,7 +462,7 @@
             this.Controls.Add(this.GBX_Circuits);
             this.Controls.Add(this.MenuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -505,6 +517,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CBX_Meilleur;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cotation;
+        private System.Windows.Forms.Label label2;
     }
 }
 

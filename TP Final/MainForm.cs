@@ -20,83 +20,14 @@ namespace TP_Final
             InitializeComponent();
         }
 
-        private void FB_Circuit_Ajout_Click(object sender, EventArgs e)
-        {
-            DLG_AjoutModif DLG = new DLG_AjoutModif();
-            DLG.ShowDialog();
-        }
-
-        private void FB_Circuit_Modif_Click(object sender, EventArgs e)
-        {
-            DLG_AjoutModif DLG = new DLG_AjoutModif();
-            DLG.ShowDialog();
-        }
-
-        private void FB_Circuit_Show_Click(object sender, EventArgs e)
-        {
-            DLG_ListeMonuments DLG = new DLG_ListeMonuments();
-            DLG.Show();
-        }
-
-        private void FB_Monument_Ajout_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FB_Monument_Supp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CBX_Tous_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CBX_Tous.Checked)
-            {
-                CBX_Meilleur.Checked = false;
-                CBX_VilleDepart.Checked = false;
-                CBX_Prix.Checked = false;
-                CBX_Monument.Checked = false;
-                CBX_Tous.Checked = true;
-            }
-        }
-
-        private void CBX_Other_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CBX_VilleDepart.Checked || CBX_Prix.Checked || CBX_Monument.Checked)
-            {
-                CBX_Tous.Checked = false;
-                CBX_Meilleur.Checked = false;
-            }
-        }
-
-        private void MI_Connexion_Connecter_Click(object sender, EventArgs e)
-        {
-            DLG_Connexion DLG = new DLG_Connexion();
-            if (DLG.ShowDialog() == DialogResult.OK)
-            {
-                Connexion = DLG.Connexion;
-                Connecté = true;
-                UpdateControls();
-            }
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Deconnexion();
-        }
-
-        private void MI_Connexion_Deconnecter_Click(object sender, EventArgs e)
-        {
-            Deconnexion();
-        }
-
+        #region Fonctions
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         void Deconnexion()
         {
             Connexion.Close();
             Connecté = false;
             UpdateControls();
         }
-
         void UpdateControls()
         {
             MI_Connexion_Connecter.Enabled = !Connecté;
@@ -116,26 +47,28 @@ namespace TP_Final
             FB_Circuit_Ajout.Enabled = Connecté;
             Initialise_DGV_Circuit();
         }
-
         void Initialise_DGV_Circuit()
         {
             bool PlusQue1Argument = false;
             string sVille = "VilleDepart like '%" + TBX_VilleDepart.Text + "%'";
             string sPrix = "Prix < " + TBX_Prix.Text;
-            string sMonument = "Monument like '%" + TBX_Monument.Text + "&'";
             if (Connecté)
             {
                 try
                 {
                     DGV_Circuit.Rows.Clear();
-                    string SQL = "select NomCircuit, VilleDepart, VilleArrivee, Prix from Circuits"; 
+                    string SQL = "select NomCircuit, VilleDepart, VilleArrivee, Prix from Circuits";
                     if (CBX_Meilleur.Checked)
                     {
-                        SQL += "inner join"; //Non terminé;
+                        //À implémenter avec une Vue.
                     }
                     else if (!CBX_Tous.Checked)
                     {
                         SQL += "where ";
+                        if (CBX_Monument.Checked)
+                        {
+                            //À implémenter avec une Vue.
+                        }
                         if (CBX_VilleDepart.Checked)
                         {
                             SQL += sVille;
@@ -146,13 +79,6 @@ namespace TP_Final
                             if (PlusQue1Argument)
                                 SQL += " and ";
                             SQL += sPrix;
-                            PlusQue1Argument = true;
-                        }
-                        if (CBX_Monument.Checked)
-                        {
-                            if (PlusQue1Argument)
-                                SQL += " and ";
-                            SQL += sMonument;
                         }
                     }
 
@@ -171,7 +97,48 @@ namespace TP_Final
                 }
             }
         }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
 
+        #region Événements
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void FB_Circuit_Ajout_Click(object sender, EventArgs e)
+        {
+            DLG_AjoutModif DLG = new DLG_AjoutModif();
+            DLG.Connexion = Connexion;
+            DLG.ShowDialog();
+        }
+        private void FB_Circuit_Modif_Click(object sender, EventArgs e)
+        {
+            DLG_AjoutModif DLG = new DLG_AjoutModif();
+            DLG.Connexion = Connexion;
+            DLG.ModeModification = true;
+            DLG.ShowDialog();
+        }
+        private void FB_Circuit_Show_Click(object sender, EventArgs e)
+        {
+            DLG_ListeMonuments DLG = new DLG_ListeMonuments();
+            DLG.Show();
+        }
+        private void FB_Monument_Ajout_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void FB_Monument_Supp_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CBX_Tous_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBX_Tous.Checked)
+            {
+                CBX_Meilleur.Checked = false;
+                CBX_VilleDepart.Checked = false;
+                CBX_Prix.Checked = false;
+                CBX_Monument.Checked = false;
+                CBX_Tous.Checked = true;
+            }
+        }
         private void CBX_Meilleur_CheckedChanged(object sender, EventArgs e)
         {
             if (CBX_Meilleur.Checked)
@@ -183,5 +150,33 @@ namespace TP_Final
                 CBX_Meilleur.Checked = true;
             }
         }
+        private void CBX_Other_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBX_VilleDepart.Checked || CBX_Prix.Checked || CBX_Monument.Checked)
+            {
+                CBX_Tous.Checked = false;
+                CBX_Meilleur.Checked = false;
+            }
+        }
+        private void MI_Connexion_Connecter_Click(object sender, EventArgs e)
+        {
+            DLG_Connexion DLG = new DLG_Connexion();
+            if (DLG.ShowDialog() == DialogResult.OK)
+            {
+                Connexion = DLG.Connexion;
+                Connecté = true;
+                UpdateControls();
+            }
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Deconnexion();
+        }
+        private void MI_Connexion_Deconnecter_Click(object sender, EventArgs e)
+        {
+            Deconnexion();
+        }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
     }
 }

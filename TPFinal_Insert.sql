@@ -6,6 +6,7 @@ DROP SEQUENCE CircuitSeq;
 DROP SEQUENCE ClientSeq;
 DROP VIEW MeilleurCircuit;
 DROP VIEW RechercheCircuit;
+DROP VIEW TousLesCircuits;
 */
 
 CREATE SEQUENCE ReservationSeq INCREMENT BY 1 START WITH 1;
@@ -24,6 +25,13 @@ CREATE VIEW RechercheCircuit as
 select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix from ListeMonuments
 inner join Circuits on ListeMonuments.NumCircuit = Circuits.NumCircuit
 inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument;
+
+CREATE VIEW TousLesCircuits as
+select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix, sum(NombreEtoiles) as TotalEtoiles from ListeMonuments
+inner join Circuits on ListeMonuments.NumCircuit = Circuits.NumCircuit
+inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument
+group by Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix
+order by TotalEtoiles desc;
 
 -- Monuments
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Le château Frontenac', 1893, 'Le Château Frontenac est le premier d''une longue série d''hôtels de style « château » construits par les compagnies ferroviaires canadiennes à la fin du XIXe et au début du XXe siècle', 

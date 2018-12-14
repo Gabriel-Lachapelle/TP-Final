@@ -45,7 +45,8 @@ namespace TP_Final
             TSMI_Circuit.Enabled = Connecté;
             TSMI_Monument.Enabled = Connecté;
             FB_Circuit_Ajout.Enabled = Connecté;
-            Initialise_DGV_Circuit();
+            if (Connecté)
+                Initialise_DGV_Circuit();
         }
         void Initialise_DGV_Circuit()
         {
@@ -53,7 +54,7 @@ namespace TP_Final
             string sVille = "VilleDepart like '%" + TBX_VilleDepart.Text + "%'";
             string sPrix = "Prix < " + TBX_Prix.Text;
             string sMonument = "Monument like '%" + TBX_Monument.Text + "%'";
-            string GroupBy = " group by Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix";
+            string GroupBy = " group by NomCircuit, VilleDepart, VilleArrivee, Prix";
             if (Connecté)
             {
                 try
@@ -62,11 +63,14 @@ namespace TP_Final
                     string SQL = "select * from RechercheCircuit";
                     if (CBX_Meilleur.Checked)
                     {
-                        SQL = "select * from MeilleurMonument";
+                        SQL = "select * from MeilleurCircuit";
                     }
-                    else if (!CBX_Tous.Checked)
+                    else
                     {
-                        SQL += " where ";
+                        if (CBX_Tous.Checked)
+                            SQL = "select * from TousLesCircuits";
+                        else
+                            SQL += " where ";
                         if (CBX_Monument.Checked)
                         {
                             SQL += sMonument;
@@ -85,7 +89,8 @@ namespace TP_Final
                                 SQL += " and ";
                             SQL += sPrix;
                         }
-                        SQL += GroupBy;
+                        if (!CBX_Tous.Checked)
+                            SQL += GroupBy;
                     }
 
                     OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
@@ -93,7 +98,7 @@ namespace TP_Final
 
                     while (OracleRead.Read())
                     {
-                        DGV_Circuit.Rows.Add(OracleRead.GetString(0), OracleRead.GetString(1), OracleRead.GetString(2), OracleRead.GetDecimal(3), OracleRead.GetDecimal(4));
+                        DGV_Circuit.Rows.Add(OracleRead.GetString(0), OracleRead.GetString(1), OracleRead.GetString(2), OracleRead.GetDecimal(3));
                     }
                     OracleRead.Close();
                 }
@@ -102,6 +107,10 @@ namespace TP_Final
                     MessageBox.Show(SQL.Message);
                 }
             }
+        }
+        private void RafraichirBoutonRecherche()
+        {
+            BTN_Rechercher.Enabled = CBX_Tous.Checked || CBX_Meilleur.Checked || CBX_VilleDepart.Checked || CBX_Prix.Checked || CBX_Monument.Checked;
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
@@ -144,6 +153,7 @@ namespace TP_Final
                 CBX_Monument.Checked = false;
                 CBX_Tous.Checked = true;
             }
+            RafraichirBoutonRecherche();
         }
         private void CBX_Meilleur_CheckedChanged(object sender, EventArgs e)
         {
@@ -155,6 +165,7 @@ namespace TP_Final
                 CBX_Monument.Checked = false;
                 CBX_Meilleur.Checked = true;
             }
+            RafraichirBoutonRecherche();
         }
         private void CBX_Other_CheckedChanged(object sender, EventArgs e)
         {
@@ -163,6 +174,7 @@ namespace TP_Final
                 CBX_Tous.Checked = false;
                 CBX_Meilleur.Checked = false;
             }
+            RafraichirBoutonRecherche();
         }
         private void MI_Connexion_Connecter_Click(object sender, EventArgs e)
         {
@@ -182,7 +194,17 @@ namespace TP_Final
         {
             Deconnexion();
         }
+        private void BTN_Rechercher_Click(object sender, EventArgs e)
+        {
+            Initialise_DGV_Circuit();
+        }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
+
+        private void DGV_Circuit_SelectionChanged(object sender, EventArgs e)
+        {
+            FB_Circuit_Modif.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_Circuit_Show.Enabled = DGV_Circuit.SelectedRows != null;
+        }
     }
 }

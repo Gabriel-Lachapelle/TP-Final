@@ -4,9 +4,9 @@ DROP SEQUENCE ReservationSeq;
 DROP SEQUENCE MonumentSeq;
 DROP SEQUENCE CircuitSeq;
 DROP SEQUENCE ClientSeq;
+DROP VIEW TousLesCircuits;
 DROP VIEW MeilleurCircuit;
 DROP VIEW RechercheCircuit;
-DROP VIEW TousLesCircuits;
 */
 
 CREATE SEQUENCE ReservationSeq INCREMENT BY 1 START WITH 1;
@@ -14,24 +14,24 @@ CREATE SEQUENCE MonumentSeq INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE CircuitSeq INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE ClientSeq INCREMENT BY 1 START WITH 1;
 
-CREATE VIEW MeilleurCircuit as
-select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix, count(NomMonument) as NbBonMonuments from ListeMonuments
-inner join Circuits on ListeMonuments.NumCircuit = Circuits.NumCircuit
-inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument
+create view TousLesCircuits as
+select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix, sum(NombreEtoiles) as TotalEtoiles from Circuits
+left outer join ListeMonuments on Circuits.NumCircuit = ListeMonuments.NumCircuit
+left outer join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument
+group by Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix
+order by TotalEtoiles desc;
+
+create view MeilleurCircuit as
+select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix, count(NomMonument) as NbBonMonuments from Circuits
+left outer join ListeMonuments on Circuits.NumCircuit = ListeMonuments.NumCircuit
+left outer join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument
 where NombreEtoiles >= 3 group by Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix
 order by Prix, NbBonMonuments desc;
 
-CREATE VIEW RechercheCircuit as
-select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix from ListeMonuments
-inner join Circuits on ListeMonuments.NumCircuit = Circuits.NumCircuit
-inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument;
-
-CREATE VIEW TousLesCircuits as
-select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix, sum(NombreEtoiles) as TotalEtoiles from ListeMonuments
-inner join Circuits on ListeMonuments.NumCircuit = Circuits.NumCircuit
-inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument
-group by Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix
-order by TotalEtoiles desc;
+create view RechercheCircuit as
+select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix from Circuits
+left outer join ListeMonuments on Circuits.NumCircuit = ListeMonuments.NumCircuit
+left outer join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument;
 
 -- Monuments
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Le château Frontenac', 1893, 'Le Château Frontenac est le premier d''une longue série d''hôtels de style « château » construits par les compagnies ferroviaires canadiennes à la fin du XIXe et au début du XXe siècle', 

@@ -82,9 +82,9 @@
             this.LBL_Duree.Location = new System.Drawing.Point(8, 136);
             this.LBL_Duree.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
             this.LBL_Duree.Name = "LBL_Duree";
-            this.LBL_Duree.Size = new System.Drawing.Size(102, 16);
+            this.LBL_Duree.Size = new System.Drawing.Size(89, 16);
             this.LBL_Duree.TabIndex = 3;
-            this.LBL_Duree.Text = "Durée (Minutes)";
+            this.LBL_Duree.Text = "Durée (Jours)";
             // 
             // LBL_Prix
             // 
@@ -184,6 +184,7 @@
             this.BTN_Ok.TabIndex = 9;
             this.BTN_Ok.Text = "Ajouter";
             this.BTN_Ok.UseVisualStyleBackColor = true;
+            this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
             // 
             // BTN_Annuler
             // 

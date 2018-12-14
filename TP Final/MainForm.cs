@@ -122,13 +122,16 @@ namespace TP_Final
             DLG_AjoutModif DLG = new DLG_AjoutModif();
             DLG.Connexion = Connexion;
             DLG.ShowDialog();
+            Initialise_DGV_Circuit();
         }
         private void FB_Circuit_Modif_Click(object sender, EventArgs e)
         {
             DLG_AjoutModif DLG = new DLG_AjoutModif();
             DLG.Connexion = Connexion;
+            DLG.NomCircuitEnModif = DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString();
             DLG.ModeModification = true;
             DLG.ShowDialog();
+            Initialise_DGV_Circuit();
         }
         private void FB_Circuit_Show_Click(object sender, EventArgs e)
         {

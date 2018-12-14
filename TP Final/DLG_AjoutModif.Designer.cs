@@ -148,6 +148,7 @@
             // TBX_Duree
             // 
             this.TBX_Duree.Location = new System.Drawing.Point(228, 133);
+            this.TBX_Duree.MaxLength = 4;
             this.TBX_Duree.Name = "TBX_Duree";
             this.TBX_Duree.Size = new System.Drawing.Size(95, 22);
             this.TBX_Duree.TabIndex = 9;
@@ -156,6 +157,7 @@
             // TBX_Prix
             // 
             this.TBX_Prix.Location = new System.Drawing.Point(228, 166);
+            this.TBX_Prix.MaxLength = 4;
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(95, 22);
             this.TBX_Prix.TabIndex = 8;
@@ -164,6 +166,7 @@
             // TBX_ClientsMax
             // 
             this.TBX_ClientsMax.Location = new System.Drawing.Point(228, 196);
+            this.TBX_ClientsMax.MaxLength = 3;
             this.TBX_ClientsMax.Name = "TBX_ClientsMax";
             this.TBX_ClientsMax.Size = new System.Drawing.Size(95, 22);
             this.TBX_ClientsMax.TabIndex = 7;

@@ -15,6 +15,8 @@ namespace TP_Final
     {
         public OracleConnection Connexion;
         public bool ModeModification = false;
+        public string NomCircuitEnModif;
+        string IDCircuitEnModif;
         public DLG_AjoutModif()
         {
             InitializeComponent();
@@ -22,22 +24,81 @@ namespace TP_Final
 
         private void DLG_AjoutModif_Load(object sender, EventArgs e)
         {
-            if (ModeModification)
+            try
             {
-                this.Text = "Modification d'un circuit";
-                //Remplir les contrôles avec les informations du circuit.
+                //Remplir les ComboBox avec le nom des villes:
+                string SQL = "select NomVille from Villes";
+                OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
+                OracleDataReader OracleRead = OracleCMD.ExecuteReader();
+                while (OracleRead.Read())
+                {
+                    CBX_VilleArrivee.Items.Add(OracleRead.GetString(0));
+                    CBX_VilleDepart.Items.Add(OracleRead.GetString(0));
+                }
+                OracleRead.Close();
+            }
+            catch (Exception SQL)
+            {
+                MessageBox.Show(SQL.Message);
             }
 
-            //Remplir les ComboBox avec le nom des villes:
-            string SQL = "select NomVille from Villes";
-            OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
-            OracleDataReader OracleRead = OracleCMD.ExecuteReader();
-            while (OracleRead.Read())
+            if (ModeModification)
             {
-                CBX_VilleArrivee.Items.Add(OracleRead.GetString(0));
-                CBX_VilleDepart.Items.Add(OracleRead.GetString(0));
+                BTN_Ok.Text = "Modifier";
+                try
+                {
+                    this.Text = "Modification d'un circuit";
+                    string SQLModif = "select NomCircuit, VilleDepart, VilleArrivee, Duree, Prix, NombreClientsMax, NumCircuit from Circuits where NomCircuit = '"
+                        + NomCircuitEnModif + "'";
+                    OracleCommand OracleCMDModif = new OracleCommand(SQLModif, Connexion);
+                    OracleDataReader OracleReadModif = OracleCMDModif.ExecuteReader();
+                    OracleReadModif.Read();
+
+                    //Remplissage des contrôles avec les données.
+                    TBX_Nom.Text = OracleReadModif.GetString(0);
+                    TBX_Duree.Text = OracleReadModif.GetDecimal(3).ToString();
+                    TBX_Prix.Text = OracleReadModif.GetDecimal(4).ToString();
+                    TBX_ClientsMax.Text = OracleReadModif.GetDecimal(5).ToString();
+                    IDCircuitEnModif = OracleReadModif.GetDecimal(6).ToString();
+                    //On garde les villes puisqu'elles sont sous forme de CodeVille.
+                    string VilleD = OracleReadModif.GetString(1);
+                    string VilleA = OracleReadModif.GetString(2);
+                    OracleReadModif.Close();
+
+                    string SQLVilleD = "select NomVille from Villes where CodeVille = '" + VilleD + "'";
+                    string SQLVilleA = "select NomVille from Villes where CodeVille = '" + VilleA + "'";
+
+                    //Ville de départ:
+                    OracleCMDModif = new OracleCommand(SQLVilleD, Connexion);
+                    OracleReadModif = OracleCMDModif.ExecuteReader();
+                    OracleReadModif.Read();
+                    VilleD = OracleReadModif.GetString(0);
+                    OracleReadModif.Close();
+
+                    for (int i = 0; i < CBX_VilleDepart.Items.Count; i++)
+                    {
+                        if (VilleD == CBX_VilleDepart.Items[i].ToString())
+                            CBX_VilleDepart.SelectedIndex = i;
+                    }
+
+                    //Ville d'arrivée:
+                    OracleCMDModif = new OracleCommand(SQLVilleA, Connexion);
+                    OracleReadModif = OracleCMDModif.ExecuteReader();
+                    OracleReadModif.Read();
+                    VilleA = OracleReadModif.GetString(0);
+                    OracleReadModif.Close();
+
+                    for (int i = 0; i < CBX_VilleArrivee.Items.Count; i++)
+                    {
+                        if (VilleA == CBX_VilleArrivee.Items[i].ToString())
+                            CBX_VilleArrivee.SelectedIndex = i;
+                    }
+                }
+                catch (Exception SQLModif)
+                {
+                    MessageBox.Show(SQLModif.Message);
+                }
             }
-            OracleRead.Close();
         }
 
         private void AjouterCircuit()
@@ -96,6 +157,40 @@ namespace TP_Final
                 MessageBox.Show(SQL.Message);
             }
         }
+
+        private void ModifierCircuit()
+        {
+            try
+            {
+                //Pour changer les nom des villes en CodeVille:
+                string SQLVilleD = "select CodeVille from Villes where NomVille = '" + CBX_VilleDepart.Text + "'";
+                string SQLVilleA = "select CodeVille from Villes where NomVille = '" + CBX_VilleArrivee.Text + "'";
+
+                //Villes de départ:
+                OracleCommand OracleCMDVille = new OracleCommand(SQLVilleD, Connexion);
+                OracleDataReader OracleRead = OracleCMDVille.ExecuteReader();
+                OracleRead.Read();
+                SQLVilleD = OracleRead.GetString(0);
+                OracleRead.Close();
+
+                //Ville d'arrivée:
+                OracleCMDVille = new OracleCommand(SQLVilleA, Connexion);
+                OracleRead = OracleCMDVille.ExecuteReader();
+                OracleRead.Read();
+                SQLVilleA = OracleRead.GetString(0);
+                OracleRead.Close();
+
+                //Mise à jour de la table:
+                string SQL = "update Circuits set NomCircuit = '" + TBX_Nom.Text + "', VilleDepart = '" + SQLVilleD + "', VilleArrivee = '" + SQLVilleA + "', Duree = " + TBX_Duree.Text
+                   + ", Prix = " + TBX_Prix.Text + ", NombreClientsMax = " + TBX_ClientsMax.Text + " where NumCircuit = " + IDCircuitEnModif;
+                OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
+                OracleCMD.ExecuteNonQuery();
+            }
+            catch (Exception SQL)
+            {
+                MessageBox.Show(SQL.Message);
+            }
+        }
         private void Numbers_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -106,7 +201,10 @@ namespace TP_Final
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
-            AjouterCircuit();
+            if (ModeModification)
+                ModifierCircuit();
+            else
+                AjouterCircuit();
         }
     }
 }

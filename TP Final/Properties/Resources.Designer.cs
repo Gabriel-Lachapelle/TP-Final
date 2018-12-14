@@ -263,9 +263,39 @@ namespace TP_Final.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Search_Neutral {
+        internal static System.Drawing.Bitmap Settings_Clicked {
             get {
-                object obj = ResourceManager.GetObject("Search_Neutral", resourceCulture);
+                object obj = ResourceManager.GetObject("Settings_Clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_Disabled {
+            get {
+                object obj = ResourceManager.GetObject("Settings_Disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Settings_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_Neutral {
+            get {
+                object obj = ResourceManager.GetObject("Settings_Neutral", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

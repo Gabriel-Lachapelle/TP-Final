@@ -112,19 +112,14 @@ namespace TP_Final
         {
             BTN_Rechercher.Enabled = CBX_Tous.Checked || CBX_Meilleur.Checked || CBX_VilleDepart.Checked || CBX_Prix.Checked || CBX_Monument.Checked;
         }
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        #endregion
-
-        #region Événements
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        private void FB_Circuit_Ajout_Click(object sender, EventArgs e)
+        private void AjouterCircuit()
         {
             DLG_AjoutModif DLG = new DLG_AjoutModif();
             DLG.Connexion = Connexion;
             DLG.ShowDialog();
             Initialise_DGV_Circuit();
         }
-        private void FB_Circuit_Modif_Click(object sender, EventArgs e)
+        private void ModifierCircuit()
         {
             DLG_AjoutModif DLG = new DLG_AjoutModif();
             DLG.Connexion = Connexion;
@@ -133,18 +128,41 @@ namespace TP_Final
             DLG.ShowDialog();
             Initialise_DGV_Circuit();
         }
-        private void FB_Circuit_Show_Click(object sender, EventArgs e)
+        private void SupprimerCircuit()
         {
-            DLG_ListeMonuments DLG = new DLG_ListeMonuments();
+            if (MessageBox.Show("Êtes vous sûr de vouloir supprimer ce circuit?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    string SQL = "delete from Circuits where NomCircuit = '" + DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString() + "'";
+                    OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
+                    OracleCMD.ExecuteNonQuery();
+                    Initialise_DGV_Circuit();
+                }
+                catch (Exception SQL)
+                {
+                    MessageBox.Show(SQL.Message);
+                }
+            }
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
+
+        #region Événements
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        private void FB_Circuit_Ajout_Click(object sender, EventArgs e)
+        {
+            AjouterCircuit();
+        }
+        private void FB_Circuit_Modif_Click(object sender, EventArgs e)
+        {
+            ModifierCircuit();
+        }
+        private void FB_Circuit_Gerer_Click(object sender, EventArgs e)
+        {
+            DLG_GererMonuments DLG = new DLG_GererMonuments();
             DLG.Show();
-        }
-        private void FB_Monument_Ajout_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void FB_Monument_Supp_Click(object sender, EventArgs e)
-        {
-
         }
         private void CBX_Tous_CheckedChanged(object sender, EventArgs e)
         {
@@ -201,13 +219,29 @@ namespace TP_Final
         {
             Initialise_DGV_Circuit();
         }
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        #endregion
-
+        private void MI_Circuits_Ajout_Click(object sender, EventArgs e)
+        {
+            AjouterCircuit();
+        }
+        private void MI_Circuits_Modif_Click(object sender, EventArgs e)
+        {
+            ModifierCircuit();
+        }
+        private void FB_Circuit_Supp_Click(object sender, EventArgs e)
+        {
+            SupprimerCircuit();
+        }
         private void DGV_Circuit_SelectionChanged(object sender, EventArgs e)
         {
             FB_Circuit_Modif.Enabled = DGV_Circuit.SelectedRows != null;
-            FB_Circuit_Show.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_Circuit_Gerer.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
+            MI_Circuits_Ajout.Enabled = DGV_Circuit.SelectedRows != null;
+            MI_Circuits_Modif.Enabled = DGV_Circuit.SelectedRows != null;
         }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
+
+
     }
 }

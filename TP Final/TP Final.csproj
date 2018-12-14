@@ -58,11 +58,11 @@
     <Compile Include="DLG_Connexion.Designer.cs">
       <DependentUpon>DLG_Connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="DLG_ListeMonuments.cs">
+    <Compile Include="DLG_GererMonuments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DLG_ListeMonuments.Designer.cs">
-      <DependentUpon>DLG_ListeMonuments.cs</DependentUpon>
+    <Compile Include="DLG_GererMonuments.Designer.cs">
+      <DependentUpon>DLG_GererMonuments.cs</DependentUpon>
     </Compile>
     <Compile Include="FlashButton.cs">
       <SubType>Component</SubType>
@@ -82,8 +82,8 @@
     <EmbeddedResource Include="DLG_Connexion.resx">
       <DependentUpon>DLG_Connexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DLG_ListeMonuments.resx">
-      <DependentUpon>DLG_ListeMonuments.cs</DependentUpon>
+    <EmbeddedResource Include="DLG_GererMonuments.resx">
+      <DependentUpon>DLG_GererMonuments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -185,6 +185,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Previous_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_Neutral.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

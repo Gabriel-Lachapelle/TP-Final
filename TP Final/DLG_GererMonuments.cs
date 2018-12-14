@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP_Final
 {
-    public partial class DLG_ListeMonuments : Form
+    public partial class DLG_GererMonuments : Form
     {
-        public DLG_ListeMonuments()
+        public DLG_GererMonuments()
         {
             InitializeComponent();
         }

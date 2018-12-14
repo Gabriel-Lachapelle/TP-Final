@@ -1,6 +1,6 @@
 ﻿namespace TP_Final
 {
-    partial class DLG_ListeMonuments
+    partial class DLG_GererMonuments
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_ListeMonuments));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_GererMonuments));
             this.LBL_Nom = new System.Windows.Forms.Label();
             this.LBL_Cout = new System.Windows.Forms.Label();
             this.LBL_Histoire = new System.Windows.Forms.Label();

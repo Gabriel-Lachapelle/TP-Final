@@ -52,25 +52,30 @@ namespace TP_Final
             bool PlusQue1Argument = false;
             string sVille = "VilleDepart like '%" + TBX_VilleDepart.Text + "%'";
             string sPrix = "Prix < " + TBX_Prix.Text;
+            string sMonument = "Monument like '%" + TBX_Monument.Text + "%'";
+            string GroupBy = " group by Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix";
             if (Connecté)
             {
                 try
                 {
                     DGV_Circuit.Rows.Clear();
-                    string SQL = "select NomCircuit, VilleDepart, VilleArrivee, Prix from Circuits";
+                    string SQL = "select * from RechercheCircuit";
                     if (CBX_Meilleur.Checked)
                     {
-                        //À implémenter avec une Vue.
+                        SQL = "select * from MeilleurMonument";
                     }
                     else if (!CBX_Tous.Checked)
                     {
-                        SQL += "where ";
+                        SQL += " where ";
                         if (CBX_Monument.Checked)
                         {
-                            //À implémenter avec une Vue.
+                            SQL += sMonument;
+                            PlusQue1Argument = true;
                         }
                         if (CBX_VilleDepart.Checked)
                         {
+                            if (PlusQue1Argument)
+                                SQL += " and ";
                             SQL += sVille;
                             PlusQue1Argument = true;
                         }
@@ -80,6 +85,7 @@ namespace TP_Final
                                 SQL += " and ";
                             SQL += sPrix;
                         }
+                        SQL += GroupBy;
                     }
 
                     OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
@@ -87,7 +93,7 @@ namespace TP_Final
 
                     while (OracleRead.Read())
                     {
-                        DGV_Circuit.Rows.Add(OracleRead.GetString(0), OracleRead.GetString(1), OracleRead.GetString(2), OracleRead.GetDecimal(3));
+                        DGV_Circuit.Rows.Add(OracleRead.GetString(0), OracleRead.GetString(1), OracleRead.GetString(2), OracleRead.GetDecimal(3), OracleRead.GetDecimal(4));
                     }
                     OracleRead.Close();
                 }

@@ -57,12 +57,12 @@ INSERT INTO Villes VALUES ('THM', 'Thetford Mines', 25649, 'Thetford Mines est u
 INSERT INTO Villes VALUES ('BHN', 'Beauharnois', 12011, 'Beauharnois est une ville de la municipalité régionale de comté de Beauharnois-Salaberry située au pays du Suroît au Québec. Beauharnois fait partie de la région administrative de la Montérégie et également partie de la Communauté métropolitaine de Montréal.');
 
 -- Circuits
-INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'COA', 'PRC', 'Circuit De sud en est', 4, 680, 20);
-INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'MTL', 'SAG', 'Circuit Découverte Fleuve et Saguenay', 5, 570, 13);
-INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'OKA', 'MTL', 'Circuit Montréal et les alentours', 2, 410, 18);
-INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'PRC', 'OKA', 'Circuit Découverte sud Québec', 4, 580, 10);
-INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'PRC', 'MTL', 'Circuit Découvert Québec', 5, 1000, 5);
-
+INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'COA', 'PRC', 'Circuit De sud en est', 680, 4, 20);
+INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'MTL', 'SAG', 'Circuit Découverte Fleuve et Saguenay', 570, 5, 13);
+INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'OKA', 'MTL', 'Circuit Montréal et les alentours', 410, 2, 18);
+INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'PRC', 'OKA', 'Circuit Découverte sud Québec', 580, 4, 10);
+INSERT INTO Circuits VALUES(CircuitSeq.nextval, 'PRC', 'MTL', 'Circuit Découvert Québec', 1000, 5, 5);
+SELECT * FROM Circuits;
 -- ListeMonuments
 INSERT INTO ListeMonuments VALUES((SELECT NumCircuit FROM Circuits WHERE NomCircuit='Circuit De sud en est'), (SELECT NumMonument FROM Monuments WHERE NomMonument='Musée Beaulne'), 1);
 INSERT INTO ListeMonuments VALUES((SELECT NumCircuit FROM Circuits WHERE NomCircuit='Circuit De sud en est'), (SELECT NumMonument FROM Monuments WHERE NomMonument='Musée minéralogique et minier de Thetford Mines'), 2);

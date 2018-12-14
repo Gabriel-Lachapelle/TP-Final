@@ -31,7 +31,7 @@ create table Circuits
   VilleDepart char(3),
   VilleArrivee char(3),
   NomCircuit varchar2(60) constraint NomUnique unique,
-  Prix number(4,2),
+  Prix number(4),
   Duree number(4),
   NombreClientsMax number(3),
   CONSTRAINT FKVilleDepart FOREIGN KEY(VilleDepart) REFERENCES Villes(CodeVille),

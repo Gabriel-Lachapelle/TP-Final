@@ -39,13 +39,51 @@ namespace TP_Final
                     MessageBox.Show(SQL.Message, "Érreur");
             }
         }
-
+        private void SauvegarderPreferences()
+        {
+            Properties.Settings.Default.PreferencesSauvegardees = true;
+            if (CBX_Souvenir.Checked)
+            {
+                Properties.Settings.Default.NomUsager = TBX_Nom.Text;
+                Properties.Settings.Default.MotDePasse = TBX_MDP.Text;
+            }
+            else
+            {
+                Properties.Settings.Default.NomUsager = "";
+                Properties.Settings.Default.MotDePasse = "";
+            }
+            Properties.Settings.Default.Taille_DLG_Connexion = Size;
+            Properties.Settings.Default.Position_DLG_Connexion = Location;
+            Properties.Settings.Default.Save();
+        }
+        private void ChargerPreferences()
+        {
+            if (Properties.Settings.Default.PreferencesSauvegardees)
+            {
+                CBX_Souvenir.Checked = Properties.Settings.Default.NomUsager != "";
+                TBX_Nom.Text = Properties.Settings.Default.NomUsager;
+                TBX_MDP.Text = Properties.Settings.Default.MotDePasse;
+                Location = Properties.Settings.Default.Position_DLG_Connexion;
+                Size = Properties.Settings.Default.Taille_DLG_Connexion;
+            }
+        }
+     
         private void TBX_TextChanged(object sender, EventArgs e)
         {
             if (TBX_Nom.Text == "" || TBX_MDP.Text == "")
                 BTN_Connexion.Enabled = false;
             else
                 BTN_Connexion.Enabled = true;
+        }
+
+        private void DLG_Connexion_Load(object sender, EventArgs e)
+        {
+            ChargerPreferences();
+        }
+
+        private void DLG_Connexion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SauvegarderPreferences();
         }
     }
 }

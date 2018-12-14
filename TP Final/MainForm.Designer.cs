@@ -47,6 +47,10 @@
             this.VilleArrivee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrixCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.FB_Circuit_Supp = new Calculator.FlashButton();
+            this.FB_Circuit_Gerer = new Calculator.FlashButton();
+            this.FB_Circuit_Modif = new Calculator.FlashButton();
+            this.FB_Circuit_Ajout = new Calculator.FlashButton();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.TSMI_Connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.MI_Connexion_Connecter = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,17 +58,10 @@
             this.TSMI_Circuit = new System.Windows.Forms.ToolStripMenuItem();
             this.MI_Circuits_Ajout = new System.Windows.Forms.ToolStripMenuItem();
             this.MI_Circuits_Modif = new System.Windows.Forms.ToolStripMenuItem();
-            this.MI_Circuits_AfficherMonuments = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMI_Monument = new System.Windows.Forms.ToolStripMenuItem();
-            this.MI_Monument_Ordre = new System.Windows.Forms.ToolStripMenuItem();
-            this.MI_Monument_Cotation = new System.Windows.Forms.ToolStripMenuItem();
-            this.MI_Monument_Meilleur = new System.Windows.Forms.ToolStripMenuItem();
+            this.MI_Circuits_GererMonuments = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.FB_Circuit_Supp = new Calculator.FlashButton();
-            this.FB_Circuit_Gerer = new Calculator.FlashButton();
-            this.FB_Circuit_Modif = new Calculator.FlashButton();
-            this.FB_Circuit_Ajout = new Calculator.FlashButton();
+            this.MI_Circuit_Supp = new System.Windows.Forms.ToolStripMenuItem();
             this.GBX_Recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -150,12 +147,15 @@
             // 
             // TBX_Monument
             // 
-            this.TBX_Monument.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TBX_Monument.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_Monument.Enabled = false;
             this.TBX_Monument.Location = new System.Drawing.Point(136, 105);
             this.TBX_Monument.Margin = new System.Windows.Forms.Padding(4);
+            this.TBX_Monument.MaximumSize = new System.Drawing.Size(250, 22);
+            this.TBX_Monument.MinimumSize = new System.Drawing.Size(135, 22);
             this.TBX_Monument.Name = "TBX_Monument";
-            this.TBX_Monument.Size = new System.Drawing.Size(200, 22);
+            this.TBX_Monument.Size = new System.Drawing.Size(137, 22);
             this.TBX_Monument.TabIndex = 12;
             // 
             // CBX_Prix
@@ -174,22 +174,28 @@
             // 
             // TBX_Prix
             // 
-            this.TBX_Prix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TBX_Prix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_Prix.Enabled = false;
             this.TBX_Prix.Location = new System.Drawing.Point(136, 75);
             this.TBX_Prix.Margin = new System.Windows.Forms.Padding(4);
+            this.TBX_Prix.MaximumSize = new System.Drawing.Size(250, 22);
+            this.TBX_Prix.MinimumSize = new System.Drawing.Size(135, 22);
             this.TBX_Prix.Name = "TBX_Prix";
-            this.TBX_Prix.Size = new System.Drawing.Size(200, 22);
+            this.TBX_Prix.Size = new System.Drawing.Size(137, 22);
             this.TBX_Prix.TabIndex = 11;
             // 
             // TBX_VilleDepart
             // 
-            this.TBX_VilleDepart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TBX_VilleDepart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_VilleDepart.Enabled = false;
             this.TBX_VilleDepart.Location = new System.Drawing.Point(136, 48);
             this.TBX_VilleDepart.Margin = new System.Windows.Forms.Padding(4);
+            this.TBX_VilleDepart.MaximumSize = new System.Drawing.Size(250, 22);
+            this.TBX_VilleDepart.MinimumSize = new System.Drawing.Size(135, 22);
             this.TBX_VilleDepart.Name = "TBX_VilleDepart";
-            this.TBX_VilleDepart.Size = new System.Drawing.Size(200, 22);
+            this.TBX_VilleDepart.Size = new System.Drawing.Size(137, 22);
             this.TBX_VilleDepart.TabIndex = 10;
             // 
             // CBX_VilleDepart
@@ -278,118 +284,6 @@
             this.PrixCircuit.Name = "PrixCircuit";
             this.PrixCircuit.ReadOnly = true;
             // 
-            // MenuStrip
-            // 
-            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMI_Connexion,
-            this.TSMI_Circuit,
-            this.TSMI_Monument,
-            this.TSMI_Aide,
-            this.TSMI_APropos});
-            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(514, 24);
-            this.MenuStrip.TabIndex = 3;
-            this.MenuStrip.Text = "menuStrip1";
-            // 
-            // TSMI_Connexion
-            // 
-            this.TSMI_Connexion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MI_Connexion_Connecter,
-            this.MI_Connexion_Deconnecter});
-            this.TSMI_Connexion.Name = "TSMI_Connexion";
-            this.TSMI_Connexion.Size = new System.Drawing.Size(76, 20);
-            this.TSMI_Connexion.Text = "Connexion";
-            // 
-            // MI_Connexion_Connecter
-            // 
-            this.MI_Connexion_Connecter.Name = "MI_Connexion_Connecter";
-            this.MI_Connexion_Connecter.Size = new System.Drawing.Size(155, 22);
-            this.MI_Connexion_Connecter.Text = "Se connecter";
-            this.MI_Connexion_Connecter.Click += new System.EventHandler(this.MI_Connexion_Connecter_Click);
-            // 
-            // MI_Connexion_Deconnecter
-            // 
-            this.MI_Connexion_Deconnecter.Enabled = false;
-            this.MI_Connexion_Deconnecter.Name = "MI_Connexion_Deconnecter";
-            this.MI_Connexion_Deconnecter.Size = new System.Drawing.Size(155, 22);
-            this.MI_Connexion_Deconnecter.Text = "Se déconnecter";
-            this.MI_Connexion_Deconnecter.Click += new System.EventHandler(this.MI_Connexion_Deconnecter_Click);
-            // 
-            // TSMI_Circuit
-            // 
-            this.TSMI_Circuit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MI_Circuits_Ajout,
-            this.MI_Circuits_Modif,
-            this.MI_Circuits_AfficherMonuments});
-            this.TSMI_Circuit.Enabled = false;
-            this.TSMI_Circuit.Name = "TSMI_Circuit";
-            this.TSMI_Circuit.Size = new System.Drawing.Size(59, 20);
-            this.TSMI_Circuit.Text = "Circuits";
-            // 
-            // MI_Circuits_Ajout
-            // 
-            this.MI_Circuits_Ajout.Name = "MI_Circuits_Ajout";
-            this.MI_Circuits_Ajout.Size = new System.Drawing.Size(201, 22);
-            this.MI_Circuits_Ajout.Text = "Ajouter";
-            this.MI_Circuits_Ajout.Click += new System.EventHandler(this.MI_Circuits_Ajout_Click);
-            // 
-            // MI_Circuits_Modif
-            // 
-            this.MI_Circuits_Modif.Name = "MI_Circuits_Modif";
-            this.MI_Circuits_Modif.Size = new System.Drawing.Size(201, 22);
-            this.MI_Circuits_Modif.Text = "Modifier";
-            this.MI_Circuits_Modif.Click += new System.EventHandler(this.MI_Circuits_Modif_Click);
-            // 
-            // MI_Circuits_AfficherMonuments
-            // 
-            this.MI_Circuits_AfficherMonuments.Name = "MI_Circuits_AfficherMonuments";
-            this.MI_Circuits_AfficherMonuments.Size = new System.Drawing.Size(201, 22);
-            this.MI_Circuits_AfficherMonuments.Text = "Afficher les monuments";
-            // 
-            // TSMI_Monument
-            // 
-            this.TSMI_Monument.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MI_Monument_Ordre});
-            this.TSMI_Monument.Enabled = false;
-            this.TSMI_Monument.Name = "TSMI_Monument";
-            this.TSMI_Monument.Size = new System.Drawing.Size(84, 20);
-            this.TSMI_Monument.Text = "Monuments";
-            // 
-            // MI_Monument_Ordre
-            // 
-            this.MI_Monument_Ordre.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MI_Monument_Cotation,
-            this.MI_Monument_Meilleur});
-            this.MI_Monument_Ordre.Name = "MI_Monument_Ordre";
-            this.MI_Monument_Ordre.Size = new System.Drawing.Size(159, 22);
-            this.MI_Monument_Ordre.Text = "Ordonner selon:";
-            // 
-            // MI_Monument_Cotation
-            // 
-            this.MI_Monument_Cotation.Name = "MI_Monument_Cotation";
-            this.MI_Monument_Cotation.Size = new System.Drawing.Size(120, 22);
-            this.MI_Monument_Cotation.Text = "Cotation";
-            // 
-            // MI_Monument_Meilleur
-            // 
-            this.MI_Monument_Meilleur.Name = "MI_Monument_Meilleur";
-            this.MI_Monument_Meilleur.Size = new System.Drawing.Size(120, 22);
-            this.MI_Monument_Meilleur.Text = "Meilleur";
-            // 
-            // TSMI_Aide
-            // 
-            this.TSMI_Aide.Name = "TSMI_Aide";
-            this.TSMI_Aide.Size = new System.Drawing.Size(43, 20);
-            this.TSMI_Aide.Text = "Aide";
-            // 
-            // TSMI_APropos
-            // 
-            this.TSMI_APropos.Name = "TSMI_APropos";
-            this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
-            this.TSMI_APropos.Text = "À propos";
-            // 
             // FB_Circuit_Supp
             // 
             this.FB_Circuit_Supp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -474,6 +368,95 @@
             this.FB_Circuit_Ajout.UseVisualStyleBackColor = true;
             this.FB_Circuit_Ajout.Click += new System.EventHandler(this.FB_Circuit_Ajout_Click);
             // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_Connexion,
+            this.TSMI_Circuit,
+            this.TSMI_Aide,
+            this.TSMI_APropos});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.MenuStrip.Size = new System.Drawing.Size(514, 24);
+            this.MenuStrip.TabIndex = 3;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
+            // TSMI_Connexion
+            // 
+            this.TSMI_Connexion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MI_Connexion_Connecter,
+            this.MI_Connexion_Deconnecter});
+            this.TSMI_Connexion.Name = "TSMI_Connexion";
+            this.TSMI_Connexion.Size = new System.Drawing.Size(76, 20);
+            this.TSMI_Connexion.Text = "Connexion";
+            // 
+            // MI_Connexion_Connecter
+            // 
+            this.MI_Connexion_Connecter.Name = "MI_Connexion_Connecter";
+            this.MI_Connexion_Connecter.Size = new System.Drawing.Size(155, 22);
+            this.MI_Connexion_Connecter.Text = "Se connecter";
+            this.MI_Connexion_Connecter.Click += new System.EventHandler(this.MI_Connexion_Connecter_Click);
+            // 
+            // MI_Connexion_Deconnecter
+            // 
+            this.MI_Connexion_Deconnecter.Enabled = false;
+            this.MI_Connexion_Deconnecter.Name = "MI_Connexion_Deconnecter";
+            this.MI_Connexion_Deconnecter.Size = new System.Drawing.Size(155, 22);
+            this.MI_Connexion_Deconnecter.Text = "Se déconnecter";
+            this.MI_Connexion_Deconnecter.Click += new System.EventHandler(this.MI_Connexion_Deconnecter_Click);
+            // 
+            // TSMI_Circuit
+            // 
+            this.TSMI_Circuit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MI_Circuits_Ajout,
+            this.MI_Circuits_Modif,
+            this.MI_Circuit_Supp,
+            this.MI_Circuits_GererMonuments});
+            this.TSMI_Circuit.Enabled = false;
+            this.TSMI_Circuit.Name = "TSMI_Circuit";
+            this.TSMI_Circuit.Size = new System.Drawing.Size(59, 20);
+            this.TSMI_Circuit.Text = "Circuits";
+            // 
+            // MI_Circuits_Ajout
+            // 
+            this.MI_Circuits_Ajout.Name = "MI_Circuits_Ajout";
+            this.MI_Circuits_Ajout.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuits_Ajout.Text = "Ajouter";
+            this.MI_Circuits_Ajout.Click += new System.EventHandler(this.MI_Circuits_Ajout_Click);
+            // 
+            // MI_Circuits_Modif
+            // 
+            this.MI_Circuits_Modif.Name = "MI_Circuits_Modif";
+            this.MI_Circuits_Modif.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuits_Modif.Text = "Modifier";
+            this.MI_Circuits_Modif.Click += new System.EventHandler(this.MI_Circuits_Modif_Click);
+            // 
+            // MI_Circuits_GererMonuments
+            // 
+            this.MI_Circuits_GererMonuments.Name = "MI_Circuits_GererMonuments";
+            this.MI_Circuits_GererMonuments.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuits_GererMonuments.Text = "Gérer les monuments";
+            // 
+            // TSMI_Aide
+            // 
+            this.TSMI_Aide.Name = "TSMI_Aide";
+            this.TSMI_Aide.Size = new System.Drawing.Size(43, 20);
+            this.TSMI_Aide.Text = "Aide";
+            // 
+            // TSMI_APropos
+            // 
+            this.TSMI_APropos.Name = "TSMI_APropos";
+            this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
+            this.TSMI_APropos.Text = "À propos";
+            // 
+            // MI_Circuit_Supp
+            // 
+            this.MI_Circuit_Supp.Name = "MI_Circuit_Supp";
+            this.MI_Circuit_Supp.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuit_Supp.Text = "Supprimer";
+            this.MI_Circuit_Supp.Click += new System.EventHandler(this.MI_Circuit_Supp_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -495,6 +478,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.GBX_Recherche.ResumeLayout(false);
             this.GBX_Recherche.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).EndInit();
@@ -528,11 +512,7 @@
         private System.Windows.Forms.ToolStripMenuItem TSMI_Circuit;
         private System.Windows.Forms.ToolStripMenuItem MI_Circuits_Ajout;
         private System.Windows.Forms.ToolStripMenuItem MI_Circuits_Modif;
-        private System.Windows.Forms.ToolStripMenuItem MI_Circuits_AfficherMonuments;
-        private System.Windows.Forms.ToolStripMenuItem TSMI_Monument;
-        private System.Windows.Forms.ToolStripMenuItem MI_Monument_Ordre;
-        private System.Windows.Forms.ToolStripMenuItem MI_Monument_Cotation;
-        private System.Windows.Forms.ToolStripMenuItem MI_Monument_Meilleur;
+        private System.Windows.Forms.ToolStripMenuItem MI_Circuits_GererMonuments;
         private System.Windows.Forms.ToolStripMenuItem TSMI_Aide;
         private System.Windows.Forms.ToolStripMenuItem TSMI_APropos;
         private System.Windows.Forms.CheckBox CBX_Meilleur;
@@ -542,6 +522,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VilleArrivee;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrixCircuit;
         private Calculator.FlashButton FB_Circuit_Supp;
+        private System.Windows.Forms.ToolStripMenuItem MI_Circuit_Supp;
     }
 }
 

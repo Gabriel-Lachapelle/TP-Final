@@ -27,6 +27,13 @@ namespace TP_Final
             Connexion.Close();
             Connecté = false;
             UpdateControls();
+            DGV_Circuit.Rows.Clear();
+            FB_Circuit_Modif.Enabled = Connecté;
+            FB_Circuit_Gerer.Enabled = Connecté;
+            FB_Circuit_Supp.Enabled = Connecté;
+            MI_Circuits_Ajout.Enabled = Connecté;
+            MI_Circuits_Modif.Enabled = Connecté;
+            MI_Circuit_Supp.Enabled = Connecté;
         }
         void UpdateControls()
         {
@@ -43,7 +50,6 @@ namespace TP_Final
             TBX_Monument.Enabled = Connecté;
             BTN_Rechercher.Enabled = Connecté;
             TSMI_Circuit.Enabled = Connecté;
-            TSMI_Monument.Enabled = Connecté;
             FB_Circuit_Ajout.Enabled = Connecté;
             if (Connecté)
                 Initialise_DGV_Circuit();
@@ -145,7 +151,21 @@ namespace TP_Final
                 }
             }
         }
-
+        private void SauvegarderPreferences()
+        {
+            Properties.Settings.Default.MainFormPref = true;
+            Properties.Settings.Default.Position_MainForm = Location;
+            Properties.Settings.Default.Taille_MainForm = Size;
+            Properties.Settings.Default.Save();
+        }
+        private void ChargerPreferences()
+        {
+            if (Properties.Settings.Default.MainFormPref)
+            {
+                Location = Properties.Settings.Default.Position_MainForm;
+                Size = Properties.Settings.Default.Taille_MainForm;
+            }
+        }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
 
@@ -210,6 +230,7 @@ namespace TP_Final
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Deconnexion();
+            SauvegarderPreferences();
         }
         private void MI_Connexion_Deconnecter_Click(object sender, EventArgs e)
         {
@@ -238,10 +259,17 @@ namespace TP_Final
             FB_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuits_Ajout.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuits_Modif.Enabled = DGV_Circuit.SelectedRows != null;
+            MI_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
+        }
+        private void MI_Circuit_Supp_Click(object sender, EventArgs e)
+        {
+            SupprimerCircuit();
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ChargerPreferences();
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
-
-
     }
 }

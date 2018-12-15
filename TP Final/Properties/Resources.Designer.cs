@@ -143,6 +143,16 @@ namespace TP_Final.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Details_Neutral {
+            get {
+                object obj = ResourceManager.GetObject("Details_Neutral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Edit_Clicked {
             get {
                 object obj = ResourceManager.GetObject("Edit_Clicked", resourceCulture);

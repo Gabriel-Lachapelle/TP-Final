@@ -59,14 +59,14 @@ namespace TP_Final
             bool PlusQue1Argument = false;
             string sVille = "VilleDepart like '%" + TBX_VilleDepart.Text + "%'";
             string sPrix = "Prix < " + TBX_Prix.Text;
-            string sMonument = "Monument like '%" + TBX_Monument.Text + "%'";
+            string sMonument = "NomMonument like '%" + TBX_Monument.Text + "%'";
             string GroupBy = " group by NomCircuit, VilleDepart, VilleArrivee, Prix";
             if (Connecté)
             {
                 try
                 {
                     DGV_Circuit.Rows.Clear();
-                    string SQL = "select * from RechercheCircuit";
+                    string SQL = "select NomCircuit, VilleDepart, VilleArrivee, Prix from RechercheCircuit";
                     if (CBX_Meilleur.Checked)
                     {
                         SQL = "select * from MeilleurCircuit";
@@ -166,6 +166,13 @@ namespace TP_Final
                 Size = Properties.Settings.Default.Taille_MainForm;
             }
         }
+        private void ListerMonuments()
+        {
+            DLG_ListeMonuments DLG = new DLG_ListeMonuments();
+            DLG.Connexion = Connexion;
+            DLG.NomCircuit = DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString();
+            DLG.Show();
+        }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
 
@@ -181,8 +188,7 @@ namespace TP_Final
         }
         private void FB_Circuit_Gerer_Click(object sender, EventArgs e)
         {
-            DLG_GererMonuments DLG = new DLG_GererMonuments();
-            DLG.Show();
+            ListerMonuments();
         }
         private void CBX_Tous_CheckedChanged(object sender, EventArgs e)
         {

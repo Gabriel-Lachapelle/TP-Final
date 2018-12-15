@@ -183,6 +183,7 @@
             this.TBX_ClientsMax.Name = "TBX_ClientsMax";
             this.TBX_ClientsMax.Size = new System.Drawing.Size(73, 22);
             this.TBX_ClientsMax.TabIndex = 7;
+            this.TBX_ClientsMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
             // TBX_Nom
             // 

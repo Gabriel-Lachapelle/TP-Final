@@ -29,75 +29,77 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_AjoutMonument));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TBX_Nom = new System.Windows.Forms.TextBox();
+            this.TBX_Annee = new System.Windows.Forms.TextBox();
+            this.TBX_Prix = new System.Windows.Forms.TextBox();
+            this.RTBX_Histoire = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.flashButton4 = new Calculator.FlashButton();
-            this.flashButton3 = new Calculator.FlashButton();
-            this.flashButton2 = new Calculator.FlashButton();
-            this.flashButton1 = new Calculator.FlashButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.FB_Gerer = new Calculator.FlashButton();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.GBX_Details = new System.Windows.Forms.GroupBox();
+            this.PBX_Image = new System.Windows.Forms.PictureBox();
+            this.BTN_Ajouter = new System.Windows.Forms.Button();
+            this.BTN_Annuler = new System.Windows.Forms.Button();
+            this.FB_Etoile_5 = new Calculator.FlashButton();
+            this.FB_Etoile_4 = new Calculator.FlashButton();
+            this.FB_Etoile_3 = new Calculator.FlashButton();
+            this.FB_Etoile_2 = new Calculator.FlashButton();
+            this.FB_Etoile_1 = new Calculator.FlashButton();
+            this.GBX_Details.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TBX_Nom
             // 
-            this.textBox1.Location = new System.Drawing.Point(415, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 22);
-            this.textBox1.TabIndex = 0;
+            this.TBX_Nom.Location = new System.Drawing.Point(272, 39);
+            this.TBX_Nom.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
+            this.TBX_Nom.Name = "TBX_Nom";
+            this.TBX_Nom.Size = new System.Drawing.Size(137, 22);
+            this.TBX_Nom.TabIndex = 0;
             // 
-            // textBox2
+            // TBX_Annee
             // 
-            this.textBox2.Location = new System.Drawing.Point(415, 59);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 22);
-            this.textBox2.TabIndex = 1;
+            this.TBX_Annee.Location = new System.Drawing.Point(272, 100);
+            this.TBX_Annee.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
+            this.TBX_Annee.Name = "TBX_Annee";
+            this.TBX_Annee.Size = new System.Drawing.Size(137, 22);
+            this.TBX_Annee.TabIndex = 1;
+            this.TBX_Annee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
-            // textBox3
+            // TBX_Prix
             // 
-            this.textBox3.Location = new System.Drawing.Point(415, 89);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(85, 22);
-            this.textBox3.TabIndex = 2;
+            this.TBX_Prix.Location = new System.Drawing.Point(272, 159);
+            this.TBX_Prix.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
+            this.TBX_Prix.Name = "TBX_Prix";
+            this.TBX_Prix.Size = new System.Drawing.Size(137, 22);
+            this.TBX_Prix.TabIndex = 2;
+            this.TBX_Prix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
-            // richTextBox1
+            // RTBX_Histoire
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(415, 125);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(204, 142);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.RTBX_Histoire.Location = new System.Drawing.Point(442, 41);
+            this.RTBX_Histoire.Margin = new System.Windows.Forms.Padding(4);
+            this.RTBX_Histoire.Name = "RTBX_Histoire";
+            this.RTBX_Histoire.Size = new System.Drawing.Size(203, 142);
+            this.RTBX_Histoire.TabIndex = 3;
+            this.RTBX_Histoire.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(281, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(10);
+            this.label1.Location = new System.Drawing.Point(269, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 16);
+            this.label1.Size = new System.Drawing.Size(37, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Nom du monument";
+            this.label1.Text = "Nom";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(269, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(10);
+            this.label2.Location = new System.Drawing.Point(269, 79);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 16);
             this.label2.TabIndex = 5;
@@ -106,8 +108,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(371, 92);
-            this.label3.Margin = new System.Windows.Forms.Padding(10);
+            this.label3.Location = new System.Drawing.Point(269, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 6;
@@ -116,157 +118,175 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(355, 128);
-            this.label4.Margin = new System.Windows.Forms.Padding(10);
+            this.label4.Location = new System.Drawing.Point(439, 18);
+            this.label4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Histoire";
             // 
-            // groupBox1
+            // GBX_Details
             // 
-            this.groupBox1.Controls.Add(this.flashButton4);
-            this.groupBox1.Controls.Add(this.flashButton3);
-            this.groupBox1.Controls.Add(this.flashButton2);
-            this.groupBox1.Controls.Add(this.flashButton1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.FB_Gerer);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(645, 290);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Détails";
+            this.GBX_Details.Controls.Add(this.BTN_Ajouter);
+            this.GBX_Details.Controls.Add(this.BTN_Annuler);
+            this.GBX_Details.Controls.Add(this.FB_Etoile_5);
+            this.GBX_Details.Controls.Add(this.FB_Etoile_4);
+            this.GBX_Details.Controls.Add(this.FB_Etoile_3);
+            this.GBX_Details.Controls.Add(this.FB_Etoile_2);
+            this.GBX_Details.Controls.Add(this.FB_Etoile_1);
+            this.GBX_Details.Controls.Add(this.PBX_Image);
+            this.GBX_Details.Controls.Add(this.label1);
+            this.GBX_Details.Controls.Add(this.label4);
+            this.GBX_Details.Controls.Add(this.TBX_Nom);
+            this.GBX_Details.Controls.Add(this.label3);
+            this.GBX_Details.Controls.Add(this.TBX_Annee);
+            this.GBX_Details.Controls.Add(this.label2);
+            this.GBX_Details.Controls.Add(this.TBX_Prix);
+            this.GBX_Details.Controls.Add(this.RTBX_Histoire);
+            this.GBX_Details.Location = new System.Drawing.Point(13, 13);
+            this.GBX_Details.Margin = new System.Windows.Forms.Padding(4);
+            this.GBX_Details.Name = "GBX_Details";
+            this.GBX_Details.Padding = new System.Windows.Forms.Padding(4);
+            this.GBX_Details.Size = new System.Drawing.Size(668, 237);
+            this.GBX_Details.TabIndex = 8;
+            this.GBX_Details.TabStop = false;
+            this.GBX_Details.Text = "Détails";
             // 
-            // button1
+            // PBX_Image
             // 
-            this.button1.Location = new System.Drawing.Point(583, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBX_Image.Location = new System.Drawing.Point(24, 22);
+            this.PBX_Image.Name = "PBX_Image";
+            this.PBX_Image.Size = new System.Drawing.Size(232, 161);
+            this.PBX_Image.TabIndex = 13;
+            this.PBX_Image.TabStop = false;
+            this.PBX_Image.DragDrop += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragDrop);
+            this.PBX_Image.DragEnter += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragEnter);
             // 
-            // button2
+            // BTN_Ajouter
             // 
-            this.button2.Location = new System.Drawing.Point(502, 311);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Annuler";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_Ajouter.Location = new System.Drawing.Point(570, 207);
+            this.BTN_Ajouter.Name = "BTN_Ajouter";
+            this.BTN_Ajouter.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Ajouter.TabIndex = 9;
+            this.BTN_Ajouter.Text = "Ajouter";
+            this.BTN_Ajouter.UseVisualStyleBackColor = true;
             // 
-            // flashButton4
+            // BTN_Annuler
             // 
-            this.flashButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flashButton4.BackgroundImage")));
-            this.flashButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton4.ClickedImage = global::TP_Final.Properties.Resources.Star_Clicked;
-            this.flashButton4.DisabledImage = ((System.Drawing.Image)(resources.GetObject("flashButton4.DisabledImage")));
-            this.flashButton4.Image = ((System.Drawing.Image)(resources.GetObject("flashButton4.Image")));
-            this.flashButton4.Location = new System.Drawing.Point(216, 233);
-            this.flashButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.flashButton4.Name = "flashButton4";
-            this.flashButton4.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
-            this.flashButton4.OverImage = global::TP_Final.Properties.Resources.Star_Hover;
-            this.flashButton4.Size = new System.Drawing.Size(40, 40);
-            this.flashButton4.TabIndex = 17;
-            this.flashButton4.Text = "Gérer les monuments du circuit";
-            this.flashButton4.UseVisualStyleBackColor = true;
+            this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTN_Annuler.Location = new System.Drawing.Point(489, 207);
+            this.BTN_Annuler.Name = "BTN_Annuler";
+            this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Annuler.TabIndex = 10;
+            this.BTN_Annuler.Text = "Annuler";
+            this.BTN_Annuler.UseVisualStyleBackColor = true;
             // 
-            // flashButton3
+            // FB_Etoile_5
             // 
-            this.flashButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flashButton3.BackgroundImage")));
-            this.flashButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton3.ClickedImage = global::TP_Final.Properties.Resources.Star_Clicked;
-            this.flashButton3.DisabledImage = ((System.Drawing.Image)(resources.GetObject("flashButton3.DisabledImage")));
-            this.flashButton3.Image = ((System.Drawing.Image)(resources.GetObject("flashButton3.Image")));
-            this.flashButton3.Location = new System.Drawing.Point(168, 233);
-            this.flashButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.flashButton3.Name = "flashButton3";
-            this.flashButton3.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
-            this.flashButton3.OverImage = global::TP_Final.Properties.Resources.Star_Hover;
-            this.flashButton3.Size = new System.Drawing.Size(40, 40);
-            this.flashButton3.TabIndex = 16;
-            this.flashButton3.Text = "Gérer les monuments du circuit";
-            this.flashButton3.UseVisualStyleBackColor = true;
+            this.FB_Etoile_5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Etoile_5.BackgroundImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Etoile_5.ClickedImage = global::TP_Final.Properties.Resources.Star_Hover;
+            this.FB_Etoile_5.DisabledImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_5.Image = ((System.Drawing.Image)(resources.GetObject("FB_Etoile_5.Image")));
+            this.FB_Etoile_5.Location = new System.Drawing.Point(216, 190);
+            this.FB_Etoile_5.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Etoile_5.Name = "FB_Etoile_5";
+            this.FB_Etoile_5.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
+            this.FB_Etoile_5.OverImage = global::TP_Final.Properties.Resources.Star_Clicked;
+            this.FB_Etoile_5.Size = new System.Drawing.Size(40, 40);
+            this.FB_Etoile_5.TabIndex = 18;
+            this.FB_Etoile_5.Text = "Gérer les monuments du circuit";
+            this.FB_Etoile_5.UseVisualStyleBackColor = true;
+            this.FB_Etoile_5.Click += new System.EventHandler(this.FB_Etoile_5_Click);
             // 
-            // flashButton2
+            // FB_Etoile_4
             // 
-            this.flashButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flashButton2.BackgroundImage")));
-            this.flashButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton2.ClickedImage = global::TP_Final.Properties.Resources.Star_Clicked;
-            this.flashButton2.DisabledImage = ((System.Drawing.Image)(resources.GetObject("flashButton2.DisabledImage")));
-            this.flashButton2.Image = ((System.Drawing.Image)(resources.GetObject("flashButton2.Image")));
-            this.flashButton2.Location = new System.Drawing.Point(120, 233);
-            this.flashButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.flashButton2.Name = "flashButton2";
-            this.flashButton2.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
-            this.flashButton2.OverImage = global::TP_Final.Properties.Resources.Star_Hover;
-            this.flashButton2.Size = new System.Drawing.Size(40, 40);
-            this.flashButton2.TabIndex = 15;
-            this.flashButton2.Text = "Gérer les monuments du circuit";
-            this.flashButton2.UseVisualStyleBackColor = true;
+            this.FB_Etoile_4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Etoile_4.BackgroundImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Etoile_4.ClickedImage = global::TP_Final.Properties.Resources.Star_Hover;
+            this.FB_Etoile_4.DisabledImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_4.Image = ((System.Drawing.Image)(resources.GetObject("FB_Etoile_4.Image")));
+            this.FB_Etoile_4.Location = new System.Drawing.Point(168, 190);
+            this.FB_Etoile_4.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Etoile_4.Name = "FB_Etoile_4";
+            this.FB_Etoile_4.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
+            this.FB_Etoile_4.OverImage = global::TP_Final.Properties.Resources.Star_Clicked;
+            this.FB_Etoile_4.Size = new System.Drawing.Size(40, 40);
+            this.FB_Etoile_4.TabIndex = 17;
+            this.FB_Etoile_4.Text = "Gérer les monuments du circuit";
+            this.FB_Etoile_4.UseVisualStyleBackColor = true;
+            this.FB_Etoile_4.Click += new System.EventHandler(this.FB_Etoile_4_Click);
             // 
-            // flashButton1
+            // FB_Etoile_3
             // 
-            this.flashButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flashButton1.BackgroundImage")));
-            this.flashButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.flashButton1.ClickedImage = global::TP_Final.Properties.Resources.Star_Clicked;
-            this.flashButton1.DisabledImage = ((System.Drawing.Image)(resources.GetObject("flashButton1.DisabledImage")));
-            this.flashButton1.Image = ((System.Drawing.Image)(resources.GetObject("flashButton1.Image")));
-            this.flashButton1.Location = new System.Drawing.Point(72, 233);
-            this.flashButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.flashButton1.Name = "flashButton1";
-            this.flashButton1.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
-            this.flashButton1.OverImage = global::TP_Final.Properties.Resources.Star_Hover;
-            this.flashButton1.Size = new System.Drawing.Size(40, 40);
-            this.flashButton1.TabIndex = 14;
-            this.flashButton1.Text = "Gérer les monuments du circuit";
-            this.flashButton1.UseVisualStyleBackColor = true;
+            this.FB_Etoile_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Etoile_3.BackgroundImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Etoile_3.ClickedImage = global::TP_Final.Properties.Resources.Star_Hover;
+            this.FB_Etoile_3.DisabledImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_3.Image = ((System.Drawing.Image)(resources.GetObject("FB_Etoile_3.Image")));
+            this.FB_Etoile_3.Location = new System.Drawing.Point(120, 190);
+            this.FB_Etoile_3.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Etoile_3.Name = "FB_Etoile_3";
+            this.FB_Etoile_3.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
+            this.FB_Etoile_3.OverImage = global::TP_Final.Properties.Resources.Star_Clicked;
+            this.FB_Etoile_3.Size = new System.Drawing.Size(40, 40);
+            this.FB_Etoile_3.TabIndex = 16;
+            this.FB_Etoile_3.Text = "Gérer les monuments du circuit";
+            this.FB_Etoile_3.UseVisualStyleBackColor = true;
+            this.FB_Etoile_3.Click += new System.EventHandler(this.FB_Etoile_3_Click);
             // 
-            // pictureBox1
+            // FB_Etoile_2
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 204);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.FB_Etoile_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Etoile_2.BackgroundImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Etoile_2.ClickedImage = global::TP_Final.Properties.Resources.Star_Hover;
+            this.FB_Etoile_2.DisabledImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_2.Image = ((System.Drawing.Image)(resources.GetObject("FB_Etoile_2.Image")));
+            this.FB_Etoile_2.Location = new System.Drawing.Point(72, 190);
+            this.FB_Etoile_2.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Etoile_2.Name = "FB_Etoile_2";
+            this.FB_Etoile_2.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
+            this.FB_Etoile_2.OverImage = global::TP_Final.Properties.Resources.Star_Clicked;
+            this.FB_Etoile_2.Size = new System.Drawing.Size(40, 40);
+            this.FB_Etoile_2.TabIndex = 15;
+            this.FB_Etoile_2.Text = "Gérer les monuments du circuit";
+            this.FB_Etoile_2.UseVisualStyleBackColor = true;
+            this.FB_Etoile_2.Click += new System.EventHandler(this.FB_Etoile_2_Click);
             // 
-            // FB_Gerer
+            // FB_Etoile_1
             // 
-            this.FB_Gerer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.BackgroundImage")));
-            this.FB_Gerer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Gerer.ClickedImage = global::TP_Final.Properties.Resources.Star_Clicked;
-            this.FB_Gerer.DisabledImage = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.DisabledImage")));
-            this.FB_Gerer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.Image")));
-            this.FB_Gerer.Location = new System.Drawing.Point(24, 233);
-            this.FB_Gerer.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Gerer.Name = "FB_Gerer";
-            this.FB_Gerer.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
-            this.FB_Gerer.OverImage = global::TP_Final.Properties.Resources.Star_Hover;
-            this.FB_Gerer.Size = new System.Drawing.Size(40, 40);
-            this.FB_Gerer.TabIndex = 8;
-            this.FB_Gerer.Text = "Gérer les monuments du circuit";
-            this.FB_Gerer.UseVisualStyleBackColor = true;
+            this.FB_Etoile_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Etoile_1.BackgroundImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Etoile_1.ClickedImage = global::TP_Final.Properties.Resources.Star_Hover;
+            this.FB_Etoile_1.DisabledImage = global::TP_Final.Properties.Resources.Star_Disabled;
+            this.FB_Etoile_1.Image = ((System.Drawing.Image)(resources.GetObject("FB_Etoile_1.Image")));
+            this.FB_Etoile_1.Location = new System.Drawing.Point(24, 190);
+            this.FB_Etoile_1.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Etoile_1.Name = "FB_Etoile_1";
+            this.FB_Etoile_1.NeutralImage = global::TP_Final.Properties.Resources.Star_Neutral;
+            this.FB_Etoile_1.OverImage = global::TP_Final.Properties.Resources.Star_Clicked;
+            this.FB_Etoile_1.Size = new System.Drawing.Size(40, 40);
+            this.FB_Etoile_1.TabIndex = 14;
+            this.FB_Etoile_1.Text = "Gérer les monuments du circuit";
+            this.FB_Etoile_1.UseVisualStyleBackColor = true;
+            this.FB_Etoile_1.Click += new System.EventHandler(this.FB_Etoile_1_Click);
             // 
             // DLG_AjoutMonument
             // 
+            this.AcceptButton = this.BTN_Ajouter;
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 346);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.CancelButton = this.BTN_Annuler;
+            this.ClientSize = new System.Drawing.Size(692, 260);
+            this.Controls.Add(this.GBX_Details);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -274,31 +294,31 @@
             this.Name = "DLG_AjoutMonument";
             this.ShowIcon = false;
             this.Text = "Ajout d\'un monument";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.GBX_Details.ResumeLayout(false);
+            this.GBX_Details.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox TBX_Nom;
+        private System.Windows.Forms.TextBox TBX_Annee;
+        private System.Windows.Forms.TextBox TBX_Prix;
+        private System.Windows.Forms.RichTextBox RTBX_Histoire;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private Calculator.FlashButton FB_Gerer;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private Calculator.FlashButton flashButton4;
-        private Calculator.FlashButton flashButton3;
-        private Calculator.FlashButton flashButton2;
-        private Calculator.FlashButton flashButton1;
+        private System.Windows.Forms.GroupBox GBX_Details;
+        private System.Windows.Forms.PictureBox PBX_Image;
+        private System.Windows.Forms.Button BTN_Ajouter;
+        private System.Windows.Forms.Button BTN_Annuler;
+        private Calculator.FlashButton FB_Etoile_1;
+        private Calculator.FlashButton FB_Etoile_5;
+        private Calculator.FlashButton FB_Etoile_4;
+        private Calculator.FlashButton FB_Etoile_3;
+        private Calculator.FlashButton FB_Etoile_2;
     }
 }

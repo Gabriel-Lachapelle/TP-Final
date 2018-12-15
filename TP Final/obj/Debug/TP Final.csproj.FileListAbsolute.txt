@@ -24,3 +24,4 @@ C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.pdb
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.csprojResolveAssemblyReference.cache
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_AjoutModif.resources
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_ListeMonuments.resources
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_GererMonuments.resources

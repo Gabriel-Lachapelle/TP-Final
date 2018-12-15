@@ -29,7 +29,7 @@ namespace TP_Final
             UpdateControls();
             DGV_Circuit.Rows.Clear();
             FB_Circuit_Modif.Enabled = Connecté;
-            FB_Circuit_Gerer.Enabled = Connecté;
+            FB_Info.Enabled = Connecté;
             FB_Circuit_Supp.Enabled = Connecté;
             MI_Circuits_Ajout.Enabled = Connecté;
             MI_Circuits_Modif.Enabled = Connecté;
@@ -261,8 +261,10 @@ namespace TP_Final
         private void DGV_Circuit_SelectionChanged(object sender, EventArgs e)
         {
             FB_Circuit_Modif.Enabled = DGV_Circuit.SelectedRows != null;
-            FB_Circuit_Gerer.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_Info.Enabled = DGV_Circuit.SelectedRows != null;
             FB_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_Info.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_Gerer.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuits_Ajout.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuits_Modif.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
@@ -277,5 +279,13 @@ namespace TP_Final
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
+
+        private void FB_Gerer_Click(object sender, EventArgs e)
+        {
+            DLG_GererMonuments DLG = new DLG_GererMonuments();
+            DLG.Connexion = Connexion;
+            DLG.NomCircuit = DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString();
+            DLG.Show();
+        }
     }
 }

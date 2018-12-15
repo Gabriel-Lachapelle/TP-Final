@@ -6,7 +6,8 @@ DROP SEQUENCE ClientSeq;
 DROP VIEW TousLesCircuits;
 DROP VIEW MeilleurCircuit;
 DROP VIEW RechercheCircuit;
-DROP VIEW ListeMonument
+DROP VIEW ListeMonument;
+DROP VIEW MonumentsCircuit;
 */
 
 -- Sequences:
@@ -40,6 +41,11 @@ select Image, NomMonument, Monuments.Prix, Histoire, NomCircuit, Ordre from Monu
 inner join ListeMonuments on Monuments.NumMonument = ListeMonuments.NumMonument
 inner join Circuits on Circuits.NumCircuit = ListeMonuments.NumCircuit;
 
+create view MonumentsCircuit as
+select NomMonument, NomCircuit, Ordre from Circuits
+inner join ListeMonuments on Circuits.NumCircuit = ListeMonuments.NumCircuit
+inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument
+
 -- Monuments
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Le château Frontenac', 1893, 'Le Château Frontenac est le premier d''une longue série d''hôtels de style « château » construits par les compagnies ferroviaires canadiennes à la fin du XIXe et au début du XXe siècle', 
                                 'vide', 500, 4);
@@ -51,7 +57,7 @@ INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Jardin botanique de Montréal
                                 'vide', 90, 3);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Marché Jean-Talon', 1929, 'Le marché Jean-Talon est un marché public au centre de la Petite Italie de Montréal.',
                                 'vide', 50, 1);
-INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Parc national d''Oka', 1990, 'Le parc national d''Oka est un parc national du Québec (Canada) situé près du village d''Oka, sur la rive nord du lac des Deux Montagnes.', 
+INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Parc national d`Oka', 1990, 'Le parc national d''Oka est un parc national du Québec (Canada) situé près du village d''Oka, sur la rive nord du lac des Deux Montagnes.', 
                                 'vide', 60, 2);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Super Aqua Club', 1985, 'En opération pendant les 10 semaines de l''été et avec plus de 45 attractions pour toute la famille, le Super Aqua Club est un parc aquatique complet qui accueille plusieurs milliers de visiteurs, chaque jour.', 
                                 'vide', 100, 3);
@@ -63,7 +69,7 @@ INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Hôtel du Parlement du Québec
                                 'vide', 150, 5);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Parc national du Fjord-du-Saguenay', 1983, 'Le parc national du Fjord-du-Saguenay, d''une superficie de 326,7 km2, est un parc national du Québec situé à une centaine de kilomètres en aval de Saguenay sur la rivière du même nom.', 
                                 'vide', 200, 4);
-INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Centre d''interprétation des mammifères marins', 1991, 'Créé en 1991 par le Groupe de recherche et d''éducation sur les mammifères marins (GREMM), il est dédié à la recherche scientifique sur les baleines du Saint-Laurent. ', 
+INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Centre d`interprétation des mammifères marins', 1991, 'Créé en 1991 par le Groupe de recherche et d''éducation sur les mammifères marins (GREMM), il est dédié à la recherche scientifique sur les baleines du Saint-Laurent. ', 
                                 'vide', 75, 2);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Musée Beaulne', 1976, 'Le musée Beaulne, ouvert en 1976 est un musée situé à Coaticook, en Estrie, au Québec. Il est situé dans une grande maison de Style Queen Anne nommé château Arthur-Osmore-Norton.', 
                                 'vide', 50, 1);

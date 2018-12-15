@@ -58,11 +58,11 @@
             this.MI_Circuits_GererMonuments = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.FB_Gerer = new Calculator.FlashButton();
             this.FB_Circuit_Supp = new Calculator.FlashButton();
             this.FB_Circuit_Ajout = new Calculator.FlashButton();
             this.FB_Circuit_Modif = new Calculator.FlashButton();
             this.FB_Info = new Calculator.FlashButton();
-            this.FB_Gerer = new Calculator.FlashButton();
             this.GBX_Recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -82,11 +82,11 @@
             this.GBX_Recherche.Controls.Add(this.TBX_VilleDepart);
             this.GBX_Recherche.Controls.Add(this.CBX_VilleDepart);
             this.GBX_Recherche.Controls.Add(this.BTN_Rechercher);
-            this.GBX_Recherche.Location = new System.Drawing.Point(13, 272);
+            this.GBX_Recherche.Location = new System.Drawing.Point(13, 360);
             this.GBX_Recherche.Margin = new System.Windows.Forms.Padding(4);
             this.GBX_Recherche.Name = "GBX_Recherche";
             this.GBX_Recherche.Padding = new System.Windows.Forms.Padding(4);
-            this.GBX_Recherche.Size = new System.Drawing.Size(488, 136);
+            this.GBX_Recherche.Size = new System.Drawing.Size(769, 136);
             this.GBX_Recherche.TabIndex = 1;
             this.GBX_Recherche.TabStop = false;
             this.GBX_Recherche.Text = "Recherche";
@@ -96,7 +96,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 44);
+            this.label1.Location = new System.Drawing.Point(626, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 26);
             this.label1.TabIndex = 19;
@@ -107,12 +107,12 @@
             this.CBX_Meilleur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CBX_Meilleur.AutoSize = true;
             this.CBX_Meilleur.Enabled = false;
-            this.CBX_Meilleur.Location = new System.Drawing.Point(368, 22);
+            this.CBX_Meilleur.Location = new System.Drawing.Point(647, 19);
             this.CBX_Meilleur.Margin = new System.Windows.Forms.Padding(5);
             this.CBX_Meilleur.Name = "CBX_Meilleur";
             this.CBX_Meilleur.Size = new System.Drawing.Size(113, 20);
             this.CBX_Meilleur.TabIndex = 14;
-            this.CBX_Meilleur.Text = "Meilleur Circuit";
+            this.CBX_Meilleur.Text = "Meilleur Circuit\r\n";
             this.CBX_Meilleur.UseVisualStyleBackColor = true;
             this.CBX_Meilleur.CheckedChanged += new System.EventHandler(this.CBX_Meilleur_CheckedChanged);
             // 
@@ -156,7 +156,7 @@
             this.TBX_Monument.MaximumSize = new System.Drawing.Size(250, 22);
             this.TBX_Monument.MinimumSize = new System.Drawing.Size(135, 22);
             this.TBX_Monument.Name = "TBX_Monument";
-            this.TBX_Monument.Size = new System.Drawing.Size(137, 22);
+            this.TBX_Monument.Size = new System.Drawing.Size(250, 22);
             this.TBX_Monument.TabIndex = 13;
             // 
             // CBX_Prix
@@ -183,7 +183,7 @@
             this.TBX_Prix.MaximumSize = new System.Drawing.Size(250, 22);
             this.TBX_Prix.MinimumSize = new System.Drawing.Size(135, 22);
             this.TBX_Prix.Name = "TBX_Prix";
-            this.TBX_Prix.Size = new System.Drawing.Size(137, 22);
+            this.TBX_Prix.Size = new System.Drawing.Size(250, 22);
             this.TBX_Prix.TabIndex = 12;
             // 
             // TBX_VilleDepart
@@ -196,7 +196,7 @@
             this.TBX_VilleDepart.MaximumSize = new System.Drawing.Size(250, 22);
             this.TBX_VilleDepart.MinimumSize = new System.Drawing.Size(135, 22);
             this.TBX_VilleDepart.Name = "TBX_VilleDepart";
-            this.TBX_VilleDepart.Size = new System.Drawing.Size(137, 22);
+            this.TBX_VilleDepart.Size = new System.Drawing.Size(250, 22);
             this.TBX_VilleDepart.TabIndex = 11;
             // 
             // CBX_VilleDepart
@@ -217,7 +217,7 @@
             // 
             this.BTN_Rechercher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Rechercher.Enabled = false;
-            this.BTN_Rechercher.Location = new System.Drawing.Point(395, 104);
+            this.BTN_Rechercher.Location = new System.Drawing.Point(676, 104);
             this.BTN_Rechercher.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_Rechercher.Name = "BTN_Rechercher";
             this.BTN_Rechercher.Size = new System.Drawing.Size(86, 24);
@@ -248,7 +248,7 @@
             this.DGV_Circuit.ReadOnly = true;
             this.DGV_Circuit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Circuit.ShowEditingIcon = false;
-            this.DGV_Circuit.Size = new System.Drawing.Size(440, 236);
+            this.DGV_Circuit.Size = new System.Drawing.Size(721, 324);
             this.DGV_Circuit.TabIndex = 1;
             this.DGV_Circuit.SelectionChanged += new System.EventHandler(this.DGV_Circuit_SelectionChanged);
             // 
@@ -295,7 +295,7 @@
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(514, 24);
+            this.MenuStrip.Size = new System.Drawing.Size(795, 24);
             this.MenuStrip.TabIndex = 3;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -374,6 +374,27 @@
             this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
             this.TSMI_APropos.Text = "À propos";
             // 
+            // FB_Gerer
+            // 
+            this.FB_Gerer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Gerer.BackgroundImage = global::TP_Final.Properties.Resources.Settings_Neutral;
+            this.FB_Gerer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Gerer.ClickedImage = global::TP_Final.Properties.Resources.Settings_Clicked;
+            this.FB_Gerer.DisabledImage = global::TP_Final.Properties.Resources.Settings_Disabled;
+            this.FB_Gerer.Enabled = false;
+            this.FB_Gerer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.Image")));
+            this.FB_Gerer.Location = new System.Drawing.Point(742, 220);
+            this.FB_Gerer.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Gerer.Name = "FB_Gerer";
+            this.FB_Gerer.NeutralImage = global::TP_Final.Properties.Resources.Settings_Neutral;
+            this.FB_Gerer.OverImage = global::TP_Final.Properties.Resources.Settings_Hover;
+            this.FB_Gerer.Size = new System.Drawing.Size(40, 40);
+            this.FB_Gerer.TabIndex = 6;
+            this.FB_Gerer.Text = "Gérer les monuments du circuit";
+            this.ToolTip.SetToolTip(this.FB_Gerer, "Gérer les monuments de ce circuit");
+            this.FB_Gerer.UseVisualStyleBackColor = true;
+            this.FB_Gerer.Click += new System.EventHandler(this.FB_Gerer_Click);
+            // 
             // FB_Circuit_Supp
             // 
             this.FB_Circuit_Supp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -383,7 +404,7 @@
             this.FB_Circuit_Supp.DisabledImage = global::TP_Final.Properties.Resources.Delete_Disabled;
             this.FB_Circuit_Supp.Enabled = false;
             this.FB_Circuit_Supp.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Supp.Image")));
-            this.FB_Circuit_Supp.Location = new System.Drawing.Point(461, 124);
+            this.FB_Circuit_Supp.Location = new System.Drawing.Point(742, 124);
             this.FB_Circuit_Supp.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Circuit_Supp.Name = "FB_Circuit_Supp";
             this.FB_Circuit_Supp.NeutralImage = global::TP_Final.Properties.Resources.Delete_Neutral;
@@ -404,7 +425,7 @@
             this.FB_Circuit_Ajout.DisabledImage = global::TP_Final.Properties.Resources.Add_Disabled;
             this.FB_Circuit_Ajout.Enabled = false;
             this.FB_Circuit_Ajout.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Ajout.Image")));
-            this.FB_Circuit_Ajout.Location = new System.Drawing.Point(461, 28);
+            this.FB_Circuit_Ajout.Location = new System.Drawing.Point(742, 28);
             this.FB_Circuit_Ajout.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Circuit_Ajout.Name = "FB_Circuit_Ajout";
             this.FB_Circuit_Ajout.NeutralImage = global::TP_Final.Properties.Resources.Add_Neutral;
@@ -425,7 +446,7 @@
             this.FB_Circuit_Modif.DisabledImage = global::TP_Final.Properties.Resources.Edit_Disabled;
             this.FB_Circuit_Modif.Enabled = false;
             this.FB_Circuit_Modif.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Modif.Image")));
-            this.FB_Circuit_Modif.Location = new System.Drawing.Point(463, 76);
+            this.FB_Circuit_Modif.Location = new System.Drawing.Point(744, 76);
             this.FB_Circuit_Modif.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Circuit_Modif.Name = "FB_Circuit_Modif";
             this.FB_Circuit_Modif.NeutralImage = global::TP_Final.Properties.Resources.Edit_Neutral;
@@ -446,7 +467,7 @@
             this.FB_Info.DisabledImage = global::TP_Final.Properties.Resources.Details_Neutral;
             this.FB_Info.Enabled = false;
             this.FB_Info.Image = ((System.Drawing.Image)(resources.GetObject("FB_Info.Image")));
-            this.FB_Info.Location = new System.Drawing.Point(461, 172);
+            this.FB_Info.Location = new System.Drawing.Point(742, 172);
             this.FB_Info.Margin = new System.Windows.Forms.Padding(4);
             this.FB_Info.Name = "FB_Info";
             this.FB_Info.NeutralImage = global::TP_Final.Properties.Resources.Details_Neutral;
@@ -458,32 +479,11 @@
             this.FB_Info.UseVisualStyleBackColor = true;
             this.FB_Info.Click += new System.EventHandler(this.FB_Circuit_Gerer_Click);
             // 
-            // FB_Gerer
-            // 
-            this.FB_Gerer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Gerer.BackgroundImage = global::TP_Final.Properties.Resources.Settings_Neutral;
-            this.FB_Gerer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Gerer.ClickedImage = global::TP_Final.Properties.Resources.Settings_Clicked;
-            this.FB_Gerer.DisabledImage = global::TP_Final.Properties.Resources.Settings_Disabled;
-            this.FB_Gerer.Enabled = false;
-            this.FB_Gerer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.Image")));
-            this.FB_Gerer.Location = new System.Drawing.Point(461, 220);
-            this.FB_Gerer.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Gerer.Name = "FB_Gerer";
-            this.FB_Gerer.NeutralImage = global::TP_Final.Properties.Resources.Settings_Neutral;
-            this.FB_Gerer.OverImage = global::TP_Final.Properties.Resources.Settings_Hover;
-            this.FB_Gerer.Size = new System.Drawing.Size(40, 40);
-            this.FB_Gerer.TabIndex = 6;
-            this.FB_Gerer.Text = "Gérer les monuments du circuit";
-            this.ToolTip.SetToolTip(this.FB_Gerer, "Gérer les monuments de ce circuit");
-            this.FB_Gerer.UseVisualStyleBackColor = true;
-            this.FB_Gerer.Click += new System.EventHandler(this.FB_Gerer_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 421);
+            this.ClientSize = new System.Drawing.Size(795, 509);
             this.Controls.Add(this.FB_Gerer);
             this.Controls.Add(this.FB_Circuit_Supp);
             this.Controls.Add(this.GBX_Recherche);
@@ -494,10 +494,9 @@
             this.Controls.Add(this.FB_Info);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(530, 460);
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

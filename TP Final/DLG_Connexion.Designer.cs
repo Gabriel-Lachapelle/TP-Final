@@ -155,6 +155,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(340, 230);
             this.Name = "DLG_Connexion";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connexion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_Connexion_FormClosing);

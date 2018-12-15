@@ -33,6 +33,7 @@ namespace TP_Final
                 OracleAdapter.Fill(DS, "Liste Monuments");
                 OracleAdapter.Dispose();
                 LierDetails();
+                TBX_Ordre.Text = (this.BindingContext[DS, "Liste Monuments"].Position + 1).ToString();
             }
             catch (Exception SQL)
             {
@@ -51,11 +52,13 @@ namespace TP_Final
         private void FB_Prochain_Click(object sender, EventArgs e)
         {
             this.BindingContext[DS, "Liste Monuments"].Position++;
+            TBX_Ordre.Text = (this.BindingContext[DS, "Liste Monuments"].Position + 1).ToString();
         }
 
         private void FB_Precedent_Click(object sender, EventArgs e)
         {
             this.BindingContext[DS, "Liste Monuments"].Position--;
+            TBX_Ordre.Text = (this.BindingContext[DS, "Liste Monuments"].Position + 1).ToString();
         }
     }
 }

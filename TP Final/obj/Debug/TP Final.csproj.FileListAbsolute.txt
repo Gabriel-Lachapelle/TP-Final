@@ -25,3 +25,4 @@ C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.csprojRes
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_AjoutModif.resources
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_ListeMonuments.resources
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_GererMonuments.resources
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_AjoutMonument.resources

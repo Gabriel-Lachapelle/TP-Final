@@ -108,24 +108,31 @@
             // 
             // CBX_VilleDepart
             // 
+            this.CBX_VilleDepart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CBX_VilleDepart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_VilleDepart.FormattingEnabled = true;
             this.CBX_VilleDepart.Location = new System.Drawing.Point(161, 61);
             this.CBX_VilleDepart.Name = "CBX_VilleDepart";
-            this.CBX_VilleDepart.Size = new System.Drawing.Size(162, 24);
+            this.CBX_VilleDepart.Size = new System.Drawing.Size(140, 24);
             this.CBX_VilleDepart.TabIndex = 6;
             // 
             // CBX_VilleArrivee
             // 
+            this.CBX_VilleArrivee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CBX_VilleArrivee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBX_VilleArrivee.FormattingEnabled = true;
             this.CBX_VilleArrivee.Location = new System.Drawing.Point(161, 97);
             this.CBX_VilleArrivee.Name = "CBX_VilleArrivee";
-            this.CBX_VilleArrivee.Size = new System.Drawing.Size(162, 24);
+            this.CBX_VilleArrivee.Size = new System.Drawing.Size(140, 24);
             this.CBX_VilleArrivee.TabIndex = 7;
             // 
             // GBX_Infos
             // 
+            this.GBX_Infos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GBX_Infos.Controls.Add(this.TBX_Duree);
             this.GBX_Infos.Controls.Add(this.CBX_VilleArrivee);
             this.GBX_Infos.Controls.Add(this.TBX_Prix);
@@ -140,48 +147,57 @@
             this.GBX_Infos.Controls.Add(this.LBL_Duree);
             this.GBX_Infos.Location = new System.Drawing.Point(12, 12);
             this.GBX_Infos.Name = "GBX_Infos";
-            this.GBX_Infos.Size = new System.Drawing.Size(340, 231);
+            this.GBX_Infos.Size = new System.Drawing.Size(318, 230);
             this.GBX_Infos.TabIndex = 8;
             this.GBX_Infos.TabStop = false;
             this.GBX_Infos.Text = "Informations du circuit";
             // 
             // TBX_Duree
             // 
+            this.TBX_Duree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_Duree.Location = new System.Drawing.Point(228, 133);
             this.TBX_Duree.MaxLength = 4;
             this.TBX_Duree.Name = "TBX_Duree";
-            this.TBX_Duree.Size = new System.Drawing.Size(95, 22);
+            this.TBX_Duree.Size = new System.Drawing.Size(73, 22);
             this.TBX_Duree.TabIndex = 9;
             this.TBX_Duree.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
             // TBX_Prix
             // 
+            this.TBX_Prix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_Prix.Location = new System.Drawing.Point(228, 166);
             this.TBX_Prix.MaxLength = 4;
             this.TBX_Prix.Name = "TBX_Prix";
-            this.TBX_Prix.Size = new System.Drawing.Size(95, 22);
+            this.TBX_Prix.Size = new System.Drawing.Size(73, 22);
             this.TBX_Prix.TabIndex = 8;
             this.TBX_Prix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
             // TBX_ClientsMax
             // 
+            this.TBX_ClientsMax.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_ClientsMax.Location = new System.Drawing.Point(228, 196);
             this.TBX_ClientsMax.MaxLength = 3;
             this.TBX_ClientsMax.Name = "TBX_ClientsMax";
-            this.TBX_ClientsMax.Size = new System.Drawing.Size(95, 22);
+            this.TBX_ClientsMax.Size = new System.Drawing.Size(73, 22);
             this.TBX_ClientsMax.TabIndex = 7;
             // 
             // TBX_Nom
             // 
+            this.TBX_Nom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_Nom.Location = new System.Drawing.Point(161, 25);
             this.TBX_Nom.Name = "TBX_Nom";
-            this.TBX_Nom.Size = new System.Drawing.Size(162, 22);
+            this.TBX_Nom.Size = new System.Drawing.Size(140, 22);
             this.TBX_Nom.TabIndex = 4;
             // 
             // BTN_Ok
             // 
+            this.BTN_Ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Ok.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ok.Location = new System.Drawing.Point(277, 249);
+            this.BTN_Ok.Location = new System.Drawing.Point(255, 248);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
             this.BTN_Ok.TabIndex = 9;
@@ -191,8 +207,9 @@
             // 
             // BTN_Annuler
             // 
+            this.BTN_Annuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(196, 249);
+            this.BTN_Annuler.Location = new System.Drawing.Point(174, 248);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
             this.BTN_Annuler.TabIndex = 10;
@@ -203,15 +220,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 282);
+            this.ClientSize = new System.Drawing.Size(341, 281);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(this.BTN_Ok);
             this.Controls.Add(this.GBX_Infos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(500, 320);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(320, 320);
             this.Name = "DLG_AjoutModif";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajout d\'un circuit";
             this.Load += new System.EventHandler(this.DLG_AjoutModif_Load);

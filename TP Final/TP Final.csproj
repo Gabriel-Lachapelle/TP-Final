@@ -52,6 +52,12 @@
     <Compile Include="DLG_AjoutModif.Designer.cs">
       <DependentUpon>DLG_AjoutModif.cs</DependentUpon>
     </Compile>
+    <Compile Include="DLG_AjoutMonument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DLG_AjoutMonument.Designer.cs">
+      <DependentUpon>DLG_AjoutMonument.cs</DependentUpon>
+    </Compile>
     <Compile Include="DLG_Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="ValidationProvider.cs" />
     <EmbeddedResource Include="DLG_AjoutModif.resx">
       <DependentUpon>DLG_AjoutModif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DLG_AjoutMonument.resx">
+      <DependentUpon>DLG_AjoutMonument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DLG_Connexion.resx">
       <DependentUpon>DLG_Connexion.cs</DependentUpon>

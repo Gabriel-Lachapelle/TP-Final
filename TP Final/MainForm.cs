@@ -28,9 +28,12 @@ namespace TP_Final
             Connecté = false;
             UpdateControls();
             DGV_Circuit.Rows.Clear();
+            FB_Circuit_Ajout.Enabled = Connecté;
             FB_Circuit_Modif.Enabled = Connecté;
-            FB_Info.Enabled = Connecté;
             FB_Circuit_Supp.Enabled = Connecté;
+            FB_Info.Enabled = Connecté;
+            FB_Gerer.Enabled = Connecté;
+            FB_AjoutMonument.Enabled = Connecté;
             MI_Circuits_Ajout.Enabled = Connecté;
             MI_Circuits_Modif.Enabled = Connecté;
             MI_Circuit_Supp.Enabled = Connecté;
@@ -173,6 +176,19 @@ namespace TP_Final
             DLG.NomCircuit = DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString();
             DLG.Show();
         }
+        private void GererMonuments()
+        {
+            DLG_GererMonuments DLG = new DLG_GererMonuments();
+            DLG.Connexion = Connexion;
+            DLG.NomCircuit = DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString();
+            DLG.Show();
+        }
+
+        private void AjouterMonument()
+        {
+            DLG_AjoutMonument DLG = new DLG_AjoutMonument();
+            DLG.Show();
+        }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
 
@@ -265,6 +281,7 @@ namespace TP_Final
             FB_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
             FB_Info.Enabled = DGV_Circuit.SelectedRows != null;
             FB_Gerer.Enabled = DGV_Circuit.SelectedRows != null;
+            FB_AjoutMonument.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuits_Ajout.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuits_Modif.Enabled = DGV_Circuit.SelectedRows != null;
             MI_Circuit_Supp.Enabled = DGV_Circuit.SelectedRows != null;
@@ -277,15 +294,16 @@ namespace TP_Final
         {
             ChargerPreferences();
         }
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        #endregion
-
         private void FB_Gerer_Click(object sender, EventArgs e)
         {
-            DLG_GererMonuments DLG = new DLG_GererMonuments();
-            DLG.Connexion = Connexion;
-            DLG.NomCircuit = DGV_Circuit.SelectedRows[0].Cells["NomCircuit"].Value.ToString();
-            DLG.Show();
+            GererMonuments();
         }
+
+        private void FB_AjoutMonument_Click(object sender, EventArgs e)
+        {
+            AjouterMonument();
+        }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #endregion
     }
 }

@@ -219,5 +219,38 @@
   <ItemGroup>
     <None Include="Resources\Details_Neutral.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Details_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Details_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Details_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monument_Neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monument_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monument_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monument_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_Disabled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

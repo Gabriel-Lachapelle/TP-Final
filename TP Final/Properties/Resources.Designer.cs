@@ -143,6 +143,36 @@ namespace TP_Final.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Details_Clicked {
+            get {
+                object obj = ResourceManager.GetObject("Details_Clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Details_Disabled {
+            get {
+                object obj = ResourceManager.GetObject("Details_Disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Details_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Details_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Details_Neutral {
             get {
                 object obj = ResourceManager.GetObject("Details_Neutral", resourceCulture);
@@ -186,6 +216,46 @@ namespace TP_Final.Properties {
         internal static System.Drawing.Bitmap Edit_Neutral {
             get {
                 object obj = ResourceManager.GetObject("Edit_Neutral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Monument_Clicked {
+            get {
+                object obj = ResourceManager.GetObject("Monument_Clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Monument_Disabled {
+            get {
+                object obj = ResourceManager.GetObject("Monument_Disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Monument_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Monument_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Monument_Neutral {
+            get {
+                object obj = ResourceManager.GetObject("Monument_Neutral", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +416,46 @@ namespace TP_Final.Properties {
         internal static System.Drawing.Bitmap Show_Neutral {
             get {
                 object obj = ResourceManager.GetObject("Show_Neutral", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star_Clicked {
+            get {
+                object obj = ResourceManager.GetObject("Star_Clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star_Disabled {
+            get {
+                object obj = ResourceManager.GetObject("Star_Disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star_Hover {
+            get {
+                object obj = ResourceManager.GetObject("Star_Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star_Neutral {
+            get {
+                object obj = ResourceManager.GetObject("Star_Neutral", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

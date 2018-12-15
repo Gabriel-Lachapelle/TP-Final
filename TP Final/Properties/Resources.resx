@@ -142,6 +142,15 @@
   <data name="Delete_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Details_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Details_Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Details_Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Details_Disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Details_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Details_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Details_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Details_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -156,6 +165,18 @@
   </data>
   <data name="Edit_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monument_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monument_Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monument_Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monument_Disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monument_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monument_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monument_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monument_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Next_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Next_Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,5 +225,17 @@
   </data>
   <data name="Show_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star_Clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star_Clicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star_Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star_Disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star_Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star_Hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star_Neutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star_Neutral.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

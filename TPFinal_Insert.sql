@@ -31,12 +31,12 @@ where NombreEtoiles >= 3 group by Circuits.NomCircuit, VilleDepart, VilleArrivee
 order by Prix, NbBonMonuments desc;
 
 create view RechercheCircuit as
-select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix from Circuits
+select Circuits.NomCircuit, VilleDepart, VilleArrivee, Circuits.Prix, NomMonument from Circuits
 left outer join ListeMonuments on Circuits.NumCircuit = ListeMonuments.NumCircuit
 left outer join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument;
 
 create view ListeMonument as
-select Image, NomMonument, Monuments.Prix, Histoire from Monuments
+select Image, NomMonument, Monuments.Prix, Histoire, NomCircuit, Ordre from Monuments
 inner join ListeMonuments on Monuments.NumMonument = ListeMonuments.NumMonument
 inner join Circuits on Circuits.NumCircuit = ListeMonuments.NumCircuit;
 

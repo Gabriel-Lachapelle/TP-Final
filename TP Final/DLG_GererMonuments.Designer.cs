@@ -33,13 +33,13 @@
             this.GBX_Monument = new System.Windows.Forms.GroupBox();
             this.LBL_TousMonuments = new System.Windows.Forms.Label();
             this.LBL_MonumentsCircuit = new System.Windows.Forms.Label();
+            this.FB_Ajouter = new Calculator.FlashButton();
+            this.FB_Retirer = new Calculator.FlashButton();
             this.LBX_TousMonuments = new System.Windows.Forms.ListBox();
             this.LBX_MonumentsCircuit = new System.Windows.Forms.ListBox();
             this.TBX_NomCircuit = new System.Windows.Forms.TextBox();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.BTN_Retour = new System.Windows.Forms.Button();
-            this.FB_Ajouter = new Calculator.FlashButton();
-            this.FB_Retirer = new Calculator.FlashButton();
             this.GBX_Monument.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,46 @@
             this.LBL_MonumentsCircuit.Size = new System.Drawing.Size(161, 16);
             this.LBL_MonumentsCircuit.TabIndex = 23;
             this.LBL_MonumentsCircuit.Text = "Monuments dans le circuit";
+            // 
+            // FB_Ajouter
+            // 
+            this.FB_Ajouter.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.FB_Ajouter.BackgroundImage = global::TP_Final.Properties.Resources.Previous_Neutral;
+            this.FB_Ajouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Ajouter.ClickedImage = global::TP_Final.Properties.Resources.Previous_Clicked;
+            this.FB_Ajouter.DisabledImage = global::TP_Final.Properties.Resources.Previous_Disabled;
+            this.FB_Ajouter.Enabled = false;
+            this.FB_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FB_Ajouter.Image")));
+            this.FB_Ajouter.Location = new System.Drawing.Point(268, 113);
+            this.FB_Ajouter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 20);
+            this.FB_Ajouter.Name = "FB_Ajouter";
+            this.FB_Ajouter.NeutralImage = global::TP_Final.Properties.Resources.Previous_Neutral;
+            this.FB_Ajouter.OverImage = global::TP_Final.Properties.Resources.Previous_Hover;
+            this.FB_Ajouter.Size = new System.Drawing.Size(40, 40);
+            this.FB_Ajouter.TabIndex = 22;
+            this.ToolTip.SetToolTip(this.FB_Ajouter, "Ajouter le monument au circuit");
+            this.FB_Ajouter.UseVisualStyleBackColor = true;
+            this.FB_Ajouter.Click += new System.EventHandler(this.FB_Ajouter_Click);
+            // 
+            // FB_Retirer
+            // 
+            this.FB_Retirer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Retirer.BackgroundImage = global::TP_Final.Properties.Resources.Next_Neutral;
+            this.FB_Retirer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Retirer.ClickedImage = global::TP_Final.Properties.Resources.Next_Clicked;
+            this.FB_Retirer.DisabledImage = global::TP_Final.Properties.Resources.Next_Disabled;
+            this.FB_Retirer.Enabled = false;
+            this.FB_Retirer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Retirer.Image")));
+            this.FB_Retirer.Location = new System.Drawing.Point(268, 69);
+            this.FB_Retirer.Margin = new System.Windows.Forms.Padding(5, 20, 5, 5);
+            this.FB_Retirer.Name = "FB_Retirer";
+            this.FB_Retirer.NeutralImage = global::TP_Final.Properties.Resources.Next_Neutral;
+            this.FB_Retirer.OverImage = global::TP_Final.Properties.Resources.Next_Hover;
+            this.FB_Retirer.Size = new System.Drawing.Size(40, 40);
+            this.FB_Retirer.TabIndex = 21;
+            this.ToolTip.SetToolTip(this.FB_Retirer, "Retirer le monument du circuit");
+            this.FB_Retirer.UseVisualStyleBackColor = true;
+            this.FB_Retirer.Click += new System.EventHandler(this.FB_Retirer_Click);
             // 
             // LBX_TousMonuments
             // 
@@ -128,46 +168,6 @@
             this.BTN_Retour.UseVisualStyleBackColor = true;
             this.BTN_Retour.Click += new System.EventHandler(this.BTN_Retour_Click);
             // 
-            // FB_Ajouter
-            // 
-            this.FB_Ajouter.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.FB_Ajouter.BackgroundImage = global::TP_Final.Properties.Resources.Previous_Neutral;
-            this.FB_Ajouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Ajouter.ClickedImage = global::TP_Final.Properties.Resources.Previous_Clicked;
-            this.FB_Ajouter.DisabledImage = global::TP_Final.Properties.Resources.Previous_Disabled;
-            this.FB_Ajouter.Enabled = false;
-            this.FB_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FB_Ajouter.Image")));
-            this.FB_Ajouter.Location = new System.Drawing.Point(268, 113);
-            this.FB_Ajouter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 20);
-            this.FB_Ajouter.Name = "FB_Ajouter";
-            this.FB_Ajouter.NeutralImage = global::TP_Final.Properties.Resources.Previous_Neutral;
-            this.FB_Ajouter.OverImage = global::TP_Final.Properties.Resources.Previous_Hover;
-            this.FB_Ajouter.Size = new System.Drawing.Size(40, 40);
-            this.FB_Ajouter.TabIndex = 22;
-            this.ToolTip.SetToolTip(this.FB_Ajouter, "Ajouter le monument au circuit");
-            this.FB_Ajouter.UseVisualStyleBackColor = true;
-            this.FB_Ajouter.Click += new System.EventHandler(this.FB_Ajouter_Click);
-            // 
-            // FB_Retirer
-            // 
-            this.FB_Retirer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Retirer.BackgroundImage = global::TP_Final.Properties.Resources.Next_Neutral;
-            this.FB_Retirer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Retirer.ClickedImage = global::TP_Final.Properties.Resources.Next_Clicked;
-            this.FB_Retirer.DisabledImage = global::TP_Final.Properties.Resources.Next_Disabled;
-            this.FB_Retirer.Enabled = false;
-            this.FB_Retirer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Retirer.Image")));
-            this.FB_Retirer.Location = new System.Drawing.Point(268, 69);
-            this.FB_Retirer.Margin = new System.Windows.Forms.Padding(5, 20, 5, 5);
-            this.FB_Retirer.Name = "FB_Retirer";
-            this.FB_Retirer.NeutralImage = global::TP_Final.Properties.Resources.Next_Neutral;
-            this.FB_Retirer.OverImage = global::TP_Final.Properties.Resources.Next_Hover;
-            this.FB_Retirer.Size = new System.Drawing.Size(40, 40);
-            this.FB_Retirer.TabIndex = 21;
-            this.ToolTip.SetToolTip(this.FB_Retirer, "Retirer le monument du circuit");
-            this.FB_Retirer.UseVisualStyleBackColor = true;
-            this.FB_Retirer.Click += new System.EventHandler(this.FB_Retirer_Click);
-            // 
             // DLG_GererMonuments
             // 
             this.AcceptButton = this.BTN_Retour;
@@ -186,6 +186,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gérer les monuments du circuit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_GererMonuments_FormClosing);
             this.Load += new System.EventHandler(this.DLG_GererMonuments_Load);
             this.GBX_Monument.ResumeLayout(false);
             this.GBX_Monument.PerformLayout();

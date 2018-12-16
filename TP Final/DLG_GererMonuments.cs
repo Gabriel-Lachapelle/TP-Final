@@ -23,6 +23,7 @@ namespace TP_Final
 
         private void DLG_GererMonuments_Load(object sender, EventArgs e)
         {
+            Charger();
             TBX_NomCircuit.Text = NomCircuit;
             try
             {
@@ -129,6 +130,26 @@ namespace TP_Final
         private void BTN_Retour_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Sauvegarder()
+        {
+            Properties.Settings.Default.DLG_GererMonuments_Pref = true;
+            Properties.Settings.Default.DLG_GererMonuments_Position = Location;
+            Properties.Settings.Default.DLG_GererMonuments_Taille = Size;
+        }
+        private void Charger()
+        {
+            if (Properties.Settings.Default.DLG_GererMonuments_Pref)
+            {
+                Location = Properties.Settings.Default.DLG_GererMonuments_Position;
+                Size = Properties.Settings.Default.DLG_GererMonuments_Taille;
+            }
+        }
+
+        private void DLG_GererMonuments_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Sauvegarder();
         }
     }
 }

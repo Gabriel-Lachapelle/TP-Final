@@ -26,6 +26,7 @@ namespace TP_Final
 
         private void DLG_AjoutModif_Load(object sender, EventArgs e)
         {
+            Charger();
             ValidationProvider = new ValidationProvider(this);
             ValidationProvider.AddControlToValidate(TBX_Nom, ValiderNom);
             ValidationProvider.AddControlToValidate(CBX_VilleDepart, ValiderCBX_VD);
@@ -249,6 +250,27 @@ namespace TP_Final
         {
             message = "Nombre de clients vide";
             return TBX_ClientsMax.Text != "";
+        }
+
+        private void Sauvegarder()
+        {
+            Properties.Settings.Default.DLG_AjoutModif_Pref = true;
+            Properties.Settings.Default.DLG_AjoutModif_Position = Location;
+            Properties.Settings.Default.DLG_AjoutModif_Taille = Size;
+            Properties.Settings.Default.Save();
+        }
+        private void Charger()
+        {
+            if (Properties.Settings.Default.DLG_AjoutModif_Pref)
+            {
+                Location = Properties.Settings.Default.DLG_AjoutModif_Position;
+                Size = Properties.Settings.Default.DLG_AjoutModif_Taille;
+            }
+        }
+
+        private void DLG_AjoutModif_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Sauvegarder();
         }
     }
 }

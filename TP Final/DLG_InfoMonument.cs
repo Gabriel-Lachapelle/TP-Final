@@ -21,6 +21,7 @@ namespace TP_Final
 
         private void DLG_InfoMonument_Load(object sender, EventArgs e)
         {
+            Charger();
             string Etoile = "★";
             try
             {
@@ -100,6 +101,27 @@ namespace TP_Final
                     MessageBox.Show(SQL.Message);
                 }
             }
+        }
+
+        private void Sauvergarder()
+        {
+            Properties.Settings.Default.DLG_InfoMonument_Pref = true;
+            Properties.Settings.Default.DLG_InfoMonument_Position = Location;
+            Properties.Settings.Default.DLG_InfoMonument_Taille = Size;
+        }
+
+        private void Charger()
+        {
+            if (Properties.Settings.Default.DLG_InfoMonument_Pref)
+            {
+                Location = Properties.Settings.Default.DLG_InfoMonument_Position;
+                Size = Properties.Settings.Default.DLG_InfoMonument_Taille;
+            }
+        }
+
+        private void DLG_InfoMonument_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Sauvergarder();
         }
     }
 }

@@ -158,17 +158,17 @@ namespace TP_Final
         }
         private void SauvegarderPreferences()
         {
-            Properties.Settings.Default.MainFormPref = true;
-            Properties.Settings.Default.Position_MainForm = Location;
-            Properties.Settings.Default.Taille_MainForm = Size;
+            Properties.Settings.Default.MainForm_Pref = true;
+            Properties.Settings.Default.MainForm_Position = Location;
+            Properties.Settings.Default.MainForm_Taille = Size;
             Properties.Settings.Default.Save();
         }
         private void ChargerPreferences()
         {
-            if (Properties.Settings.Default.MainFormPref)
+            if (Properties.Settings.Default.MainForm_Pref)
             {
-                Location = Properties.Settings.Default.Position_MainForm;
-                Size = Properties.Settings.Default.Taille_MainForm;
+                Location = Properties.Settings.Default.MainForm_Position;
+                Size = Properties.Settings.Default.MainForm_Taille;
             }
         }
         private void ListerMonuments()

@@ -212,6 +212,7 @@
             this.Name = "DLG_AjoutMonument";
             this.ShowIcon = false;
             this.Text = "Ajout d\'un monument";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_AjoutMonument_FormClosing);
             this.Load += new System.EventHandler(this.DLG_AjoutMonument_Load);
             this.GBX_Details.ResumeLayout(false);
             this.GBX_Details.PerformLayout();

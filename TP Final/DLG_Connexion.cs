@@ -41,7 +41,7 @@ namespace TP_Final
         }
         private void SauvegarderPreferences()
         {
-            Properties.Settings.Default.PreferencesSauvegardees = true;
+            Properties.Settings.Default.DLG_Connexion_Pref = true;
             if (CBX_Souvenir.Checked)
             {
                 Properties.Settings.Default.NomUsager = TBX_Nom.Text;
@@ -52,19 +52,19 @@ namespace TP_Final
                 Properties.Settings.Default.NomUsager = "";
                 Properties.Settings.Default.MotDePasse = "";
             }
-            Properties.Settings.Default.Taille_DLG_Connexion = Size;
-            Properties.Settings.Default.Position_DLG_Connexion = Location;
+            Properties.Settings.Default.DLG_Connexion_Taille = Size;
+            Properties.Settings.Default.DLG_Connexion_Position = Location;
             Properties.Settings.Default.Save();
         }
         private void ChargerPreferences()
         {
-            if (Properties.Settings.Default.PreferencesSauvegardees)
+            if (Properties.Settings.Default.DLG_Connexion_Pref)
             {
                 CBX_Souvenir.Checked = Properties.Settings.Default.NomUsager != "";
                 TBX_Nom.Text = Properties.Settings.Default.NomUsager;
                 TBX_MDP.Text = Properties.Settings.Default.MotDePasse;
-                Location = Properties.Settings.Default.Position_DLG_Connexion;
-                Size = Properties.Settings.Default.Taille_DLG_Connexion;
+                Location = Properties.Settings.Default.DLG_Connexion_Position;
+                Size = Properties.Settings.Default.DLG_Connexion_Taille;
             }
         }
      

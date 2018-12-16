@@ -141,6 +141,7 @@
             this.Name = "DLG_InfoMonument";
             this.ShowIcon = false;
             this.Text = "Détails des monuments";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_InfoMonument_FormClosing);
             this.Load += new System.EventHandler(this.DLG_InfoMonument_Load);
             this.GBX_Monuments.ResumeLayout(false);
             this.GBX_Monuments.PerformLayout();

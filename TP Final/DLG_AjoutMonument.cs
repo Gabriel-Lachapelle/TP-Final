@@ -29,6 +29,7 @@ namespace TP_Final
 
         private void DLG_AjoutMonument_Load(object sender, EventArgs e)
         {
+            Charger();
             ValidationProvider = new ValidationProvider(this);
             ValidationProvider.AddControlToValidate(TBX_Nom, ValiderNom);
             ValidationProvider.AddControlToValidate(TBX_Prix, ValiderPrix);
@@ -149,6 +150,26 @@ namespace TP_Final
         private void Stars_ValueChanged(object sender, EventArgs e)
         {
             ValidationProvider.UpdateError(Stars);
+        }
+
+        private void Sauvegarder()
+        {
+            Properties.Settings.Default.DLG_AjoutMonuments_Pref = true;
+            Properties.Settings.Default.DLG_AjoutMonuments_Position = Location;
+            Properties.Settings.Default.DLG_AjoutMonuments_Taille = Size;
+        }
+        private void Charger()
+        {
+            if (Properties.Settings.Default.DLG_AjoutMonuments_Pref)
+            {
+                Location = Properties.Settings.Default.DLG_AjoutMonuments_Position;
+                Size = Properties.Settings.Default.DLG_AjoutMonuments_Taille;
+            }
+        }
+
+        private void DLG_AjoutMonument_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Sauvegarder();
         }
     }
 }

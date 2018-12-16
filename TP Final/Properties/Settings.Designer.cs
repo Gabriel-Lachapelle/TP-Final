@@ -50,72 +50,252 @@ namespace TP_Final.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool PreferencesSauvegardees {
+        public bool DLG_Connexion_Pref {
             get {
-                return ((bool)(this["PreferencesSauvegardees"]));
+                return ((bool)(this["DLG_Connexion_Pref"]));
             }
             set {
-                this["PreferencesSauvegardees"] = value;
+                this["DLG_Connexion_Pref"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Size Taille_DLG_Connexion {
+        public global::System.Drawing.Size DLG_Connexion_Taille {
             get {
-                return ((global::System.Drawing.Size)(this["Taille_DLG_Connexion"]));
+                return ((global::System.Drawing.Size)(this["DLG_Connexion_Taille"]));
             }
             set {
-                this["Taille_DLG_Connexion"] = value;
+                this["DLG_Connexion_Taille"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point Position_DLG_Connexion {
+        public global::System.Drawing.Point DLG_Connexion_Position {
             get {
-                return ((global::System.Drawing.Point)(this["Position_DLG_Connexion"]));
+                return ((global::System.Drawing.Point)(this["DLG_Connexion_Position"]));
             }
             set {
-                this["Position_DLG_Connexion"] = value;
+                this["DLG_Connexion_Position"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Size Taille_MainForm {
+        public global::System.Drawing.Size MainForm_Taille {
             get {
-                return ((global::System.Drawing.Size)(this["Taille_MainForm"]));
+                return ((global::System.Drawing.Size)(this["MainForm_Taille"]));
             }
             set {
-                this["Taille_MainForm"] = value;
+                this["MainForm_Taille"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point Position_MainForm {
+        public global::System.Drawing.Point MainForm_Position {
             get {
-                return ((global::System.Drawing.Point)(this["Position_MainForm"]));
+                return ((global::System.Drawing.Point)(this["MainForm_Position"]));
             }
             set {
-                this["Position_MainForm"] = value;
+                this["MainForm_Position"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool MainFormPref {
+        public bool MainForm_Pref {
             get {
-                return ((bool)(this["MainFormPref"]));
+                return ((bool)(this["MainForm_Pref"]));
             }
             set {
-                this["MainFormPref"] = value;
+                this["MainForm_Pref"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DLG_AjoutModif_Taille {
+            get {
+                return ((global::System.Drawing.Size)(this["DLG_AjoutModif_Taille"]));
+            }
+            set {
+                this["DLG_AjoutModif_Taille"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point DLG_AjoutModif_Position {
+            get {
+                return ((global::System.Drawing.Point)(this["DLG_AjoutModif_Position"]));
+            }
+            set {
+                this["DLG_AjoutModif_Position"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DLG_AjoutModif_Pref {
+            get {
+                return ((bool)(this["DLG_AjoutModif_Pref"]));
+            }
+            set {
+                this["DLG_AjoutModif_Pref"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DLG_AjoutMonuments_Taille {
+            get {
+                return ((global::System.Drawing.Size)(this["DLG_AjoutMonuments_Taille"]));
+            }
+            set {
+                this["DLG_AjoutMonuments_Taille"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point DLG_AjoutMonuments_Position {
+            get {
+                return ((global::System.Drawing.Point)(this["DLG_AjoutMonuments_Position"]));
+            }
+            set {
+                this["DLG_AjoutMonuments_Position"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DLG_AjoutMonuments_Pref {
+            get {
+                return ((bool)(this["DLG_AjoutMonuments_Pref"]));
+            }
+            set {
+                this["DLG_AjoutMonuments_Pref"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DLG_GererMonuments_Taille {
+            get {
+                return ((global::System.Drawing.Size)(this["DLG_GererMonuments_Taille"]));
+            }
+            set {
+                this["DLG_GererMonuments_Taille"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point DLG_GererMonuments_Position {
+            get {
+                return ((global::System.Drawing.Point)(this["DLG_GererMonuments_Position"]));
+            }
+            set {
+                this["DLG_GererMonuments_Position"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DLG_GererMonuments_Pref {
+            get {
+                return ((bool)(this["DLG_GererMonuments_Pref"]));
+            }
+            set {
+                this["DLG_GererMonuments_Pref"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DLG_InfoMonument_Taille {
+            get {
+                return ((global::System.Drawing.Size)(this["DLG_InfoMonument_Taille"]));
+            }
+            set {
+                this["DLG_InfoMonument_Taille"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point DLG_InfoMonument_Position {
+            get {
+                return ((global::System.Drawing.Point)(this["DLG_InfoMonument_Position"]));
+            }
+            set {
+                this["DLG_InfoMonument_Position"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DLG_InfoMonument_Pref {
+            get {
+                return ((bool)(this["DLG_InfoMonument_Pref"]));
+            }
+            set {
+                this["DLG_InfoMonument_Pref"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DLG_ListeMonuments_Taille {
+            get {
+                return ((global::System.Drawing.Size)(this["DLG_ListeMonuments_Taille"]));
+            }
+            set {
+                this["DLG_ListeMonuments_Taille"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point DLG_ListeMonuments_Position {
+            get {
+                return ((global::System.Drawing.Point)(this["DLG_ListeMonuments_Position"]));
+            }
+            set {
+                this["DLG_ListeMonuments_Position"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DLG_ListeMonuments_Pref {
+            get {
+                return ((bool)(this["DLG_ListeMonuments_Pref"]));
+            }
+            set {
+                this["DLG_ListeMonuments_Pref"] = value;
             }
         }
     }

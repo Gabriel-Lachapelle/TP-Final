@@ -240,6 +240,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajout d\'un circuit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_AjoutModif_FormClosing);
             this.Load += new System.EventHandler(this.DLG_AjoutModif_Load);
             this.GBX_Infos.ResumeLayout(false);
             this.GBX_Infos.PerformLayout();

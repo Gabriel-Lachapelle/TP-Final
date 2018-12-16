@@ -237,6 +237,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Liste des monuments du circuit";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_ListeMonuments_FormClosing);
             this.Load += new System.EventHandler(this.DLG_GererMonuments_Load);
             this.GBX_Monuments.ResumeLayout(false);
             this.GBX_Monuments.PerformLayout();

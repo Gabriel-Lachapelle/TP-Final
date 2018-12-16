@@ -26,6 +26,7 @@ namespace TP_Final
 
         private void DLG_GererMonuments_Load(object sender, EventArgs e)
         {
+            Charger();
             TBX_NomCircuit.Text = NomCircuit;
             try
             {
@@ -70,6 +71,26 @@ namespace TP_Final
         private void AfficherImage()
         {
             PBX_Image.BackgroundImage = DB_Images.Find(GBX_Monuments.Name);
+        }
+
+        private void Sauvegarder()
+        {
+            Properties.Settings.Default.DLG_ListeMonuments_Pref = true;
+            Properties.Settings.Default.DLG_ListeMonuments_Position = Location;
+            Properties.Settings.Default.DLG_ListeMonuments_Taille = Size;
+        }
+        private void Charger()
+        {
+            if (Properties.Settings.Default.DLG_ListeMonuments_Pref)
+            {
+                Location = Properties.Settings.Default.DLG_ListeMonuments_Position;
+                Size = Properties.Settings.Default.DLG_ListeMonuments_Taille;
+            }
+        }
+
+        private void DLG_ListeMonuments_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Sauvegarder();
         }
     }
 }

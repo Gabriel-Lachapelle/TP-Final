@@ -117,4 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="RTBX_Aide.Text" xml:space="preserve">
+    <value>
+ Ici sera présenté les fonctionnalités de l'application:
+
+ Pour la fenêtre principale de l'application, vous avez plusieurs options envers les circuits:
+
+ - Ajouter un circuit:
+     Ils vous sera demandé de remplir les information du circuit tel que: Nom, Prix, Durée, etc.
+     Notez que pour ajouter des monuments à un circuit il vous faudra utiliser l'engrenage qui sera expliqué plus bas.
+
+ - Modifier un circuit:
+     Vous pouvez changer tous les détails liés au circuit seléctionné.
+     Notez encore une fois que pour modifier les monument du circuit cela ce fait par le même contrôle que mentionné plus tôt.
+
+ - Supprimer un circuit:
+     Supprimer le circuit seléctionné.
+
+  - Information du circuit:
+     Cette option vous permet de voir les monuments en détails du circuit seléctionné, ils sont aussi arrangés en ordre de passage.
+
+ - Gerer les monuments du circuit:
+     Cette option permet d'ajouter ou de retirer les monuments du circuit seléctionné, étant donné qu'un Monument ne peut être vu
+     qu'une seule fois par circuit, il n'est pas possible d'avoir des doublons. De plus, l'ordre de passage est l'ordre de la liste.
+
+ - Ajouter un bâtiment:
+     Vous pouvez par cette option ajouter un monument, ils vous sera demandé d'entrez les détails de celui-ci, de le coter (1 à 5 étoiles)
+     ainsi que de donner une image représentative.
+
+ - Recherche des circuits:
+     La recherche des circuit vous donne plusieurs options pour trouver le cicuit.
+     Tous les circuits affiche tous les circuits selon leur cotation (La somme des étoiles des monuments qui en font parti)
+     Meilleur circuit affiche en ordre les circuits les mieux côtés selon des monuments de 3 étoiles et plus ayant le monument seléctionné
+     Les autres options sont assez claires par leur nom, sacher que vous pouvez combinez les 3 dernière options.
+
+ - Voir tous les monuments:
+     Ce bouton vous affichera tous les monuments et vous donnera la possibilité de voir dans quels circuit il apparaît ainsi que l'ordre dans lequel il est visité.</value>
+  </data>
 </root>

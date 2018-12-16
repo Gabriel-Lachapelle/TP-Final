@@ -298,5 +298,41 @@ namespace TP_Final.Properties {
                 this["DLG_ListeMonuments_Pref"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size DLG_Aide_Taille {
+            get {
+                return ((global::System.Drawing.Size)(this["DLG_Aide_Taille"]));
+            }
+            set {
+                this["DLG_Aide_Taille"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point DLG_Aide_Position {
+            get {
+                return ((global::System.Drawing.Point)(this["DLG_Aide_Position"]));
+            }
+            set {
+                this["DLG_Aide_Position"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DLG_Aide_Pref {
+            get {
+                return ((bool)(this["DLG_Aide_Pref"]));
+            }
+            set {
+                this["DLG_Aide_Pref"] = value;
+            }
+        }
     }
 }

@@ -176,21 +176,21 @@ namespace TP_Final
             RafraichirEtoiles();
         }
 
-        private void PBX_Image_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Move;
-        }
+        //private void PBX_Image_DragEnter(object sender, DragEventArgs e)
+        //{
+        //    e.Effect = DragDropEffects.Move;
+        //}
 
-        private void PBX_Image_DragDrop(object sender, DragEventArgs e)
-        {
-            int X = this.PointToClient(new Point(e.X, e.Y)).X;
-            int Y = this.PointToClient(new Point(e.X, e.Y)).Y;
-            if (X >= PBX_Image.Location.X && X <= PBX_Image.Location.X + PBX_Image.Width && Y >= PBX_Image.Location.Y && Y <= PBX_Image.Location.Y + PBX_Image.Height)
-            {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                PBX_Image.BackgroundImage = Image.FromFile(files[0]);
-            }
-        }
+        //private void PBX_Image_DragDrop(object sender, DragEventArgs e)
+        //{
+        //    int X = this.PointToClient(new Point(e.X, e.Y)).X;
+        //    int Y = this.PointToClient(new Point(e.X, e.Y)).Y;
+        //    if (X >= PBX_Image.Location.X && X <= PBX_Image.Location.X + PBX_Image.Width && Y >= PBX_Image.Location.Y && Y <= PBX_Image.Location.Y + PBX_Image.Height)
+        //    {
+        //        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        //        PBX_Image.BackgroundImage = Image.FromFile(files[0]);
+        //    }
+        //}
 
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {

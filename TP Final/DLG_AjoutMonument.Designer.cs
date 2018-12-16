@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_AjoutMonument));
             this.TBX_Nom = new System.Windows.Forms.TextBox();
             this.TBX_Annee = new System.Windows.Forms.TextBox();
@@ -45,7 +46,7 @@
             this.FB_Etoile_3 = new Calculator.FlashButton();
             this.FB_Etoile_2 = new Calculator.FlashButton();
             this.FB_Etoile_1 = new Calculator.FlashButton();
-            this.PBX_Image = new System.Windows.Forms.PictureBox();
+            this.PBX_Image = new PhotoManagerClient.ImageBox();
             this.GBX_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +128,7 @@
             // 
             // GBX_Details
             // 
+            this.GBX_Details.Controls.Add(this.PBX_Image);
             this.GBX_Details.Controls.Add(this.BTN_Ajouter);
             this.GBX_Details.Controls.Add(this.BTN_Annuler);
             this.GBX_Details.Controls.Add(this.FB_Etoile_5);
@@ -134,7 +136,6 @@
             this.GBX_Details.Controls.Add(this.FB_Etoile_3);
             this.GBX_Details.Controls.Add(this.FB_Etoile_2);
             this.GBX_Details.Controls.Add(this.FB_Etoile_1);
-            this.GBX_Details.Controls.Add(this.PBX_Image);
             this.GBX_Details.Controls.Add(this.label1);
             this.GBX_Details.Controls.Add(this.label4);
             this.GBX_Details.Controls.Add(this.TBX_Nom);
@@ -271,14 +272,19 @@
             // 
             // PBX_Image
             // 
+            this.PBX_Image.AllowDrop = true;
             this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBX_Image.Location = new System.Drawing.Point(24, 22);
+            this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBX_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.PBX_Image.ImportImageText = "Import image from file...";
+            this.PBX_Image.Location = new System.Drawing.Point(7, 22);
             this.PBX_Image.Name = "PBX_Image";
-            this.PBX_Image.Size = new System.Drawing.Size(232, 161);
-            this.PBX_Image.TabIndex = 13;
+            this.PBX_Image.OpenFileDialogTitle = "Please choose image an file";
+            this.PBX_Image.PasteMenuText = "Paste image from clipboard";
+            this.PBX_Image.Size = new System.Drawing.Size(267, 161);
+            this.PBX_Image.TabIndex = 19;
             this.PBX_Image.TabStop = false;
-            this.PBX_Image.DragDrop += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragDrop);
-            this.PBX_Image.DragEnter += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragEnter);
             // 
             // DLG_AjoutMonument
             // 
@@ -315,7 +321,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox GBX_Details;
-        private System.Windows.Forms.PictureBox PBX_Image;
         private System.Windows.Forms.Button BTN_Ajouter;
         private System.Windows.Forms.Button BTN_Annuler;
         private Calculator.FlashButton FB_Etoile_1;
@@ -323,5 +328,6 @@
         private Calculator.FlashButton FB_Etoile_4;
         private Calculator.FlashButton FB_Etoile_3;
         private Calculator.FlashButton FB_Etoile_2;
+        private PhotoManagerClient.ImageBox PBX_Image;
     }
 }

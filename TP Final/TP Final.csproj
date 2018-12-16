@@ -85,6 +85,9 @@
     <Compile Include="FlashButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

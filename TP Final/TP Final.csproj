@@ -70,6 +70,12 @@
     <Compile Include="DLG_GererMonuments.Designer.cs">
       <DependentUpon>DLG_GererMonuments.cs</DependentUpon>
     </Compile>
+    <Compile Include="DLG_InfoMonument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DLG_InfoMonument.Designer.cs">
+      <DependentUpon>DLG_InfoMonument.cs</DependentUpon>
+    </Compile>
     <Compile Include="DLG_ListeMonuments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DLG_GererMonuments.resx">
       <DependentUpon>DLG_GererMonuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DLG_InfoMonument.resx">
+      <DependentUpon>DLG_InfoMonument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DLG_ListeMonuments.resx">
       <DependentUpon>DLG_ListeMonuments.cs</DependentUpon>

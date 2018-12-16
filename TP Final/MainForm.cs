@@ -37,6 +37,7 @@ namespace TP_Final
             MI_Circuits_Ajout.Enabled = Connecté;
             MI_Circuits_Modif.Enabled = Connecté;
             MI_Circuit_Supp.Enabled = Connecté;
+            BTN_TousMonuments.Enabled = Connecté;
         }
         void UpdateControls()
         {
@@ -54,6 +55,7 @@ namespace TP_Final
             BTN_Rechercher.Enabled = Connecté;
             TSMI_Circuit.Enabled = Connecté;
             FB_Circuit_Ajout.Enabled = Connecté;
+            BTN_TousMonuments.Enabled = Connecté;
             if (Connecté)
                 Initialise_DGV_Circuit();
         }
@@ -305,5 +307,17 @@ namespace TP_Final
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
+
+        private void BTN_TousMonuments_Click(object sender, EventArgs e)
+        {
+            VoirMonuments();
+        }
+
+        private void VoirMonuments()
+        {
+            DLG_InfoMonument DLG = new DLG_InfoMonument();
+            DLG.Connexion = Connexion;
+            DLG.Show();
+        }
     }
 }

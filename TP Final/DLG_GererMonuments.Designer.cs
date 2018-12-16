@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_GererMonuments));
             this.GBX_Monument = new System.Windows.Forms.GroupBox();
+            this.LBL_TousMonuments = new System.Windows.Forms.Label();
+            this.LBL_MonumentsCircuit = new System.Windows.Forms.Label();
             this.LBX_TousMonuments = new System.Windows.Forms.ListBox();
             this.LBX_MonumentsCircuit = new System.Windows.Forms.ListBox();
             this.TBX_NomCircuit = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@
             this.BTN_Retour = new System.Windows.Forms.Button();
             this.FB_Ajouter = new Calculator.FlashButton();
             this.FB_Retirer = new Calculator.FlashButton();
-            this.LBL_MonumentsCircuit = new System.Windows.Forms.Label();
-            this.LBL_TousMonuments = new System.Windows.Forms.Label();
             this.GBX_Monument.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,24 @@
             this.GBX_Monument.TabIndex = 0;
             this.GBX_Monument.TabStop = false;
             this.GBX_Monument.Text = "Monuments du circuit";
+            // 
+            // LBL_TousMonuments
+            // 
+            this.LBL_TousMonuments.AutoSize = true;
+            this.LBL_TousMonuments.Location = new System.Drawing.Point(346, 49);
+            this.LBL_TousMonuments.Name = "LBL_TousMonuments";
+            this.LBL_TousMonuments.Size = new System.Drawing.Size(191, 16);
+            this.LBL_TousMonuments.TabIndex = 24;
+            this.LBL_TousMonuments.Text = "Autres monuments disponibles";
+            // 
+            // LBL_MonumentsCircuit
+            // 
+            this.LBL_MonumentsCircuit.AutoSize = true;
+            this.LBL_MonumentsCircuit.Location = new System.Drawing.Point(56, 49);
+            this.LBL_MonumentsCircuit.Name = "LBL_MonumentsCircuit";
+            this.LBL_MonumentsCircuit.Size = new System.Drawing.Size(161, 16);
+            this.LBL_MonumentsCircuit.TabIndex = 23;
+            this.LBL_MonumentsCircuit.Text = "Monuments dans le circuit";
             // 
             // LBX_TousMonuments
             // 
@@ -149,24 +167,6 @@
             this.ToolTip.SetToolTip(this.FB_Retirer, "Retirer le monument du circuit");
             this.FB_Retirer.UseVisualStyleBackColor = true;
             this.FB_Retirer.Click += new System.EventHandler(this.FB_Retirer_Click);
-            // 
-            // LBL_MonumentsCircuit
-            // 
-            this.LBL_MonumentsCircuit.AutoSize = true;
-            this.LBL_MonumentsCircuit.Location = new System.Drawing.Point(56, 49);
-            this.LBL_MonumentsCircuit.Name = "LBL_MonumentsCircuit";
-            this.LBL_MonumentsCircuit.Size = new System.Drawing.Size(161, 16);
-            this.LBL_MonumentsCircuit.TabIndex = 23;
-            this.LBL_MonumentsCircuit.Text = "Monuments dans le circuit";
-            // 
-            // LBL_TousMonuments
-            // 
-            this.LBL_TousMonuments.AutoSize = true;
-            this.LBL_TousMonuments.Location = new System.Drawing.Point(346, 49);
-            this.LBL_TousMonuments.Name = "LBL_TousMonuments";
-            this.LBL_TousMonuments.Size = new System.Drawing.Size(191, 16);
-            this.LBL_TousMonuments.TabIndex = 24;
-            this.LBL_TousMonuments.Text = "Autres monuments disponibles";
             // 
             // DLG_GererMonuments
             // 

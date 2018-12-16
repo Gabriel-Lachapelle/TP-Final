@@ -39,6 +39,7 @@ namespace TP_Final
                 LierDetails();
                 TBX_Ordre.Text = (this.BindingContext[DS, "Liste Monuments"].Position + 1).ToString();
                 AfficherImage();
+                ChangerEtatBouton();
             }
             catch (Exception SQL)
             {
@@ -54,11 +55,34 @@ namespace TP_Final
             RTBX_Histoire.DataBindings.Add("text", DS, "Liste Monuments.Histoire");
         }
 
+        private void ChangerEtatBouton()
+        {
+            if (DS.Tables.Contains("Liste Monuments"))
+            {
+                if (this.BindingContext[DS, "Liste Monuments"].Position == 0)
+                    FB_Precedent.Enabled = false;
+                else
+                    FB_Precedent.Enabled = true;
+
+
+                if (this.BindingContext[DS, "Liste Monuments"].Position + 1 == this.BindingContext[DS, "Liste Monuments"].Count)
+                    FB_Prochain.Enabled = false;
+                else
+                    FB_Prochain.Enabled = true;
+            }
+            else
+            {
+                FB_Precedent.Enabled = false;
+                FB_Prochain.Enabled = false;
+            }
+        }
+
         private void FB_Prochain_Click(object sender, EventArgs e)
         {
             this.BindingContext[DS, "Liste Monuments"].Position++;
             TBX_Ordre.Text = (this.BindingContext[DS, "Liste Monuments"].Position + 1).ToString();
             AfficherImage();
+            ChangerEtatBouton();
         }
 
         private void FB_Precedent_Click(object sender, EventArgs e)
@@ -66,6 +90,7 @@ namespace TP_Final
             this.BindingContext[DS, "Liste Monuments"].Position--;
             TBX_Ordre.Text = (this.BindingContext[DS, "Liste Monuments"].Position + 1).ToString();
             AfficherImage();
+            ChangerEtatBouton();
         }
 
         private void AfficherImage()

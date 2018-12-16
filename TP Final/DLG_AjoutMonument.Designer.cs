@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.GBX_Details = new System.Windows.Forms.GroupBox();
-            this.PBX_Image = new System.Windows.Forms.PictureBox();
             this.BTN_Ajouter = new System.Windows.Forms.Button();
             this.BTN_Annuler = new System.Windows.Forms.Button();
             this.FB_Etoile_5 = new Calculator.FlashButton();
@@ -46,13 +45,14 @@
             this.FB_Etoile_3 = new Calculator.FlashButton();
             this.FB_Etoile_2 = new Calculator.FlashButton();
             this.FB_Etoile_1 = new Calculator.FlashButton();
+            this.PBX_Image = new System.Windows.Forms.PictureBox();
             this.GBX_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // TBX_Nom
             // 
-            this.TBX_Nom.Location = new System.Drawing.Point(272, 39);
+            this.TBX_Nom.Location = new System.Drawing.Point(281, 41);
             this.TBX_Nom.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
             this.TBX_Nom.Name = "TBX_Nom";
             this.TBX_Nom.Size = new System.Drawing.Size(137, 22);
@@ -60,7 +60,7 @@
             // 
             // TBX_Annee
             // 
-            this.TBX_Annee.Location = new System.Drawing.Point(272, 100);
+            this.TBX_Annee.Location = new System.Drawing.Point(281, 102);
             this.TBX_Annee.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
             this.TBX_Annee.Name = "TBX_Annee";
             this.TBX_Annee.Size = new System.Drawing.Size(137, 22);
@@ -69,7 +69,7 @@
             // 
             // TBX_Prix
             // 
-            this.TBX_Prix.Location = new System.Drawing.Point(272, 159);
+            this.TBX_Prix.Location = new System.Drawing.Point(281, 161);
             this.TBX_Prix.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(137, 22);
@@ -78,7 +78,7 @@
             // 
             // RTBX_Histoire
             // 
-            this.RTBX_Histoire.Location = new System.Drawing.Point(442, 41);
+            this.RTBX_Histoire.Location = new System.Drawing.Point(451, 43);
             this.RTBX_Histoire.Margin = new System.Windows.Forms.Padding(4);
             this.RTBX_Histoire.Name = "RTBX_Histoire";
             this.RTBX_Histoire.Size = new System.Drawing.Size(203, 142);
@@ -88,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(269, 18);
+            this.label1.Location = new System.Drawing.Point(278, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 16);
@@ -98,7 +98,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(269, 79);
+            this.label2.Location = new System.Drawing.Point(278, 81);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 16);
@@ -108,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(269, 138);
+            this.label3.Location = new System.Drawing.Point(278, 140);
             this.label3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 16);
@@ -118,7 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(439, 18);
+            this.label4.Location = new System.Drawing.Point(448, 20);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 16);
@@ -147,41 +147,32 @@
             this.GBX_Details.Margin = new System.Windows.Forms.Padding(4);
             this.GBX_Details.Name = "GBX_Details";
             this.GBX_Details.Padding = new System.Windows.Forms.Padding(4);
-            this.GBX_Details.Size = new System.Drawing.Size(668, 237);
+            this.GBX_Details.Size = new System.Drawing.Size(679, 237);
             this.GBX_Details.TabIndex = 8;
             this.GBX_Details.TabStop = false;
             this.GBX_Details.Text = "Détails";
             // 
-            // PBX_Image
-            // 
-            this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PBX_Image.Location = new System.Drawing.Point(24, 22);
-            this.PBX_Image.Name = "PBX_Image";
-            this.PBX_Image.Size = new System.Drawing.Size(232, 161);
-            this.PBX_Image.TabIndex = 13;
-            this.PBX_Image.TabStop = false;
-            this.PBX_Image.DragDrop += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragDrop);
-            this.PBX_Image.DragEnter += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragEnter);
-            // 
             // BTN_Ajouter
             // 
             this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ajouter.Location = new System.Drawing.Point(570, 207);
+            this.BTN_Ajouter.Location = new System.Drawing.Point(579, 207);
             this.BTN_Ajouter.Name = "BTN_Ajouter";
             this.BTN_Ajouter.Size = new System.Drawing.Size(75, 23);
             this.BTN_Ajouter.TabIndex = 9;
             this.BTN_Ajouter.Text = "Ajouter";
             this.BTN_Ajouter.UseVisualStyleBackColor = true;
+            this.BTN_Ajouter.Click += new System.EventHandler(this.BTN_Ajouter_Click);
             // 
             // BTN_Annuler
             // 
             this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(489, 207);
+            this.BTN_Annuler.Location = new System.Drawing.Point(498, 207);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
             this.BTN_Annuler.TabIndex = 10;
             this.BTN_Annuler.Text = "Annuler";
             this.BTN_Annuler.UseVisualStyleBackColor = true;
+            this.BTN_Annuler.Click += new System.EventHandler(this.BTN_Annuler_Click);
             // 
             // FB_Etoile_5
             // 
@@ -278,6 +269,17 @@
             this.FB_Etoile_1.UseVisualStyleBackColor = true;
             this.FB_Etoile_1.Click += new System.EventHandler(this.FB_Etoile_1_Click);
             // 
+            // PBX_Image
+            // 
+            this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBX_Image.Location = new System.Drawing.Point(24, 22);
+            this.PBX_Image.Name = "PBX_Image";
+            this.PBX_Image.Size = new System.Drawing.Size(232, 161);
+            this.PBX_Image.TabIndex = 13;
+            this.PBX_Image.TabStop = false;
+            this.PBX_Image.DragDrop += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragDrop);
+            this.PBX_Image.DragEnter += new System.Windows.Forms.DragEventHandler(this.PBX_Image_DragEnter);
+            // 
             // DLG_AjoutMonument
             // 
             this.AcceptButton = this.BTN_Ajouter;
@@ -285,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BTN_Annuler;
-            this.ClientSize = new System.Drawing.Size(692, 260);
+            this.ClientSize = new System.Drawing.Size(705, 260);
             this.Controls.Add(this.GBX_Details);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -294,6 +296,7 @@
             this.Name = "DLG_AjoutMonument";
             this.ShowIcon = false;
             this.Text = "Ajout d\'un monument";
+            this.Load += new System.EventHandler(this.DLG_AjoutMonument_Load);
             this.GBX_Details.ResumeLayout(false);
             this.GBX_Details.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).EndInit();

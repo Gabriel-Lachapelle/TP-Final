@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Validation;
 
 namespace TP_Final
 {
     public partial class DLG_AjoutModif : Form
     {
+        ValidationProvider ValidationProvider;
         public OracleConnection Connexion;
         public bool ModeModification = false;
         public string NomCircuitEnModif;
@@ -24,6 +26,14 @@ namespace TP_Final
 
         private void DLG_AjoutModif_Load(object sender, EventArgs e)
         {
+            ValidationProvider = new ValidationProvider(this);
+            ValidationProvider.AddControlToValidate(TBX_Nom, ValiderNom);
+            ValidationProvider.AddControlToValidate(CBX_VilleDepart, ValiderCBX_VD);
+            ValidationProvider.AddControlToValidate(CBX_VilleArrivee, ValiderCBX_VA);
+            ValidationProvider.AddControlToValidate(TBX_Duree, ValiderDuree);
+            ValidationProvider.AddControlToValidate(TBX_Prix, ValiderPrix);
+            ValidationProvider.AddControlToValidate(TBX_ClientsMax, ValiderClients);
+
             try
             {
                 //Remplir les ComboBox avec le nom des villes:
@@ -201,10 +211,44 @@ namespace TP_Final
 
         private void BTN_Ok_Click(object sender, EventArgs e)
         {
-            if (ModeModification)
-                ModifierCircuit();
-            else
-                AjouterCircuit();
+            if (TBX_Nom.Text != "" && TBX_Prix.Text != "" && TBX_Duree.Text != "" && TBX_ClientsMax.Text != "" && CBX_VilleArrivee.Text != "" && CBX_VilleDepart.Text != "")
+            {
+                if (ModeModification)
+                    ModifierCircuit();
+                else
+                    AjouterCircuit();
+            }
+        }
+
+        private bool ValiderNom(ref string message)
+        {
+            message = "Nom vide";
+            return TBX_Nom.Text != "";
+        }
+        private bool ValiderCBX_VD(ref string message)
+        {
+            message = "Aucune ville de départ choisi";
+            return CBX_VilleDepart.Text != "";
+        }
+        private bool ValiderCBX_VA(ref string message)
+        {
+            message = "Aucune ville d'arrivée choisi";
+            return CBX_VilleArrivee.Text != "";
+        }
+        private bool ValiderDuree(ref string message)
+        {
+            message = "Duree vide";
+            return TBX_Duree.Text != "";
+        }
+        private bool ValiderPrix(ref string message)
+        {
+            message = "Prix vide";
+            return TBX_Prix.Text != "";
+        }
+        private bool ValiderClients(ref string message)
+        {
+            message = "Nombre de clients vide";
+            return TBX_ClientsMax.Text != "";
         }
     }
 }

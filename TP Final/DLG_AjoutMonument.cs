@@ -8,18 +8,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using System.IO;
+using Validation;
 
 namespace TP_Final
 {
-  
+
     public partial class DLG_AjoutMonument : Form
     {
+        ValidationProvider ValidationProvider;
         public OracleConnection Connexion;
         int Cotation = 0;
         public DLG_AjoutMonument()
         {
             InitializeComponent();
             PBX_Image.AllowDrop = true;
+        }
+
+        private void DLG_AjoutMonument_Load(object sender, EventArgs e)
+        {
+            ValidationProvider = new ValidationProvider(this);
+            ValidationProvider.AddControlToValidate(TBX_Nom, ValiderNom);
+            ValidationProvider.AddControlToValidate(TBX_Prix, ValiderPrix);
+            ValidationProvider.AddControlToValidate(TBX_Annee, ValiderAnnee);
+            ValidationProvider.AddControlToValidate(RTBX_Histoire, ValiderHistoire);
+            ValidationProvider.AddControlToValidate(PBX_Image, ValiderImage);
+            ValidationProvider.AddControlToValidate(FB_Etoile_5, ValiderEtoiles);
+        }
+
+        private bool ValiderNom(ref string message)
+        {
+            message = "Le nom est vide";
+            return TBX_Nom.Text != "";
+        }
+
+        private bool ValiderPrix(ref string message)
+        {
+            message = "Le prix est vide";
+            return TBX_Prix.Text != "";
+        }
+        private bool ValiderAnnee(ref string message)
+        {
+            message = "L'année de construction est vide";
+            return TBX_Annee.Text != "";
+        }
+        private bool ValiderHistoire(ref string message)
+        {
+            message = "L'histoire du monument est vide";
+            return RTBX_Histoire.Text != "";
+        }
+        private bool ValiderImage(ref string message)
+        {
+            message = "Aucune image choisie";
+            return PBX_Image.BackgroundImage != null;
+        }
+        private bool ValiderEtoiles(ref string message)
+        {
+            message = "Veuillez noter le monument";
+            return Cotation != 0;
         }
 
         private void Numbers_KeyPress(object sender, KeyPressEventArgs e)
@@ -32,31 +78,43 @@ namespace TP_Final
 
         private void AjouterMonument()
         {
-            string SQL = "insert into Monument (NumMonument, NomMonument, AnneeConstruction, Histoire, Image, Prix, NombreEtoiles) values " +
-                "(MonumentSeq.nextval, :NomMonument, :AnneeConstruction, :Histoire, :Image, :Prix, :NombreEtoiles)";
-            OracleParameter OraNom = new OracleParameter(":NomMonument", OracleDbType.Varchar2, 60);
-            OracleParameter OraAnnee = new OracleParameter(":AnneeConstruction", OracleDbType.Int32, 4);
-            OracleParameter OraHistoire = new OracleParameter(":Histoire", OracleDbType.Varchar2, 600);
-            OracleParameter OraImage = new OracleParameter(":Image", OracleDbType.Varchar2, 30);
-            OracleParameter OraPrix = new OracleParameter(":Prix", OracleDbType.Decimal, 5);
-            OracleParameter OraNbEtoiles = new OracleParameter(":NombreEtoiles", OracleDbType.Int32, 1);
+            try
+            {
+                AjouterPhoto();
+                string SQL = "insert into Monuments values (MonumentSeq.nextval, :NomMonument, :AnneeConstruction, :Histoire, :Image, :Prix, :NombreEtoiles)";
+                OracleParameter OraNom = new OracleParameter(":NomMonument", OracleDbType.Varchar2, 60);
+                OracleParameter OraAnnee = new OracleParameter(":AnneeConstruction", OracleDbType.Int32, 4);
+                OracleParameter OraHistoire = new OracleParameter(":Histoire", OracleDbType.Varchar2, 600);
+                OracleParameter OraImage = new OracleParameter(":Image", OracleDbType.Varchar2, 30);
+                OracleParameter OraPrix = new OracleParameter(":Prix", OracleDbType.Decimal, 5);
+                OracleParameter OraNbEtoiles = new OracleParameter(":NombreEtoiles", OracleDbType.Int32, 1);
 
-            OraNom.Value = TBX_Nom.Text;
-            OraAnnee.Value = TBX_Annee.Text;
-            OraHistoire.Value = RTBX_Histoire.Text;
-            OraImage.Value = PBX_Image.ImageLocation; // A modifier
-            OraPrix.Value = TBX_Prix.Text;
-            OraNbEtoiles.Value = Cotation;
+                OraNom.Value = TBX_Nom.Text;
+                OraAnnee.Value = TBX_Annee.Text;
+                OraHistoire.Value = RTBX_Histoire.Text;
+                OraImage.Value = "vide";
+                OraPrix.Value = TBX_Prix.Text;
+                OraNbEtoiles.Value = Cotation;
 
-            OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
-            OracleCMD.CommandType = CommandType.Text;
-            OracleCMD.Parameters.Add(OraNom);
-            OracleCMD.Parameters.Add(OraAnnee);
-            OracleCMD.Parameters.Add(OraHistoire);
-            OracleCMD.Parameters.Add(OraImage);
-            OracleCMD.Parameters.Add(OraPrix);
-            OracleCMD.Parameters.Add(OraNbEtoiles);
-            OracleCMD.ExecuteNonQuery();
+                OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
+                OracleCMD.CommandType = CommandType.Text;
+                OracleCMD.Parameters.Add(OraNom);
+                OracleCMD.Parameters.Add(OraAnnee);
+                OracleCMD.Parameters.Add(OraHistoire);
+                OracleCMD.Parameters.Add(OraImage);
+                OracleCMD.Parameters.Add(OraPrix);
+                OracleCMD.Parameters.Add(OraNbEtoiles);
+                OracleCMD.ExecuteNonQuery();
+            }
+            catch (Exception SQL)
+            {
+                MessageBox.Show(SQL.Message);
+            }
+        }
+
+        private void AjouterPhoto()
+        {
+            //À compléter
         }
 
         private void RafraichirEtoiles()
@@ -132,6 +190,20 @@ namespace TP_Final
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 PBX_Image.BackgroundImage = Image.FromFile(files[0]);
             }
+        }
+
+        private void BTN_Ajouter_Click(object sender, EventArgs e)
+        {
+            if (TBX_Nom.Text != "" && TBX_Annee.Text != "" && TBX_Prix.Text != "" && RTBX_Histoire.Text != "" && Cotation > 0)
+            {
+                AjouterMonument();
+                this.Close();
+            }
+        }
+
+        private void BTN_Annuler_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

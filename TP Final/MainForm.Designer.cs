@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.GBX_Recherche = new System.Windows.Forms.GroupBox();
+            this.BTN_TousMonuments = new System.Windows.Forms.Button();
             this.CBX_Meilleur = new System.Windows.Forms.CheckBox();
             this.CBX_Tous = new System.Windows.Forms.CheckBox();
             this.CBX_Monument = new System.Windows.Forms.CheckBox();
@@ -63,7 +64,6 @@
             this.MI_Circuits_GererMonuments = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.BTN_TousMonuments = new System.Windows.Forms.Button();
             this.GBX_Recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -91,6 +91,18 @@
             this.GBX_Recherche.TabIndex = 1;
             this.GBX_Recherche.TabStop = false;
             this.GBX_Recherche.Text = "Recherche";
+            // 
+            // BTN_TousMonuments
+            // 
+            this.BTN_TousMonuments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_TousMonuments.Enabled = false;
+            this.BTN_TousMonuments.Location = new System.Drawing.Point(412, 19);
+            this.BTN_TousMonuments.Name = "BTN_TousMonuments";
+            this.BTN_TousMonuments.Size = new System.Drawing.Size(167, 23);
+            this.BTN_TousMonuments.TabIndex = 20;
+            this.BTN_TousMonuments.Text = "Voir tous les monuments";
+            this.BTN_TousMonuments.UseVisualStyleBackColor = true;
+            this.BTN_TousMonuments.Click += new System.EventHandler(this.BTN_TousMonuments_Click);
             // 
             // CBX_Meilleur
             // 
@@ -489,18 +501,6 @@
             this.TSMI_APropos.Name = "TSMI_APropos";
             this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
             this.TSMI_APropos.Text = "À propos";
-            // 
-            // BTN_TousMonuments
-            // 
-            this.BTN_TousMonuments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_TousMonuments.Enabled = false;
-            this.BTN_TousMonuments.Location = new System.Drawing.Point(412, 19);
-            this.BTN_TousMonuments.Name = "BTN_TousMonuments";
-            this.BTN_TousMonuments.Size = new System.Drawing.Size(167, 23);
-            this.BTN_TousMonuments.TabIndex = 20;
-            this.BTN_TousMonuments.Text = "Voir tous les monuments";
-            this.BTN_TousMonuments.UseVisualStyleBackColor = true;
-            this.BTN_TousMonuments.Click += new System.EventHandler(this.BTN_TousMonuments_Click);
             // 
             // MainForm
             // 

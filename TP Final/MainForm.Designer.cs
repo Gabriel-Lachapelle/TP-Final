@@ -47,12 +47,6 @@
             this.VilleArrivee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrixCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.FB_AjoutMonument = new Calculator.FlashButton();
-            this.FB_Gerer = new Calculator.FlashButton();
-            this.FB_Circuit_Supp = new Calculator.FlashButton();
-            this.FB_Circuit_Ajout = new Calculator.FlashButton();
-            this.FB_Circuit_Modif = new Calculator.FlashButton();
-            this.FB_Info = new Calculator.FlashButton();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.TSMI_Connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.MI_Connexion_Connecter = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +58,12 @@
             this.MI_Circuits_GererMonuments = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.FB_AjoutMonument = new Calculator.FlashButton();
+            this.FB_Gerer = new Calculator.FlashButton();
+            this.FB_Circuit_Supp = new Calculator.FlashButton();
+            this.FB_Circuit_Ajout = new Calculator.FlashButton();
+            this.FB_Circuit_Modif = new Calculator.FlashButton();
+            this.FB_Info = new Calculator.FlashButton();
             this.GBX_Recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -287,6 +287,95 @@
             this.PrixCircuit.Name = "PrixCircuit";
             this.PrixCircuit.ReadOnly = true;
             // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_Connexion,
+            this.TSMI_Circuit,
+            this.TSMI_Aide,
+            this.TSMI_APropos});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.MenuStrip.Size = new System.Drawing.Size(612, 24);
+            this.MenuStrip.TabIndex = 3;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
+            // TSMI_Connexion
+            // 
+            this.TSMI_Connexion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MI_Connexion_Connecter,
+            this.MI_Connexion_Deconnecter});
+            this.TSMI_Connexion.Name = "TSMI_Connexion";
+            this.TSMI_Connexion.Size = new System.Drawing.Size(76, 20);
+            this.TSMI_Connexion.Text = "Connexion";
+            // 
+            // MI_Connexion_Connecter
+            // 
+            this.MI_Connexion_Connecter.Name = "MI_Connexion_Connecter";
+            this.MI_Connexion_Connecter.Size = new System.Drawing.Size(155, 22);
+            this.MI_Connexion_Connecter.Text = "Se connecter";
+            this.MI_Connexion_Connecter.Click += new System.EventHandler(this.MI_Connexion_Connecter_Click);
+            // 
+            // MI_Connexion_Deconnecter
+            // 
+            this.MI_Connexion_Deconnecter.Enabled = false;
+            this.MI_Connexion_Deconnecter.Name = "MI_Connexion_Deconnecter";
+            this.MI_Connexion_Deconnecter.Size = new System.Drawing.Size(155, 22);
+            this.MI_Connexion_Deconnecter.Text = "Se déconnecter";
+            this.MI_Connexion_Deconnecter.Click += new System.EventHandler(this.MI_Connexion_Deconnecter_Click);
+            // 
+            // TSMI_Circuit
+            // 
+            this.TSMI_Circuit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MI_Circuits_Ajout,
+            this.MI_Circuits_Modif,
+            this.MI_Circuit_Supp,
+            this.MI_Circuits_GererMonuments});
+            this.TSMI_Circuit.Enabled = false;
+            this.TSMI_Circuit.Name = "TSMI_Circuit";
+            this.TSMI_Circuit.Size = new System.Drawing.Size(59, 20);
+            this.TSMI_Circuit.Text = "Circuits";
+            // 
+            // MI_Circuits_Ajout
+            // 
+            this.MI_Circuits_Ajout.Name = "MI_Circuits_Ajout";
+            this.MI_Circuits_Ajout.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuits_Ajout.Text = "Ajouter";
+            this.MI_Circuits_Ajout.Click += new System.EventHandler(this.MI_Circuits_Ajout_Click);
+            // 
+            // MI_Circuits_Modif
+            // 
+            this.MI_Circuits_Modif.Name = "MI_Circuits_Modif";
+            this.MI_Circuits_Modif.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuits_Modif.Text = "Modifier";
+            this.MI_Circuits_Modif.Click += new System.EventHandler(this.MI_Circuits_Modif_Click);
+            // 
+            // MI_Circuit_Supp
+            // 
+            this.MI_Circuit_Supp.Name = "MI_Circuit_Supp";
+            this.MI_Circuit_Supp.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuit_Supp.Text = "Supprimer";
+            this.MI_Circuit_Supp.Click += new System.EventHandler(this.MI_Circuit_Supp_Click);
+            // 
+            // MI_Circuits_GererMonuments
+            // 
+            this.MI_Circuits_GererMonuments.Name = "MI_Circuits_GererMonuments";
+            this.MI_Circuits_GererMonuments.Size = new System.Drawing.Size(187, 22);
+            this.MI_Circuits_GererMonuments.Text = "Gérer les monuments";
+            // 
+            // TSMI_Aide
+            // 
+            this.TSMI_Aide.Name = "TSMI_Aide";
+            this.TSMI_Aide.Size = new System.Drawing.Size(43, 20);
+            this.TSMI_Aide.Text = "Aide";
+            // 
+            // TSMI_APropos
+            // 
+            this.TSMI_APropos.Name = "TSMI_APropos";
+            this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
+            this.TSMI_APropos.Text = "À propos";
+            // 
             // FB_AjoutMonument
             // 
             this.FB_AjoutMonument.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -412,95 +501,6 @@
             this.ToolTip.SetToolTip(this.FB_Info, "Voir les monuments de ce circuit");
             this.FB_Info.UseVisualStyleBackColor = true;
             this.FB_Info.Click += new System.EventHandler(this.FB_Circuit_Gerer_Click);
-            // 
-            // MenuStrip
-            // 
-            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMI_Connexion,
-            this.TSMI_Circuit,
-            this.TSMI_Aide,
-            this.TSMI_APropos});
-            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.MenuStrip.Size = new System.Drawing.Size(612, 24);
-            this.MenuStrip.TabIndex = 3;
-            this.MenuStrip.Text = "menuStrip1";
-            // 
-            // TSMI_Connexion
-            // 
-            this.TSMI_Connexion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MI_Connexion_Connecter,
-            this.MI_Connexion_Deconnecter});
-            this.TSMI_Connexion.Name = "TSMI_Connexion";
-            this.TSMI_Connexion.Size = new System.Drawing.Size(76, 20);
-            this.TSMI_Connexion.Text = "Connexion";
-            // 
-            // MI_Connexion_Connecter
-            // 
-            this.MI_Connexion_Connecter.Name = "MI_Connexion_Connecter";
-            this.MI_Connexion_Connecter.Size = new System.Drawing.Size(155, 22);
-            this.MI_Connexion_Connecter.Text = "Se connecter";
-            this.MI_Connexion_Connecter.Click += new System.EventHandler(this.MI_Connexion_Connecter_Click);
-            // 
-            // MI_Connexion_Deconnecter
-            // 
-            this.MI_Connexion_Deconnecter.Enabled = false;
-            this.MI_Connexion_Deconnecter.Name = "MI_Connexion_Deconnecter";
-            this.MI_Connexion_Deconnecter.Size = new System.Drawing.Size(155, 22);
-            this.MI_Connexion_Deconnecter.Text = "Se déconnecter";
-            this.MI_Connexion_Deconnecter.Click += new System.EventHandler(this.MI_Connexion_Deconnecter_Click);
-            // 
-            // TSMI_Circuit
-            // 
-            this.TSMI_Circuit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MI_Circuits_Ajout,
-            this.MI_Circuits_Modif,
-            this.MI_Circuit_Supp,
-            this.MI_Circuits_GererMonuments});
-            this.TSMI_Circuit.Enabled = false;
-            this.TSMI_Circuit.Name = "TSMI_Circuit";
-            this.TSMI_Circuit.Size = new System.Drawing.Size(59, 20);
-            this.TSMI_Circuit.Text = "Circuits";
-            // 
-            // MI_Circuits_Ajout
-            // 
-            this.MI_Circuits_Ajout.Name = "MI_Circuits_Ajout";
-            this.MI_Circuits_Ajout.Size = new System.Drawing.Size(187, 22);
-            this.MI_Circuits_Ajout.Text = "Ajouter";
-            this.MI_Circuits_Ajout.Click += new System.EventHandler(this.MI_Circuits_Ajout_Click);
-            // 
-            // MI_Circuits_Modif
-            // 
-            this.MI_Circuits_Modif.Name = "MI_Circuits_Modif";
-            this.MI_Circuits_Modif.Size = new System.Drawing.Size(187, 22);
-            this.MI_Circuits_Modif.Text = "Modifier";
-            this.MI_Circuits_Modif.Click += new System.EventHandler(this.MI_Circuits_Modif_Click);
-            // 
-            // MI_Circuit_Supp
-            // 
-            this.MI_Circuit_Supp.Name = "MI_Circuit_Supp";
-            this.MI_Circuit_Supp.Size = new System.Drawing.Size(187, 22);
-            this.MI_Circuit_Supp.Text = "Supprimer";
-            this.MI_Circuit_Supp.Click += new System.EventHandler(this.MI_Circuit_Supp_Click);
-            // 
-            // MI_Circuits_GererMonuments
-            // 
-            this.MI_Circuits_GererMonuments.Name = "MI_Circuits_GererMonuments";
-            this.MI_Circuits_GererMonuments.Size = new System.Drawing.Size(187, 22);
-            this.MI_Circuits_GererMonuments.Text = "Gérer les monuments";
-            // 
-            // TSMI_Aide
-            // 
-            this.TSMI_Aide.Name = "TSMI_Aide";
-            this.TSMI_Aide.Size = new System.Drawing.Size(43, 20);
-            this.TSMI_Aide.Text = "Aide";
-            // 
-            // TSMI_APropos
-            // 
-            this.TSMI_APropos.Name = "TSMI_APropos";
-            this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
-            this.TSMI_APropos.Text = "À propos";
             // 
             // MainForm
             // 

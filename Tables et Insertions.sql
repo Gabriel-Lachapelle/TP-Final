@@ -113,37 +113,37 @@ inner join Monuments on ListeMonuments.NumMonument = Monuments.NumMonument;
 
 -- Monuments
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Le château Frontenac', 1893, 'Le Château Frontenac est le premier d''une longue série d''hôtels de style « château » construits par les compagnies ferroviaires canadiennes à la fin du XIXe et au début du XXe siècle', 
-                                'vide', 500, 4);
+                                '8f7d79d6-38a6-4ab5-95bb-aadc01a5b5fb', 500, 4);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Le Rocher Percé', 1600, 'Le Rocher Percé est un îlot rocheux aux falaises escarpées possédant une arche naturelle et spectaculaire',
-                                'vide', 200, 5);
+                                '45602779-dcfb-49e0-94d5-1d33c7253c6e', 200, 5);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Basilique Notre-Dame de Montréal', 1982, 'La basilique Notre-Dame de Montréal, sise dans l''arrondissement de Ville-Marie à Montréal, est l''église-mère de Montréal, la plus vaste de l''Archidiocèse de Montréal et la deuxième plus grande église de Montréal. Véritable galerie d''art religieux, elle abrite des ornements dont la richesse n''a pas d''équivalent à Montréal. ',
-                                'vide', 75, 3);
+                                '0324d75b-f216-411c-8168-80ff36fbda87', 75, 3);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Jardin botanique de Montréal', 1931, 'Le Jardin botanique de Montréal est situé dans l''est de la ville de Montréal au Québec (Canada) et il est l''un des plus importants jardins botaniques du monde1.',
-                                'vide', 90, 3);
+                                '8853428c-0b9a-4f14-8a64-408a82d9d375', 90, 3);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Marché Jean-Talon', 1929, 'Le marché Jean-Talon est un marché public au centre de la Petite Italie de Montréal.',
-                                'vide', 50, 1);
+                                'f01dd135-a648-47ec-9980-7a14d104cd5b', 50, 1);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Parc national d`Oka', 1990, 'Le parc national d''Oka est un parc national du Québec (Canada) situé près du village d''Oka, sur la rive nord du lac des Deux Montagnes.', 
-                                'vide', 60, 2);
+                                'f94a06e9-50d7-42cb-99a8-591201c4c2f4', 60, 2);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Super Aqua Club', 1985, 'En opération pendant les 10 semaines de l''été et avec plus de 45 attractions pour toute la famille, le Super Aqua Club est un parc aquatique complet qui accueille plusieurs milliers de visiteurs, chaque jour.', 
-                                'vide', 100, 3);
+                                '6a086ea3-5d88-4dd6-ad20-8af15722bfa0', 100, 3);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Parc Michel-Chartrand', 1975, 'Le parc Michel-Chartrand, anciennement connu sous le nom de Parc régional de Longueuil, est un grand parc situé à Longueuil, au Québec, au Canada.', 
-                                'vide', 75, 2);
+                                '95dccc75-80bb-4fca-8e10-64d0c3c58d62', 75, 2);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Chapelle des Indiens', 1750, 'La chapelle des Indiens est l''une des plus anciennes églises en bois en Amérique du Nord.',
-                                'vide', 50, 4);
+                                'af554afd-3354-4fbd-961f-7408e4e8a6c4', 50, 4);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Hôtel du Parlement du Québec', 1886, 'L''hôtel du Parlement du Québec1 est l''édifice abritant l''Assemblée nationale du Québec.',
-                                'vide', 150, 5);
+                                'f237a6c8-984c-42bc-b813-9bf56f087e6f', 150, 5);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Parc national du Fjord-du-Saguenay', 1983, 'Le parc national du Fjord-du-Saguenay, d''une superficie de 326,7 km2, est un parc national du Québec situé à une centaine de kilomètres en aval de Saguenay sur la rivière du même nom.', 
-                                'vide', 200, 4);
+                                'a02bbdd1-05ce-4d90-91c6-bf8f409d96a1', 200, 4);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Centre d`interprétation des mammifères marins', 1991, 'Créé en 1991 par le Groupe de recherche et d''éducation sur les mammifères marins (GREMM), il est dédié à la recherche scientifique sur les baleines du Saint-Laurent. ', 
-                                'vide', 75, 2);
+                                'fc396058-3ec9-4070-9c0e-88f1e1f4a8ec', 75, 2);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Musée Beaulne', 1976, 'Le musée Beaulne, ouvert en 1976 est un musée situé à Coaticook, en Estrie, au Québec. Il est situé dans une grande maison de Style Queen Anne nommé château Arthur-Osmore-Norton.', 
-                                'vide', 50, 1);
+                                '27c1884e-54df-44bb-a3d7-651a4fcab24b', 50, 1);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Musée minéralogique et minier de Thetford Mines', 1976, 'Le musée a été fondé par la Société minéralogique de la région de L''Amiante (SOMIRA), lors du centenaire de la découverte de l''amiante.', 
-                                'vide', 150, 4);
+                                '5f2d4bf4-615f-4079-9167-fbd20f853d0c', 150, 4);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'La Centrale de Beauharnois', 1961, 'La centrale de Beauharnois est une centrale hydroélectrique au fil de l''eau construite sur le Canal de Beauharnois, dans le secteur Melocheville de la Ville de Beauharnois', 
-                                'vide', 120, 3);
+                                '4351eb5e-b395-4035-80d7-dbf11b3f6a3e', 120, 3);
 INSERT INTO Monuments VALUES (MonumentSeq.nextval, 'Musée de la civilisation', 1988, 'Le musée présente des expositions thématiques temporaires et des permanentes ayant pour la plupart un lien avec les sciences humaines et sociales. Il est doté d''un important fonds d''objets d''intérêt ethnographique et historique. Il offre des visites guidées, des expositions interactives, un restaurant, un salon de détente et des spectacles.', 
-                                'vide', 200, 5);
+                                '52d11157-3a2f-4466-b6da-01951e1ea4e7', 200, 5);
 -- Villes
 INSERT INTO Villes VALUES ('MTL', 'Montréal', 1705000, 'Montréal est la deuxième ville la plus peuplée du Canada. Elle se situe principalement sur l''île fluviale de Montréal, sur le fleuve Saint-Laurent (entre Québec et le lac Ontario) dans le Sud de la province de Québec, dont elle est la métropole.');
 INSERT INTO Villes VALUES ('QBC', 'Québec', 531902, 'Québec est la capitale nationale du Québec6, une des provinces du Canada. Située au coeur de la région administrative de la Capitale-Nationale, elle est le siège de nombreuses institutions dont le Parlement du Québec');

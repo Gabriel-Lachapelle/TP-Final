@@ -67,7 +67,7 @@ CREATE TABLE ListeMonuments (
     NumMonument Number(3),
     Ordre Number(2),
     CONSTRAINT PK_ListeMonument PRIMARY KEY(NumCircuit, NumMonument),
-    CONSTRAINT FK_Circuits FOREIGN KEY(NumCircuit) REFERENCES Circuits(NumCircuit),
+    CONSTRAINT FK_Circuits FOREIGN KEY(NumCircuit) REFERENCES Circuits(NumCircuit) ON DELETE CASCADE,
     CONSTRAINT FK_Monument FOREIGN KEY(NumMonument) REFERENCES Monuments(NumMonument)
 );
 
@@ -77,7 +77,6 @@ DROP SEQUENCE MonumentSeq;
 DROP SEQUENCE CircuitSeq;
 DROP SEQUENCE ClientSeq;
 DROP VIEW TousLesCircuits;
-DROP VIEW MeilleurCircuit;
 DROP VIEW RechercheCircuit;
 DROP VIEW ListeMonument;
 DROP VIEW MonumentsCircuit;

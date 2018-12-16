@@ -67,6 +67,7 @@
             // 
             this.TBX_Prix.Location = new System.Drawing.Point(314, 161);
             this.TBX_Prix.Margin = new System.Windows.Forms.Padding(4, 2, 4, 4);
+            this.TBX_Prix.MaxLength = 3;
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(137, 22);
             this.TBX_Prix.TabIndex = 2;

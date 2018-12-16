@@ -51,7 +51,16 @@ namespace TP_Final
         }
         private bool ValiderAnnee(ref string message)
         {
-            message = "L'année de construction est vide";
+            if (TBX_Annee.Text == "")
+                message = "L'année de construction est vide";
+            else
+            {
+                message = "L'année ne peut pas supérieure à " + DateTime.Now.Year.ToString();
+                int Date = DateTime.Now.Year;
+                if (TBX_Annee.Text != "")
+                    Date = Convert.ToInt32(TBX_Annee.Text);
+                return Date <= DateTime.Now.Year;
+            }
             return TBX_Annee.Text != "";
         }
         private bool ValiderHistoire(ref string message)

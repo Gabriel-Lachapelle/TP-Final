@@ -115,7 +115,7 @@
             this.CBX_VilleDepart.Location = new System.Drawing.Point(173, 61);
             this.CBX_VilleDepart.Name = "CBX_VilleDepart";
             this.CBX_VilleDepart.Size = new System.Drawing.Size(136, 24);
-            this.CBX_VilleDepart.TabIndex = 6;
+            this.CBX_VilleDepart.TabIndex = 1;
             // 
             // CBX_VilleArrivee
             // 
@@ -126,7 +126,7 @@
             this.CBX_VilleArrivee.Location = new System.Drawing.Point(173, 97);
             this.CBX_VilleArrivee.Name = "CBX_VilleArrivee";
             this.CBX_VilleArrivee.Size = new System.Drawing.Size(136, 24);
-            this.CBX_VilleArrivee.TabIndex = 7;
+            this.CBX_VilleArrivee.TabIndex = 2;
             // 
             // GBX_Infos
             // 
@@ -157,10 +157,11 @@
             this.TBX_Duree.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TBX_Duree.Location = new System.Drawing.Point(219, 130);
-            this.TBX_Duree.MaxLength = 4;
+            this.TBX_Duree.MaxLength = 2;
             this.TBX_Duree.Name = "TBX_Duree";
             this.TBX_Duree.Size = new System.Drawing.Size(90, 22);
-            this.TBX_Duree.TabIndex = 9;
+            this.TBX_Duree.TabIndex = 3;
+            this.TBX_Duree.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBX_Duree.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
             // TBX_Prix
@@ -171,7 +172,8 @@
             this.TBX_Prix.MaxLength = 4;
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(90, 22);
-            this.TBX_Prix.TabIndex = 8;
+            this.TBX_Prix.TabIndex = 4;
+            this.TBX_Prix.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBX_Prix.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
             // TBX_ClientsMax
@@ -182,7 +184,8 @@
             this.TBX_ClientsMax.MaxLength = 3;
             this.TBX_ClientsMax.Name = "TBX_ClientsMax";
             this.TBX_ClientsMax.Size = new System.Drawing.Size(90, 22);
-            this.TBX_ClientsMax.TabIndex = 7;
+            this.TBX_ClientsMax.TabIndex = 5;
+            this.TBX_ClientsMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBX_ClientsMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Numbers_KeyPress);
             // 
             // TBX_Nom
@@ -192,7 +195,7 @@
             this.TBX_Nom.Location = new System.Drawing.Point(173, 25);
             this.TBX_Nom.Name = "TBX_Nom";
             this.TBX_Nom.Size = new System.Drawing.Size(136, 22);
-            this.TBX_Nom.TabIndex = 4;
+            this.TBX_Nom.TabIndex = 0;
             // 
             // BTN_Ok
             // 
@@ -201,7 +204,7 @@
             this.BTN_Ok.Location = new System.Drawing.Point(272, 248);
             this.BTN_Ok.Name = "BTN_Ok";
             this.BTN_Ok.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Ok.TabIndex = 9;
+            this.BTN_Ok.TabIndex = 6;
             this.BTN_Ok.Text = "Ajouter";
             this.BTN_Ok.UseVisualStyleBackColor = true;
             this.BTN_Ok.Click += new System.EventHandler(this.BTN_Ok_Click);
@@ -213,7 +216,7 @@
             this.BTN_Annuler.Location = new System.Drawing.Point(191, 248);
             this.BTN_Annuler.Name = "BTN_Annuler";
             this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Annuler.TabIndex = 10;
+            this.BTN_Annuler.TabIndex = 7;
             this.BTN_Annuler.Text = "Annuler";
             this.BTN_Annuler.UseVisualStyleBackColor = true;
             // 

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.GBX_Monuments = new System.Windows.Forms.GroupBox();
-            this.LBX_Circuits = new System.Windows.Forms.ListBox();
-            this.LBL_Position = new System.Windows.Forms.Label();
-            this.TBX_Position = new System.Windows.Forms.TextBox();
             this.DGV_Monuments = new System.Windows.Forms.DataGridView();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cotation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBX_Position = new System.Windows.Forms.TextBox();
+            this.LBL_Position = new System.Windows.Forms.Label();
+            this.LBX_Circuits = new System.Windows.Forms.ListBox();
             this.GBX_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Monuments)).BeginInit();
             this.SuspendLayout();
@@ -49,43 +49,13 @@
             this.GBX_Monuments.Controls.Add(this.LBL_Position);
             this.GBX_Monuments.Controls.Add(this.LBX_Circuits);
             this.GBX_Monuments.Location = new System.Drawing.Point(13, 13);
-            this.GBX_Monuments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GBX_Monuments.Margin = new System.Windows.Forms.Padding(4);
             this.GBX_Monuments.Name = "GBX_Monuments";
-            this.GBX_Monuments.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GBX_Monuments.Padding = new System.Windows.Forms.Padding(4);
             this.GBX_Monuments.Size = new System.Drawing.Size(435, 357);
             this.GBX_Monuments.TabIndex = 1;
             this.GBX_Monuments.TabStop = false;
             this.GBX_Monuments.Text = "Monument";
-            // 
-            // LBX_Circuits
-            // 
-            this.LBX_Circuits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LBX_Circuits.FormattingEnabled = true;
-            this.LBX_Circuits.ItemHeight = 16;
-            this.LBX_Circuits.Location = new System.Drawing.Point(7, 229);
-            this.LBX_Circuits.Name = "LBX_Circuits";
-            this.LBX_Circuits.Size = new System.Drawing.Size(300, 116);
-            this.LBX_Circuits.TabIndex = 1;
-            this.LBX_Circuits.SelectedIndexChanged += new System.EventHandler(this.LBX_Circuits_SelectedIndexChanged);
-            // 
-            // LBL_Position
-            // 
-            this.LBL_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LBL_Position.AutoSize = true;
-            this.LBL_Position.Location = new System.Drawing.Point(313, 323);
-            this.LBL_Position.Name = "LBL_Position";
-            this.LBL_Position.Size = new System.Drawing.Size(56, 16);
-            this.LBL_Position.TabIndex = 2;
-            this.LBL_Position.Text = "Position";
-            // 
-            // TBX_Position
-            // 
-            this.TBX_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBX_Position.Location = new System.Drawing.Point(375, 320);
-            this.TBX_Position.Name = "TBX_Position";
-            this.TBX_Position.Size = new System.Drawing.Size(45, 22);
-            this.TBX_Position.TabIndex = 3;
             // 
             // DGV_Monuments
             // 
@@ -125,6 +95,38 @@
             this.Cotation.Name = "Cotation";
             this.Cotation.ReadOnly = true;
             // 
+            // TBX_Position
+            // 
+            this.TBX_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBX_Position.Location = new System.Drawing.Point(375, 320);
+            this.TBX_Position.Name = "TBX_Position";
+            this.TBX_Position.ReadOnly = true;
+            this.TBX_Position.Size = new System.Drawing.Size(45, 22);
+            this.TBX_Position.TabIndex = 3;
+            this.TBX_Position.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LBL_Position
+            // 
+            this.LBL_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBL_Position.AutoSize = true;
+            this.LBL_Position.Location = new System.Drawing.Point(313, 323);
+            this.LBL_Position.Name = "LBL_Position";
+            this.LBL_Position.Size = new System.Drawing.Size(56, 16);
+            this.LBL_Position.TabIndex = 2;
+            this.LBL_Position.Text = "Position";
+            // 
+            // LBX_Circuits
+            // 
+            this.LBX_Circuits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBX_Circuits.FormattingEnabled = true;
+            this.LBX_Circuits.ItemHeight = 16;
+            this.LBX_Circuits.Location = new System.Drawing.Point(7, 229);
+            this.LBX_Circuits.Name = "LBX_Circuits";
+            this.LBX_Circuits.Size = new System.Drawing.Size(300, 116);
+            this.LBX_Circuits.TabIndex = 1;
+            this.LBX_Circuits.SelectedIndexChanged += new System.EventHandler(this.LBX_Circuits_SelectedIndexChanged);
+            // 
             // DLG_InfoMonument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -132,7 +134,7 @@
             this.ClientSize = new System.Drawing.Size(461, 383);
             this.Controls.Add(this.GBX_Monuments);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(350, 300);

@@ -38,10 +38,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.GBX_Details = new System.Windows.Forms.GroupBox();
-            this.Stars = new EvaluationDemo.Stars();
-            this.PBX_Image = new PhotoManagerClient.ImageBox();
             this.BTN_Ajouter = new System.Windows.Forms.Button();
             this.BTN_Annuler = new System.Windows.Forms.Button();
+            this.Stars = new EvaluationDemo.Stars();
+            this.PBX_Image = new PhotoManagerClient.ImageBox();
             this.GBX_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).BeginInit();
             this.SuspendLayout();
@@ -145,6 +145,28 @@
             this.GBX_Details.TabStop = false;
             this.GBX_Details.Text = "Détails";
             // 
+            // BTN_Ajouter
+            // 
+            this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_Ajouter.Location = new System.Drawing.Point(612, 220);
+            this.BTN_Ajouter.Name = "BTN_Ajouter";
+            this.BTN_Ajouter.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Ajouter.TabIndex = 9;
+            this.BTN_Ajouter.Text = "Ajouter";
+            this.BTN_Ajouter.UseVisualStyleBackColor = true;
+            this.BTN_Ajouter.Click += new System.EventHandler(this.BTN_Ajouter_Click);
+            // 
+            // BTN_Annuler
+            // 
+            this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BTN_Annuler.Location = new System.Drawing.Point(531, 220);
+            this.BTN_Annuler.Name = "BTN_Annuler";
+            this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Annuler.TabIndex = 10;
+            this.BTN_Annuler.Text = "Annuler";
+            this.BTN_Annuler.UseVisualStyleBackColor = true;
+            this.BTN_Annuler.Click += new System.EventHandler(this.BTN_Annuler_Click);
+            // 
             // Stars
             // 
             this.Stars.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,28 +196,6 @@
             this.PBX_Image.TabIndex = 19;
             this.PBX_Image.TabStop = false;
             // 
-            // BTN_Ajouter
-            // 
-            this.BTN_Ajouter.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Ajouter.Location = new System.Drawing.Point(593, 220);
-            this.BTN_Ajouter.Name = "BTN_Ajouter";
-            this.BTN_Ajouter.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Ajouter.TabIndex = 9;
-            this.BTN_Ajouter.Text = "Ajouter";
-            this.BTN_Ajouter.UseVisualStyleBackColor = true;
-            this.BTN_Ajouter.Click += new System.EventHandler(this.BTN_Ajouter_Click);
-            // 
-            // BTN_Annuler
-            // 
-            this.BTN_Annuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BTN_Annuler.Location = new System.Drawing.Point(512, 220);
-            this.BTN_Annuler.Name = "BTN_Annuler";
-            this.BTN_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Annuler.TabIndex = 10;
-            this.BTN_Annuler.Text = "Annuler";
-            this.BTN_Annuler.UseVisualStyleBackColor = true;
-            this.BTN_Annuler.Click += new System.EventHandler(this.BTN_Annuler_Click);
-            // 
             // DLG_AjoutMonument
             // 
             this.AcceptButton = this.BTN_Ajouter;
@@ -206,11 +206,13 @@
             this.ClientSize = new System.Drawing.Size(732, 273);
             this.Controls.Add(this.GBX_Details);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DLG_AjoutMonument";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajout d\'un monument";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_AjoutMonument_FormClosing);
             this.Load += new System.EventHandler(this.DLG_AjoutMonument_Load);

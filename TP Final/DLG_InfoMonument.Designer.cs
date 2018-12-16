@@ -52,7 +52,7 @@
             this.GBX_Monuments.Margin = new System.Windows.Forms.Padding(4);
             this.GBX_Monuments.Name = "GBX_Monuments";
             this.GBX_Monuments.Padding = new System.Windows.Forms.Padding(4);
-            this.GBX_Monuments.Size = new System.Drawing.Size(435, 357);
+            this.GBX_Monuments.Size = new System.Drawing.Size(450, 343);
             this.GBX_Monuments.TabIndex = 1;
             this.GBX_Monuments.TabStop = false;
             this.GBX_Monuments.Text = "Monument";
@@ -76,7 +76,7 @@
             this.DGV_Monuments.ReadOnly = true;
             this.DGV_Monuments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Monuments.ShowEditingIcon = false;
-            this.DGV_Monuments.Size = new System.Drawing.Size(412, 199);
+            this.DGV_Monuments.Size = new System.Drawing.Size(427, 185);
             this.DGV_Monuments.TabIndex = 4;
             this.DGV_Monuments.SelectionChanged += new System.EventHandler(this.DGV_Monuments_SelectionChanged);
             // 
@@ -98,7 +98,7 @@
             // TBX_Position
             // 
             this.TBX_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBX_Position.Location = new System.Drawing.Point(375, 320);
+            this.TBX_Position.Location = new System.Drawing.Point(390, 306);
             this.TBX_Position.Name = "TBX_Position";
             this.TBX_Position.ReadOnly = true;
             this.TBX_Position.Size = new System.Drawing.Size(45, 22);
@@ -109,7 +109,7 @@
             // 
             this.LBL_Position.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LBL_Position.AutoSize = true;
-            this.LBL_Position.Location = new System.Drawing.Point(313, 323);
+            this.LBL_Position.Location = new System.Drawing.Point(328, 309);
             this.LBL_Position.Name = "LBL_Position";
             this.LBL_Position.Size = new System.Drawing.Size(56, 16);
             this.LBL_Position.TabIndex = 2;
@@ -121,9 +121,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LBX_Circuits.FormattingEnabled = true;
             this.LBX_Circuits.ItemHeight = 16;
-            this.LBX_Circuits.Location = new System.Drawing.Point(7, 229);
+            this.LBX_Circuits.Location = new System.Drawing.Point(7, 215);
             this.LBX_Circuits.Name = "LBX_Circuits";
-            this.LBX_Circuits.Size = new System.Drawing.Size(300, 116);
+            this.LBX_Circuits.Size = new System.Drawing.Size(315, 116);
             this.LBX_Circuits.TabIndex = 1;
             this.LBX_Circuits.SelectedIndexChanged += new System.EventHandler(this.LBX_Circuits_SelectedIndexChanged);
             // 
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 383);
+            this.ClientSize = new System.Drawing.Size(476, 369);
             this.Controls.Add(this.GBX_Monuments);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -140,6 +140,7 @@
             this.MinimumSize = new System.Drawing.Size(350, 300);
             this.Name = "DLG_InfoMonument";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Détails des monuments";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DLG_InfoMonument_FormClosing);
             this.Load += new System.EventHandler(this.DLG_InfoMonument_Load);

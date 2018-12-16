@@ -34,10 +34,10 @@ namespace TP_Final
             FB_Info.Enabled = Connecté;
             FB_Gerer.Enabled = Connecté;
             FB_AjoutMonument.Enabled = Connecté;
-            MI_Circuits_Ajout.Enabled = Connecté;
-            MI_Circuits_Modif.Enabled = Connecté;
-            MI_Circuit_Supp.Enabled = Connecté;
+            TSMI_Circuit.Enabled = Connecté;
+            TSMI_Monuments.Enabled = Connecté;
             BTN_TousMonuments.Enabled = Connecté;
+            CBX_MeilleurCircuit.Enabled = Connecté;
         }
         void UpdateControls()
         {
@@ -54,10 +54,15 @@ namespace TP_Final
             TBX_Monument.Enabled = Connecté;
             BTN_Rechercher.Enabled = Connecté;
             TSMI_Circuit.Enabled = Connecté;
+            TSMI_Monuments.Enabled = Connecté;
             FB_Circuit_Ajout.Enabled = Connecté;
             BTN_TousMonuments.Enabled = Connecté;
+            CBX_MeilleurCircuit.Enabled = Connecté;
             if (Connecté)
+            {
                 Initialise_DGV_Circuit();
+                Initialise_CBX_Meilleur();
+            }
         }
         void Initialise_DGV_Circuit()
         {
@@ -74,7 +79,8 @@ namespace TP_Final
                     string SQL = "select NomCircuit, VilleDepart, VilleArrivee, Prix from RechercheCircuit";
                     if (CBX_Meilleur.Checked)
                     {
-                        SQL = "select * from MeilleurCircuit";
+                        SQL = "select * from MeilleurCircuitPT1 having NomCircuit in (select NomCircuit from MeilleurCircuitPT2 where NomMonument = '" 
+                            + CBX_MeilleurCircuit.Text + "') group by NomCircuit, VilleDepart, VilleArrivee, Prix, Total order by Prix, Total desc";
                     }
                     else
                     {
@@ -319,6 +325,55 @@ namespace TP_Final
             DLG_InfoMonument DLG = new DLG_InfoMonument();
             DLG.Connexion = Connexion;
             DLG.Show();
+        }
+
+        private void TSMI_APropos_Click(object sender, EventArgs e)
+        {
+            DLG_APropos DLG = new DLG_APropos();
+            DLG.Show();
+        }
+
+        private void TSMI_Aide_Click(object sender, EventArgs e)
+        {
+            DLG_Aide DLG = new DLG_Aide();
+            DLG.Show();
+        }
+
+        private void MI_Circuits_Afficher_Click(object sender, EventArgs e)
+        {
+            ListerMonuments();
+        }
+
+        private void MI_Circuits_GererMonuments_Click(object sender, EventArgs e)
+        {
+            GererMonuments();
+        }
+
+        private void MI_Monuments_Ajouter_Click(object sender, EventArgs e)
+        {
+            AjouterMonument();
+        }
+
+        private void MI_Monuments_Voir_Click(object sender, EventArgs e)
+        {
+            VoirMonuments();
+        }
+
+        private void Initialise_CBX_Meilleur()
+        {
+            try
+            {
+                string SQL = "select NomMonument from Monuments";
+                OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
+                OracleDataReader OracleReader = OracleCMD.ExecuteReader();
+                while (OracleReader.Read())
+                    CBX_MeilleurCircuit.Items.Add(OracleReader.GetString(0));
+                OracleReader.Close();
+            }
+            catch (Exception SQL)
+            {
+                MessageBox.Show(SQL.Message);
+            }
         }
     }
 }

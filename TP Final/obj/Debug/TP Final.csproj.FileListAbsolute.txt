@@ -36,3 +36,5 @@ C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.csproj.Co
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.exe
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.pdb
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_APropos.resources
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_Aide.resources

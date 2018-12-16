@@ -33,13 +33,13 @@
             this.GBX_Monument = new System.Windows.Forms.GroupBox();
             this.LBL_TousMonuments = new System.Windows.Forms.Label();
             this.LBL_MonumentsCircuit = new System.Windows.Forms.Label();
-            this.FB_Ajouter = new Calculator.FlashButton();
-            this.FB_Retirer = new Calculator.FlashButton();
             this.LBX_TousMonuments = new System.Windows.Forms.ListBox();
             this.LBX_MonumentsCircuit = new System.Windows.Forms.ListBox();
             this.TBX_NomCircuit = new System.Windows.Forms.TextBox();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.BTN_Retour = new System.Windows.Forms.Button();
+            this.FB_Ajouter = new Calculator.FlashButton();
+            this.FB_Retirer = new Calculator.FlashButton();
             this.GBX_Monument.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.GBX_Monument.Margin = new System.Windows.Forms.Padding(4);
             this.GBX_Monument.Name = "GBX_Monument";
             this.GBX_Monument.Padding = new System.Windows.Forms.Padding(4);
-            this.GBX_Monument.Size = new System.Drawing.Size(578, 188);
+            this.GBX_Monument.Size = new System.Drawing.Size(578, 317);
             this.GBX_Monument.TabIndex = 0;
             this.GBX_Monument.TabStop = false;
             this.GBX_Monument.Text = "Monuments du circuit";
@@ -82,6 +82,52 @@
             this.LBL_MonumentsCircuit.TabIndex = 23;
             this.LBL_MonumentsCircuit.Text = "Monuments dans le circuit";
             // 
+            // LBX_TousMonuments
+            // 
+            this.LBX_TousMonuments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LBX_TousMonuments.FormattingEnabled = true;
+            this.LBX_TousMonuments.ItemHeight = 16;
+            this.LBX_TousMonuments.Location = new System.Drawing.Point(317, 69);
+            this.LBX_TousMonuments.Margin = new System.Windows.Forms.Padding(4);
+            this.LBX_TousMonuments.Name = "LBX_TousMonuments";
+            this.LBX_TousMonuments.Size = new System.Drawing.Size(250, 212);
+            this.LBX_TousMonuments.TabIndex = 3;
+            this.LBX_TousMonuments.SelectedIndexChanged += new System.EventHandler(this.LBX_TousMonuments_SelectedIndexChanged);
+            // 
+            // LBX_MonumentsCircuit
+            // 
+            this.LBX_MonumentsCircuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.LBX_MonumentsCircuit.FormattingEnabled = true;
+            this.LBX_MonumentsCircuit.ItemHeight = 16;
+            this.LBX_MonumentsCircuit.Location = new System.Drawing.Point(9, 69);
+            this.LBX_MonumentsCircuit.Margin = new System.Windows.Forms.Padding(4);
+            this.LBX_MonumentsCircuit.Name = "LBX_MonumentsCircuit";
+            this.LBX_MonumentsCircuit.Size = new System.Drawing.Size(250, 212);
+            this.LBX_MonumentsCircuit.TabIndex = 2;
+            this.LBX_MonumentsCircuit.SelectedIndexChanged += new System.EventHandler(this.LBX_MonumentsCircuit_SelectedIndexChanged);
+            // 
+            // TBX_NomCircuit
+            // 
+            this.TBX_NomCircuit.Location = new System.Drawing.Point(8, 23);
+            this.TBX_NomCircuit.Margin = new System.Windows.Forms.Padding(4);
+            this.TBX_NomCircuit.Name = "TBX_NomCircuit";
+            this.TBX_NomCircuit.ReadOnly = true;
+            this.TBX_NomCircuit.Size = new System.Drawing.Size(558, 22);
+            this.TBX_NomCircuit.TabIndex = 1;
+            this.TBX_NomCircuit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BTN_Retour
+            // 
+            this.BTN_Retour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_Retour.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BTN_Retour.Location = new System.Drawing.Point(536, 340);
+            this.BTN_Retour.Name = "BTN_Retour";
+            this.BTN_Retour.Size = new System.Drawing.Size(59, 23);
+            this.BTN_Retour.TabIndex = 0;
+            this.BTN_Retour.Text = "Retour";
+            this.BTN_Retour.UseVisualStyleBackColor = true;
+            this.BTN_Retour.Click += new System.EventHandler(this.BTN_Retour_Click);
+            // 
             // FB_Ajouter
             // 
             this.FB_Ajouter.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -91,7 +137,7 @@
             this.FB_Ajouter.DisabledImage = global::TP_Final.Properties.Resources.Previous_Disabled;
             this.FB_Ajouter.Enabled = false;
             this.FB_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("FB_Ajouter.Image")));
-            this.FB_Ajouter.Location = new System.Drawing.Point(268, 113);
+            this.FB_Ajouter.Location = new System.Drawing.Point(268, 242);
             this.FB_Ajouter.Margin = new System.Windows.Forms.Padding(5, 5, 5, 20);
             this.FB_Ajouter.Name = "FB_Ajouter";
             this.FB_Ajouter.NeutralImage = global::TP_Final.Properties.Resources.Previous_Neutral;
@@ -122,58 +168,12 @@
             this.FB_Retirer.UseVisualStyleBackColor = true;
             this.FB_Retirer.Click += new System.EventHandler(this.FB_Retirer_Click);
             // 
-            // LBX_TousMonuments
-            // 
-            this.LBX_TousMonuments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LBX_TousMonuments.FormattingEnabled = true;
-            this.LBX_TousMonuments.ItemHeight = 16;
-            this.LBX_TousMonuments.Location = new System.Drawing.Point(317, 69);
-            this.LBX_TousMonuments.Margin = new System.Windows.Forms.Padding(4);
-            this.LBX_TousMonuments.Name = "LBX_TousMonuments";
-            this.LBX_TousMonuments.Size = new System.Drawing.Size(250, 84);
-            this.LBX_TousMonuments.TabIndex = 3;
-            this.LBX_TousMonuments.SelectedIndexChanged += new System.EventHandler(this.LBX_TousMonuments_SelectedIndexChanged);
-            // 
-            // LBX_MonumentsCircuit
-            // 
-            this.LBX_MonumentsCircuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LBX_MonumentsCircuit.FormattingEnabled = true;
-            this.LBX_MonumentsCircuit.ItemHeight = 16;
-            this.LBX_MonumentsCircuit.Location = new System.Drawing.Point(9, 69);
-            this.LBX_MonumentsCircuit.Margin = new System.Windows.Forms.Padding(4);
-            this.LBX_MonumentsCircuit.Name = "LBX_MonumentsCircuit";
-            this.LBX_MonumentsCircuit.Size = new System.Drawing.Size(250, 84);
-            this.LBX_MonumentsCircuit.TabIndex = 2;
-            this.LBX_MonumentsCircuit.SelectedIndexChanged += new System.EventHandler(this.LBX_MonumentsCircuit_SelectedIndexChanged);
-            // 
-            // TBX_NomCircuit
-            // 
-            this.TBX_NomCircuit.Location = new System.Drawing.Point(8, 23);
-            this.TBX_NomCircuit.Margin = new System.Windows.Forms.Padding(4);
-            this.TBX_NomCircuit.Name = "TBX_NomCircuit";
-            this.TBX_NomCircuit.ReadOnly = true;
-            this.TBX_NomCircuit.Size = new System.Drawing.Size(558, 22);
-            this.TBX_NomCircuit.TabIndex = 1;
-            this.TBX_NomCircuit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BTN_Retour
-            // 
-            this.BTN_Retour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_Retour.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BTN_Retour.Location = new System.Drawing.Point(536, 211);
-            this.BTN_Retour.Name = "BTN_Retour";
-            this.BTN_Retour.Size = new System.Drawing.Size(59, 23);
-            this.BTN_Retour.TabIndex = 0;
-            this.BTN_Retour.Text = "Retour";
-            this.BTN_Retour.UseVisualStyleBackColor = true;
-            this.BTN_Retour.Click += new System.EventHandler(this.BTN_Retour_Click);
-            // 
             // DLG_GererMonuments
             // 
             this.AcceptButton = this.BTN_Retour;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 246);
+            this.ClientSize = new System.Drawing.Size(604, 375);
             this.Controls.Add(this.BTN_Retour);
             this.Controls.Add(this.GBX_Monument);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -57,6 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB_Images.cs" />
+    <Compile Include="DLG_Aide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DLG_Aide.Designer.cs">
+      <DependentUpon>DLG_Aide.cs</DependentUpon>
+    </Compile>
     <Compile Include="DLG_AjoutModif.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="DLG_AjoutMonument.Designer.cs">
       <DependentUpon>DLG_AjoutMonument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DLG_APropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DLG_APropos.Designer.cs">
+      <DependentUpon>DLG_APropos.cs</DependentUpon>
     </Compile>
     <Compile Include="DLG_Connexion.cs">
       <SubType>Form</SubType>
@@ -120,11 +132,17 @@
       <DependentUpon>Stars.cs</DependentUpon>
     </Compile>
     <Compile Include="ValidationProvider.cs" />
+    <EmbeddedResource Include="DLG_Aide.resx">
+      <DependentUpon>DLG_Aide.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DLG_AjoutModif.resx">
       <DependentUpon>DLG_AjoutModif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DLG_AjoutMonument.resx">
       <DependentUpon>DLG_AjoutMonument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DLG_APropos.resx">
+      <DependentUpon>DLG_APropos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DLG_Connexion.resx">
       <DependentUpon>DLG_Connexion.cs</DependentUpon>

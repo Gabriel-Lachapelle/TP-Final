@@ -13,7 +13,7 @@ create table Monuments
   NomMonument varchar2(60) not null,
   AnneeConstruction number(4),
   Histoire varchar2(600),
-  Image varchar2(30) default 'vide',
+  Image varchar2(80) default 'vide',
   Prix number(5,2),
   NombreEtoiles number(1),
   constraint NombreEtoilesValide check (NombreEtoiles > 0 and NombreEtoiles <= 5),

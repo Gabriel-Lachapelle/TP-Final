@@ -189,6 +189,7 @@ namespace TP_Final
         private void AjouterMonument()
         {
             DLG_AjoutMonument DLG = new DLG_AjoutMonument();
+            DLG.Connexion = Connexion;
             DLG.Show();
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

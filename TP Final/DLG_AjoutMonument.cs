@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using System.IO;
 using Validation;
+using DB_Images_Utilities;
 
 namespace TP_Final
 {
@@ -18,10 +19,12 @@ namespace TP_Final
     {
         ValidationProvider ValidationProvider;
         public OracleConnection Connexion;
+        DB_Images DB_Images;
+        string GUID;
         public DLG_AjoutMonument()
         {
             InitializeComponent();
-            PBX_Image.AllowDrop = true;
+            DB_Images = new DB_Images("Gabriel", "MotDePasse");
         }
 
         private void DLG_AjoutMonument_Load(object sender, EventArgs e)
@@ -84,14 +87,14 @@ namespace TP_Final
                 OracleParameter OraNom = new OracleParameter(":NomMonument", OracleDbType.Varchar2, 60);
                 OracleParameter OraAnnee = new OracleParameter(":AnneeConstruction", OracleDbType.Int32, 4);
                 OracleParameter OraHistoire = new OracleParameter(":Histoire", OracleDbType.Varchar2, 600);
-                OracleParameter OraImage = new OracleParameter(":Image", OracleDbType.Varchar2, 30);
+                OracleParameter OraImage = new OracleParameter(":Image", OracleDbType.Varchar2, 80);
                 OracleParameter OraPrix = new OracleParameter(":Prix", OracleDbType.Decimal, 5);
                 OracleParameter OraNbEtoiles = new OracleParameter(":NombreEtoiles", OracleDbType.Int32, 1);
 
                 OraNom.Value = TBX_Nom.Text;
                 OraAnnee.Value = TBX_Annee.Text;
                 OraHistoire.Value = RTBX_Histoire.Text;
-                OraImage.Value = "vide";
+                OraImage.Value = GUID;
                 OraPrix.Value = TBX_Prix.Text;
                 OraNbEtoiles.Value = Stars.Value;
 
@@ -113,12 +116,16 @@ namespace TP_Final
 
         private void AjouterPhoto()
         {
-            //À compléter
+            if (PBX_Image.BackgroundImage != null)
+            {
+                Image Image = PBX_Image.BackgroundImage;
+                GUID = DB_Images.Add(Image);
+            }
         }
 
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
-            if (TBX_Nom.Text != "" && TBX_Annee.Text != "" && TBX_Prix.Text != "" && RTBX_Histoire.Text != "" && Stars.Value > 0)
+            if (TBX_Nom.Text != "" && TBX_Annee.Text != "" && TBX_Prix.Text != "" && RTBX_Histoire.Text != "" && Stars.Value > 0 && PBX_Image.BackgroundImage != null)
             {
                 AjouterMonument();
                 this.Close();

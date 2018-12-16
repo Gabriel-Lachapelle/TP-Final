@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DLG_ListeMonuments));
             this.GBX_Monuments = new System.Windows.Forms.GroupBox();
+            this.PBX_Image = new PhotoManagerClient.ImageBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TBX_Ordre = new System.Windows.Forms.TextBox();
+            this.FB_Precedent = new Calculator.FlashButton();
+            this.FB_Prochain = new Calculator.FlashButton();
             this.LBL_Histoire = new System.Windows.Forms.Label();
             this.LBL_Cout = new System.Windows.Forms.Label();
             this.LBL_Nom = new System.Windows.Forms.Label();
@@ -39,11 +44,6 @@
             this.TBX_Nom = new System.Windows.Forms.TextBox();
             this.TBX_NomCircuit = new System.Windows.Forms.TextBox();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.TBX_Ordre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.FB_Precedent = new Calculator.FlashButton();
-            this.FB_Prochain = new Calculator.FlashButton();
-            this.PBX_Image = new System.Windows.Forms.PictureBox();
             this.GBX_Monuments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Image)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             this.GBX_Monuments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GBX_Monuments.Controls.Add(this.PBX_Image);
             this.GBX_Monuments.Controls.Add(this.label1);
             this.GBX_Monuments.Controls.Add(this.TBX_Ordre);
             this.GBX_Monuments.Controls.Add(this.FB_Precedent);
@@ -63,7 +64,6 @@
             this.GBX_Monuments.Controls.Add(this.RTBX_Histoire);
             this.GBX_Monuments.Controls.Add(this.TBX_Cout);
             this.GBX_Monuments.Controls.Add(this.TBX_Nom);
-            this.GBX_Monuments.Controls.Add(this.PBX_Image);
             this.GBX_Monuments.Controls.Add(this.TBX_NomCircuit);
             this.GBX_Monuments.Location = new System.Drawing.Point(13, 13);
             this.GBX_Monuments.Name = "GBX_Monuments";
@@ -71,6 +71,82 @@
             this.GBX_Monuments.TabIndex = 0;
             this.GBX_Monuments.TabStop = false;
             this.GBX_Monuments.Text = "Détails des monuments";
+            // 
+            // PBX_Image
+            // 
+            this.PBX_Image.AllowDrop = true;
+            this.PBX_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PBX_Image.ControlToolTipText = "You can either drag & drop, paste image from clipboard or choose an image file wi" +
+    "th context menu.";
+            this.PBX_Image.ImportImageText = "Import image from file...";
+            this.PBX_Image.Location = new System.Drawing.Point(6, 54);
+            this.PBX_Image.Name = "PBX_Image";
+            this.PBX_Image.OpenFileDialogTitle = "Please choose image an file";
+            this.PBX_Image.PasteMenuText = "Paste image from clipboard";
+            this.PBX_Image.Size = new System.Drawing.Size(199, 180);
+            this.PBX_Image.TabIndex = 25;
+            this.PBX_Image.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Ordre de visite";
+            // 
+            // TBX_Ordre
+            // 
+            this.TBX_Ordre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TBX_Ordre.Location = new System.Drawing.Point(85, 259);
+            this.TBX_Ordre.Name = "TBX_Ordre";
+            this.TBX_Ordre.ReadOnly = true;
+            this.TBX_Ordre.Size = new System.Drawing.Size(39, 22);
+            this.TBX_Ordre.TabIndex = 23;
+            this.TBX_Ordre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FB_Precedent
+            // 
+            this.FB_Precedent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FB_Precedent.BackgroundImage = global::TP_Final.Properties.Resources.Previous_Neutral;
+            this.FB_Precedent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Precedent.ClickedImage = global::TP_Final.Properties.Resources.Previous_Clicked;
+            this.FB_Precedent.DisabledImage = global::TP_Final.Properties.Resources.Previous_Disabled;
+            this.FB_Precedent.Image = ((System.Drawing.Image)(resources.GetObject("FB_Precedent.Image")));
+            this.FB_Precedent.Location = new System.Drawing.Point(6, 241);
+            this.FB_Precedent.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Precedent.Name = "FB_Precedent";
+            this.FB_Precedent.NeutralImage = global::TP_Final.Properties.Resources.Previous_Neutral;
+            this.FB_Precedent.OverImage = global::TP_Final.Properties.Resources.Previous_Hover;
+            this.FB_Precedent.Size = new System.Drawing.Size(40, 40);
+            this.FB_Precedent.TabIndex = 22;
+            this.FB_Precedent.Text = "Afficher les monuments du circuit";
+            this.ToolTip.SetToolTip(this.FB_Precedent, "Voir monument précedent");
+            this.FB_Precedent.UseVisualStyleBackColor = true;
+            this.FB_Precedent.Click += new System.EventHandler(this.FB_Precedent_Click);
+            // 
+            // FB_Prochain
+            // 
+            this.FB_Prochain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FB_Prochain.BackgroundImage = global::TP_Final.Properties.Resources.Next_Neutral;
+            this.FB_Prochain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Prochain.ClickedImage = global::TP_Final.Properties.Resources.Next_Clicked;
+            this.FB_Prochain.DisabledImage = global::TP_Final.Properties.Resources.Next_Disabled;
+            this.FB_Prochain.Image = ((System.Drawing.Image)(resources.GetObject("FB_Prochain.Image")));
+            this.FB_Prochain.Location = new System.Drawing.Point(163, 241);
+            this.FB_Prochain.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Prochain.Name = "FB_Prochain";
+            this.FB_Prochain.NeutralImage = global::TP_Final.Properties.Resources.Next_Neutral;
+            this.FB_Prochain.OverImage = global::TP_Final.Properties.Resources.Next_Hover;
+            this.FB_Prochain.Size = new System.Drawing.Size(40, 40);
+            this.FB_Prochain.TabIndex = 21;
+            this.FB_Prochain.Text = "Afficher les monuments du circuit";
+            this.ToolTip.SetToolTip(this.FB_Prochain, "Voir prochain monument");
+            this.FB_Prochain.UseVisualStyleBackColor = true;
+            this.FB_Prochain.Click += new System.EventHandler(this.FB_Prochain_Click);
             // 
             // LBL_Histoire
             // 
@@ -146,77 +222,6 @@
             this.TBX_NomCircuit.TabIndex = 0;
             this.TBX_NomCircuit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TBX_Ordre
-            // 
-            this.TBX_Ordre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TBX_Ordre.Location = new System.Drawing.Point(85, 259);
-            this.TBX_Ordre.Name = "TBX_Ordre";
-            this.TBX_Ordre.ReadOnly = true;
-            this.TBX_Ordre.Size = new System.Drawing.Size(39, 22);
-            this.TBX_Ordre.TabIndex = 23;
-            this.TBX_Ordre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 241);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Ordre de visite";
-            // 
-            // FB_Precedent
-            // 
-            this.FB_Precedent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FB_Precedent.BackgroundImage = global::TP_Final.Properties.Resources.Previous_Neutral;
-            this.FB_Precedent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Precedent.ClickedImage = global::TP_Final.Properties.Resources.Previous_Clicked;
-            this.FB_Precedent.DisabledImage = global::TP_Final.Properties.Resources.Previous_Disabled;
-            this.FB_Precedent.Image = ((System.Drawing.Image)(resources.GetObject("FB_Precedent.Image")));
-            this.FB_Precedent.Location = new System.Drawing.Point(6, 241);
-            this.FB_Precedent.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Precedent.Name = "FB_Precedent";
-            this.FB_Precedent.NeutralImage = global::TP_Final.Properties.Resources.Previous_Neutral;
-            this.FB_Precedent.OverImage = global::TP_Final.Properties.Resources.Previous_Hover;
-            this.FB_Precedent.Size = new System.Drawing.Size(40, 40);
-            this.FB_Precedent.TabIndex = 22;
-            this.FB_Precedent.Text = "Afficher les monuments du circuit";
-            this.ToolTip.SetToolTip(this.FB_Precedent, "Voir monument précedent");
-            this.FB_Precedent.UseVisualStyleBackColor = true;
-            this.FB_Precedent.Click += new System.EventHandler(this.FB_Precedent_Click);
-            // 
-            // FB_Prochain
-            // 
-            this.FB_Prochain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FB_Prochain.BackgroundImage = global::TP_Final.Properties.Resources.Next_Neutral;
-            this.FB_Prochain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Prochain.ClickedImage = global::TP_Final.Properties.Resources.Next_Clicked;
-            this.FB_Prochain.DisabledImage = global::TP_Final.Properties.Resources.Next_Disabled;
-            this.FB_Prochain.Image = ((System.Drawing.Image)(resources.GetObject("FB_Prochain.Image")));
-            this.FB_Prochain.Location = new System.Drawing.Point(163, 241);
-            this.FB_Prochain.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Prochain.Name = "FB_Prochain";
-            this.FB_Prochain.NeutralImage = global::TP_Final.Properties.Resources.Next_Neutral;
-            this.FB_Prochain.OverImage = global::TP_Final.Properties.Resources.Next_Hover;
-            this.FB_Prochain.Size = new System.Drawing.Size(40, 40);
-            this.FB_Prochain.TabIndex = 21;
-            this.FB_Prochain.Text = "Afficher les monuments du circuit";
-            this.ToolTip.SetToolTip(this.FB_Prochain, "Voir prochain monument");
-            this.FB_Prochain.UseVisualStyleBackColor = true;
-            this.FB_Prochain.Click += new System.EventHandler(this.FB_Prochain_Click);
-            // 
-            // PBX_Image
-            // 
-            this.PBX_Image.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.PBX_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PBX_Image.Location = new System.Drawing.Point(6, 49);
-            this.PBX_Image.Name = "PBX_Image";
-            this.PBX_Image.Size = new System.Drawing.Size(197, 185);
-            this.PBX_Image.TabIndex = 2;
-            this.PBX_Image.TabStop = false;
-            // 
             // DLG_ListeMonuments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,7 +249,6 @@
 
         private System.Windows.Forms.GroupBox GBX_Monuments;
         private System.Windows.Forms.TextBox TBX_NomCircuit;
-        private System.Windows.Forms.PictureBox PBX_Image;
         private System.Windows.Forms.Label LBL_Histoire;
         private System.Windows.Forms.Label LBL_Cout;
         private System.Windows.Forms.Label LBL_Nom;
@@ -256,5 +260,6 @@
         private System.Windows.Forms.ToolTip ToolTip;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBX_Ordre;
+        private PhotoManagerClient.ImageBox PBX_Image;
     }
 }

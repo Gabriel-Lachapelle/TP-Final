@@ -18,7 +18,6 @@ namespace TP_Final
     {
         ValidationProvider ValidationProvider;
         public OracleConnection Connexion;
-        int Cotation = 0;
         public DLG_AjoutMonument()
         {
             InitializeComponent();
@@ -33,7 +32,7 @@ namespace TP_Final
             ValidationProvider.AddControlToValidate(TBX_Annee, ValiderAnnee);
             ValidationProvider.AddControlToValidate(RTBX_Histoire, ValiderHistoire);
             ValidationProvider.AddControlToValidate(PBX_Image, ValiderImage);
-            ValidationProvider.AddControlToValidate(FB_Etoile_5, ValiderEtoiles);
+            ValidationProvider.AddControlToValidate(Stars, ValiderEtoiles);
         }
 
         private bool ValiderNom(ref string message)
@@ -65,7 +64,7 @@ namespace TP_Final
         private bool ValiderEtoiles(ref string message)
         {
             message = "Veuillez noter le monument";
-            return Cotation != 0;
+            return Stars.Value != 0;
         }
 
         private void Numbers_KeyPress(object sender, KeyPressEventArgs e)
@@ -94,7 +93,7 @@ namespace TP_Final
                 OraHistoire.Value = RTBX_Histoire.Text;
                 OraImage.Value = "vide";
                 OraPrix.Value = TBX_Prix.Text;
-                OraNbEtoiles.Value = Cotation;
+                OraNbEtoiles.Value = Stars.Value;
 
                 OracleCommand OracleCMD = new OracleCommand(SQL, Connexion);
                 OracleCMD.CommandType = CommandType.Text;
@@ -117,84 +116,9 @@ namespace TP_Final
             //À compléter
         }
 
-        private void RafraichirEtoiles()
-        {
-            if (Cotation >= 1)
-                FB_Etoile_1.NeutralImage = Properties.Resources.Star_Neutral;
-            else
-                FB_Etoile_1.NeutralImage = Properties.Resources.Star_Disabled;
-            if (Cotation >= 2)
-                FB_Etoile_2.NeutralImage = Properties.Resources.Star_Neutral;
-            else
-                FB_Etoile_2.NeutralImage = Properties.Resources.Star_Disabled;
-            if (Cotation >= 3)
-                FB_Etoile_3.NeutralImage = Properties.Resources.Star_Neutral;
-            else
-                FB_Etoile_3.NeutralImage = Properties.Resources.Star_Disabled;
-            if (Cotation >= 4)
-                FB_Etoile_4.NeutralImage = Properties.Resources.Star_Neutral;
-            else
-                FB_Etoile_4.NeutralImage = Properties.Resources.Star_Disabled;
-            if (Cotation == 5)
-                FB_Etoile_5.NeutralImage = Properties.Resources.Star_Neutral;
-            else
-                FB_Etoile_5.NeutralImage = Properties.Resources.Star_Disabled;
-            FB_Etoile_1.BackgroundImage = FB_Etoile_1.NeutralImage;
-            FB_Etoile_2.BackgroundImage = FB_Etoile_2.NeutralImage;
-            FB_Etoile_3.BackgroundImage = FB_Etoile_3.NeutralImage;
-            FB_Etoile_4.BackgroundImage = FB_Etoile_4.NeutralImage;
-            FB_Etoile_5.BackgroundImage = FB_Etoile_5.NeutralImage;
-        }
-
-        private void FB_Etoile_1_Click(object sender, EventArgs e)
-        {
-            Cotation = 1;
-            RafraichirEtoiles();
-        }
-
-        private void FB_Etoile_2_Click(object sender, EventArgs e)
-        {
-            Cotation = 2;
-            RafraichirEtoiles();
-        }
-
-        private void FB_Etoile_3_Click(object sender, EventArgs e)
-        {
-            Cotation = 3;
-            RafraichirEtoiles();
-        }
-
-        private void FB_Etoile_4_Click(object sender, EventArgs e)
-        {
-            Cotation = 4;
-            RafraichirEtoiles();
-        }
-
-        private void FB_Etoile_5_Click(object sender, EventArgs e)
-        {
-            Cotation = 5;
-            RafraichirEtoiles();
-        }
-
-        //private void PBX_Image_DragEnter(object sender, DragEventArgs e)
-        //{
-        //    e.Effect = DragDropEffects.Move;
-        //}
-
-        //private void PBX_Image_DragDrop(object sender, DragEventArgs e)
-        //{
-        //    int X = this.PointToClient(new Point(e.X, e.Y)).X;
-        //    int Y = this.PointToClient(new Point(e.X, e.Y)).Y;
-        //    if (X >= PBX_Image.Location.X && X <= PBX_Image.Location.X + PBX_Image.Width && Y >= PBX_Image.Location.Y && Y <= PBX_Image.Location.Y + PBX_Image.Height)
-        //    {
-        //        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-        //        PBX_Image.BackgroundImage = Image.FromFile(files[0]);
-        //    }
-        //}
-
         private void BTN_Ajouter_Click(object sender, EventArgs e)
         {
-            if (TBX_Nom.Text != "" && TBX_Annee.Text != "" && TBX_Prix.Text != "" && RTBX_Histoire.Text != "" && Cotation > 0)
+            if (TBX_Nom.Text != "" && TBX_Annee.Text != "" && TBX_Prix.Text != "" && RTBX_Histoire.Text != "" && Stars.Value > 0)
             {
                 AjouterMonument();
                 this.Close();
@@ -204,6 +128,11 @@ namespace TP_Final
         private void BTN_Annuler_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Stars_ValueChanged(object sender, EventArgs e)
+        {
+            ValidationProvider.UpdateError(Stars);
         }
     }
 }

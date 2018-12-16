@@ -96,6 +96,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Star.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Star.Designer.cs">
+      <DependentUpon>Star.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stars.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stars.Designer.cs">
+      <DependentUpon>Stars.cs</DependentUpon>
+    </Compile>
     <Compile Include="ValidationProvider.cs" />
     <EmbeddedResource Include="DLG_AjoutModif.resx">
       <DependentUpon>DLG_AjoutModif.cs</DependentUpon>
@@ -128,6 +140,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Star.resx">
+      <DependentUpon>Star.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stars.resx">
+      <DependentUpon>Stars.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

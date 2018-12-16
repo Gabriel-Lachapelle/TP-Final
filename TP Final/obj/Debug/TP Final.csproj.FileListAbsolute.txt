@@ -26,3 +26,6 @@ C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_Liste
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_GererMonuments.resources
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_AjoutMonument.resources
 C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP_Final.DLG_InfoMonument.resources
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\EvaluationDemo.Star.resources
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\EvaluationDemo.Stars.resources
+C:\Users\Gabriel\Documents\GitHub\TP-Final\TP Final\obj\Debug\TP Final.csprojResolveAssemblyReference.cache

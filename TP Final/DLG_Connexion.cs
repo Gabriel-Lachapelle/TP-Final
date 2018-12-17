@@ -14,6 +14,8 @@ namespace TP_Final
     public partial class DLG_Connexion : Form
     {
         public OracleConnection Connexion = new OracleConnection();
+        private Validation.ValidationProvider ValidationProvider;
+
         public DLG_Connexion()
         {
             InitializeComponent();
@@ -34,9 +36,9 @@ namespace TP_Final
             catch (Exception SQL)
             {
                 if (SQL.Message == "ORA-01017: invalid username/password; logon denied")
-                    MessageBox.Show("La combinaison du nom d'usager et du mot de passe est invalide.", "Érreur");
+                    MessageBox.Show("La combinaison du nom d'usager et du mot de passe est invalide.", "Erreur");
                 else
-                    MessageBox.Show(SQL.Message, "Érreur");
+                    MessageBox.Show(SQL.Message, "Erreur");
             }
         }
         private void SauvegarderPreferences()
@@ -79,11 +81,31 @@ namespace TP_Final
         private void DLG_Connexion_Load(object sender, EventArgs e)
         {
             ChargerPreferences();
+
+
         }
 
         private void DLG_Connexion_FormClosing(object sender, FormClosingEventArgs e)
         {
             SauvegarderPreferences();
+
+            ValidationProvider = new Validation.ValidationProvider(this);
+            ValidationProvider.AddControlToValidate(TBX_Nom, TBX_Nom_Validate);
+            ValidationProvider.AddControlToValidate(TBX_MDP, TBX_MDP_Validate);
+        }
+
+        private bool TBX_Nom_Validate(ref string Message)
+        {
+            Message = "Le nom ne doit pas être vide";
+
+            return TBX_Nom.Text != "";
+        }
+
+        private bool TBX_MDP_Validate(ref string Message)
+        {
+            Message = "Le mot de passe ne doit pas être vide";
+
+            return TBX_MDP.Text != "";
         }
     }
 }

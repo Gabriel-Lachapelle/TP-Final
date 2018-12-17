@@ -40,8 +40,8 @@
             this.RTBX_APropos.ReadOnly = true;
             this.RTBX_APropos.Size = new System.Drawing.Size(261, 192);
             this.RTBX_APropos.TabIndex = 0;
-            this.RTBX_APropos.Text = "Application faite par:\n\n➜ Gabriel Lachapelle\n➜ Alexandre Tremblay\n\nInformations d" +
-    "e connection:\n\nNom usager: lachapel\nMot de passe: ORACLE1";
+            this.RTBX_APropos.Text = "Application fait par:\n\n➜ Gabriel Lachapelle\n➜ Alexandre Tremblay\n\nInformations de" +
+    " connection:\n\nNom usager: lachapel\nMot de passe: ORACLE1";
             // 
             // DLG_APropos
             // 

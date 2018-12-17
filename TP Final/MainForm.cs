@@ -13,11 +13,13 @@ namespace TP_Final
 {
     public partial class MainForm : Form
     {
+        Validation.ValidationProvider ValidationProvider;
         bool Connecté = false;
         OracleConnection Connexion = new OracleConnection();
         public MainForm()
         {
             InitializeComponent();
+            ValidationProvider = new Validation.ValidationProvider(this);
         }
 
         #region Fonctions
@@ -132,6 +134,10 @@ namespace TP_Final
         private void RafraichirBoutonRecherche()
         {
             BTN_Rechercher.Enabled = CBX_Tous.Checked || CBX_Meilleur.Checked || CBX_VilleDepart.Checked || CBX_Prix.Checked || CBX_Monument.Checked;
+
+            string throwaway = "";
+            if (!TBX_Prix_Validate(ref throwaway))
+                BTN_Rechercher.Enabled = false;
         }
         private void AjouterCircuit()
         {
@@ -266,6 +272,32 @@ namespace TP_Final
             }
             return null;
         }
+
+        private bool TBX_Prix_Validate(ref string Message)
+        {
+            Message = "";
+            if (CBX_Prix.Checked)
+            {
+                if (TBX_Prix.Text == "" && CBX_Prix.Checked)
+                {
+                    Message = "Vous devez spécifier un prix";
+                    return false;
+                }
+                else if (TBX_Prix.Text != "")
+                {
+                    try
+                    {
+                        int.Parse(TBX_Prix.Text);
+                    }
+                    catch(Exception ex)
+                    {
+                        Message = "Le nombre spécifié n'est pas valide";
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
 
@@ -307,10 +339,7 @@ namespace TP_Final
                 CBX_Monument.Checked = false;
                 CBX_Meilleur.Checked = true;
             }
-            else
-            {
-                CBX_MeilleurCircuit.SelectedItem = null;
-            }
+
             RafraichirBoutonRecherche();
         }
         private void CBX_Other_CheckedChanged(object sender, EventArgs e)
@@ -326,18 +355,15 @@ namespace TP_Final
                 if (COMBX_VilleDepart.SelectedItem == null)
                     COMBX_VilleDepart.SelectedIndex = 0;
             }
-            else
-            {
-                COMBX_VilleDepart.SelectedItem = null;
-            }
 
             if (CBX_Monument.Checked)
             {
                 if (COMBX_Monument.SelectedItem == null)
                     COMBX_Monument.SelectedIndex = 0;
             }
-            else
-                COMBX_Monument.SelectedItem = null;
+
+            if (!CBX_Prix.Checked) // Sert seulement à retirer l'erreur de validation, s'il y a lieu
+                 ValidationProvider.UpdateValid(TBX_Prix);
 
             RafraichirBoutonRecherche();
         }
@@ -362,6 +388,7 @@ namespace TP_Final
         }
         private void BTN_Rechercher_Click(object sender, EventArgs e)
         {
+            ValidationProvider.UpdateValid(TBX_Prix);
             Initialise_DGV_Circuit();
         }
         private void MI_Circuits_Ajout_Click(object sender, EventArgs e)
@@ -395,6 +422,8 @@ namespace TP_Final
         private void MainForm_Load(object sender, EventArgs e)
         {
             ChargerPreferences();
+
+            ValidationProvider.AddControlToValidate(TBX_Prix, TBX_Prix_Validate);
         }
         private void FB_Gerer_Click(object sender, EventArgs e)
         {
@@ -482,6 +511,11 @@ namespace TP_Final
         private void COMBX_Monument_SelectedIndexChanged(object sender, EventArgs e)
         {
             CBX_Monument.Checked = COMBX_Monument.SelectedItem != null;
+        }
+
+        private void TBX_Prix_TextChanged(object sender, EventArgs e)
+        {
+            RafraichirBoutonRecherche();
         }
     }
 }

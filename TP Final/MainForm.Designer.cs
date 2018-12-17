@@ -48,12 +48,6 @@
             this.VilleArrivee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrixCircuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.FB_AjoutMonument = new Calculator.FlashButton();
-            this.FB_Gerer = new Calculator.FlashButton();
-            this.FB_Circuit_Supp = new Calculator.FlashButton();
-            this.FB_Circuit_Ajout = new Calculator.FlashButton();
-            this.FB_Circuit_Modif = new Calculator.FlashButton();
-            this.FB_Info = new Calculator.FlashButton();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.TSMI_Connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.MI_Connexion_Connecter = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +63,12 @@
             this.MI_Monuments_Voir = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.FB_AjoutMonument = new Calculator.FlashButton();
+            this.FB_Gerer = new Calculator.FlashButton();
+            this.FB_Circuit_Supp = new Calculator.FlashButton();
+            this.FB_Circuit_Ajout = new Calculator.FlashButton();
+            this.FB_Circuit_Modif = new Calculator.FlashButton();
+            this.FB_Info = new Calculator.FlashButton();
             this.GBX_Recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -222,6 +222,7 @@
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(141, 22);
             this.TBX_Prix.TabIndex = 14;
+            this.TBX_Prix.TextChanged += new System.EventHandler(this.TBX_Prix_TextChanged);
             // 
             // CBX_VilleDepart
             // 
@@ -308,137 +309,6 @@
             this.PrixCircuit.HeaderText = "Prix";
             this.PrixCircuit.Name = "PrixCircuit";
             this.PrixCircuit.ReadOnly = true;
-            // 
-            // FB_AjoutMonument
-            // 
-            this.FB_AjoutMonument.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_AjoutMonument.BackgroundImage = global::TP_Final.Properties.Resources.Monument_Neutral;
-            this.FB_AjoutMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_AjoutMonument.ClickedImage = global::TP_Final.Properties.Resources.Monument_Clicked;
-            this.FB_AjoutMonument.DisabledImage = global::TP_Final.Properties.Resources.Monument_Disabled;
-            this.FB_AjoutMonument.Enabled = false;
-            this.FB_AjoutMonument.Image = ((System.Drawing.Image)(resources.GetObject("FB_AjoutMonument.Image")));
-            this.FB_AjoutMonument.Location = new System.Drawing.Point(467, 268);
-            this.FB_AjoutMonument.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_AjoutMonument.Name = "FB_AjoutMonument";
-            this.FB_AjoutMonument.NeutralImage = global::TP_Final.Properties.Resources.Monument_Neutral;
-            this.FB_AjoutMonument.OverImage = global::TP_Final.Properties.Resources.Monument_Hover;
-            this.FB_AjoutMonument.Size = new System.Drawing.Size(40, 40);
-            this.FB_AjoutMonument.TabIndex = 6;
-            this.FB_AjoutMonument.TabStop = false;
-            this.ToolTip.SetToolTip(this.FB_AjoutMonument, "Ajouter un monument");
-            this.FB_AjoutMonument.UseVisualStyleBackColor = true;
-            this.FB_AjoutMonument.Click += new System.EventHandler(this.FB_AjoutMonument_Click);
-            // 
-            // FB_Gerer
-            // 
-            this.FB_Gerer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Gerer.BackgroundImage = global::TP_Final.Properties.Resources.Settings_Neutral;
-            this.FB_Gerer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Gerer.ClickedImage = global::TP_Final.Properties.Resources.Settings_Clicked;
-            this.FB_Gerer.DisabledImage = global::TP_Final.Properties.Resources.Settings_Disabled;
-            this.FB_Gerer.Enabled = false;
-            this.FB_Gerer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.Image")));
-            this.FB_Gerer.Location = new System.Drawing.Point(467, 220);
-            this.FB_Gerer.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Gerer.Name = "FB_Gerer";
-            this.FB_Gerer.NeutralImage = global::TP_Final.Properties.Resources.Settings_Neutral;
-            this.FB_Gerer.OverImage = global::TP_Final.Properties.Resources.Settings_Hover;
-            this.FB_Gerer.Size = new System.Drawing.Size(40, 40);
-            this.FB_Gerer.TabIndex = 5;
-            this.FB_Gerer.TabStop = false;
-            this.FB_Gerer.Text = "Gérer les monuments du circuit";
-            this.ToolTip.SetToolTip(this.FB_Gerer, "Gérer les monuments de ce circuit");
-            this.FB_Gerer.UseVisualStyleBackColor = true;
-            this.FB_Gerer.Click += new System.EventHandler(this.FB_Gerer_Click);
-            // 
-            // FB_Circuit_Supp
-            // 
-            this.FB_Circuit_Supp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Circuit_Supp.BackgroundImage = global::TP_Final.Properties.Resources.Delete_Neutral;
-            this.FB_Circuit_Supp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Circuit_Supp.ClickedImage = global::TP_Final.Properties.Resources.Delete_Clicked;
-            this.FB_Circuit_Supp.DisabledImage = global::TP_Final.Properties.Resources.Delete_Disabled;
-            this.FB_Circuit_Supp.Enabled = false;
-            this.FB_Circuit_Supp.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Supp.Image")));
-            this.FB_Circuit_Supp.Location = new System.Drawing.Point(467, 124);
-            this.FB_Circuit_Supp.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Circuit_Supp.Name = "FB_Circuit_Supp";
-            this.FB_Circuit_Supp.NeutralImage = global::TP_Final.Properties.Resources.Delete_Neutral;
-            this.FB_Circuit_Supp.OverImage = global::TP_Final.Properties.Resources.Delete_Hover;
-            this.FB_Circuit_Supp.Size = new System.Drawing.Size(40, 40);
-            this.FB_Circuit_Supp.TabIndex = 3;
-            this.FB_Circuit_Supp.TabStop = false;
-            this.FB_Circuit_Supp.Text = "Afficher les monuments du circuit";
-            this.ToolTip.SetToolTip(this.FB_Circuit_Supp, "Supprimer le circuit sélectionné");
-            this.FB_Circuit_Supp.UseVisualStyleBackColor = true;
-            this.FB_Circuit_Supp.Click += new System.EventHandler(this.FB_Circuit_Supp_Click);
-            // 
-            // FB_Circuit_Ajout
-            // 
-            this.FB_Circuit_Ajout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Circuit_Ajout.BackgroundImage = global::TP_Final.Properties.Resources.Add_Neutral;
-            this.FB_Circuit_Ajout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Circuit_Ajout.ClickedImage = global::TP_Final.Properties.Resources.Add_Clicked;
-            this.FB_Circuit_Ajout.DisabledImage = global::TP_Final.Properties.Resources.Add_Disabled;
-            this.FB_Circuit_Ajout.Enabled = false;
-            this.FB_Circuit_Ajout.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Ajout.Image")));
-            this.FB_Circuit_Ajout.Location = new System.Drawing.Point(467, 28);
-            this.FB_Circuit_Ajout.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Circuit_Ajout.Name = "FB_Circuit_Ajout";
-            this.FB_Circuit_Ajout.NeutralImage = global::TP_Final.Properties.Resources.Add_Neutral;
-            this.FB_Circuit_Ajout.OverImage = global::TP_Final.Properties.Resources.Add_Hover;
-            this.FB_Circuit_Ajout.Size = new System.Drawing.Size(40, 40);
-            this.FB_Circuit_Ajout.TabIndex = 1;
-            this.FB_Circuit_Ajout.TabStop = false;
-            this.FB_Circuit_Ajout.Text = "Ajouter un circuit";
-            this.ToolTip.SetToolTip(this.FB_Circuit_Ajout, "Ajouter un circuit");
-            this.FB_Circuit_Ajout.UseVisualStyleBackColor = true;
-            this.FB_Circuit_Ajout.Click += new System.EventHandler(this.FB_Circuit_Ajout_Click);
-            // 
-            // FB_Circuit_Modif
-            // 
-            this.FB_Circuit_Modif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Circuit_Modif.BackgroundImage = global::TP_Final.Properties.Resources.Edit_Neutral;
-            this.FB_Circuit_Modif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Circuit_Modif.ClickedImage = global::TP_Final.Properties.Resources.Edit_Clicked;
-            this.FB_Circuit_Modif.DisabledImage = global::TP_Final.Properties.Resources.Edit_Disabled;
-            this.FB_Circuit_Modif.Enabled = false;
-            this.FB_Circuit_Modif.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Modif.Image")));
-            this.FB_Circuit_Modif.Location = new System.Drawing.Point(469, 76);
-            this.FB_Circuit_Modif.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Circuit_Modif.Name = "FB_Circuit_Modif";
-            this.FB_Circuit_Modif.NeutralImage = global::TP_Final.Properties.Resources.Edit_Neutral;
-            this.FB_Circuit_Modif.OverImage = global::TP_Final.Properties.Resources.Edit_Hover;
-            this.FB_Circuit_Modif.Size = new System.Drawing.Size(40, 40);
-            this.FB_Circuit_Modif.TabIndex = 2;
-            this.FB_Circuit_Modif.TabStop = false;
-            this.FB_Circuit_Modif.Text = "Modifier le prix du circuit";
-            this.ToolTip.SetToolTip(this.FB_Circuit_Modif, "Modifier le circuit sélectionné");
-            this.FB_Circuit_Modif.UseVisualStyleBackColor = true;
-            this.FB_Circuit_Modif.Click += new System.EventHandler(this.FB_Circuit_Modif_Click);
-            // 
-            // FB_Info
-            // 
-            this.FB_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FB_Info.BackgroundImage = global::TP_Final.Properties.Resources.Details_Neutral;
-            this.FB_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FB_Info.ClickedImage = global::TP_Final.Properties.Resources.Details_Clicked;
-            this.FB_Info.DisabledImage = global::TP_Final.Properties.Resources.Details_Disabled;
-            this.FB_Info.Enabled = false;
-            this.FB_Info.Image = ((System.Drawing.Image)(resources.GetObject("FB_Info.Image")));
-            this.FB_Info.Location = new System.Drawing.Point(467, 172);
-            this.FB_Info.Margin = new System.Windows.Forms.Padding(4);
-            this.FB_Info.Name = "FB_Info";
-            this.FB_Info.NeutralImage = global::TP_Final.Properties.Resources.Details_Neutral;
-            this.FB_Info.OverImage = global::TP_Final.Properties.Resources.Details_Hover;
-            this.FB_Info.Size = new System.Drawing.Size(40, 40);
-            this.FB_Info.TabIndex = 4;
-            this.FB_Info.TabStop = false;
-            this.FB_Info.Text = "Afficher les monuments du circuit";
-            this.ToolTip.SetToolTip(this.FB_Info, "Voir les monuments de ce circuit");
-            this.FB_Info.UseVisualStyleBackColor = true;
-            this.FB_Info.Click += new System.EventHandler(this.FB_Circuit_Gerer_Click);
             // 
             // MenuStrip
             // 
@@ -574,6 +444,137 @@
             this.TSMI_APropos.Size = new System.Drawing.Size(67, 20);
             this.TSMI_APropos.Text = "À propos";
             this.TSMI_APropos.Click += new System.EventHandler(this.TSMI_APropos_Click);
+            // 
+            // FB_AjoutMonument
+            // 
+            this.FB_AjoutMonument.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_AjoutMonument.BackgroundImage = global::TP_Final.Properties.Resources.Monument_Neutral;
+            this.FB_AjoutMonument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_AjoutMonument.ClickedImage = global::TP_Final.Properties.Resources.Monument_Clicked;
+            this.FB_AjoutMonument.DisabledImage = global::TP_Final.Properties.Resources.Monument_Disabled;
+            this.FB_AjoutMonument.Enabled = false;
+            this.FB_AjoutMonument.Image = ((System.Drawing.Image)(resources.GetObject("FB_AjoutMonument.Image")));
+            this.FB_AjoutMonument.Location = new System.Drawing.Point(467, 268);
+            this.FB_AjoutMonument.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_AjoutMonument.Name = "FB_AjoutMonument";
+            this.FB_AjoutMonument.NeutralImage = global::TP_Final.Properties.Resources.Monument_Neutral;
+            this.FB_AjoutMonument.OverImage = global::TP_Final.Properties.Resources.Monument_Hover;
+            this.FB_AjoutMonument.Size = new System.Drawing.Size(40, 40);
+            this.FB_AjoutMonument.TabIndex = 6;
+            this.FB_AjoutMonument.TabStop = false;
+            this.ToolTip.SetToolTip(this.FB_AjoutMonument, "Ajouter un monument");
+            this.FB_AjoutMonument.UseVisualStyleBackColor = true;
+            this.FB_AjoutMonument.Click += new System.EventHandler(this.FB_AjoutMonument_Click);
+            // 
+            // FB_Gerer
+            // 
+            this.FB_Gerer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Gerer.BackgroundImage = global::TP_Final.Properties.Resources.Settings_Neutral;
+            this.FB_Gerer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Gerer.ClickedImage = global::TP_Final.Properties.Resources.Settings_Clicked;
+            this.FB_Gerer.DisabledImage = global::TP_Final.Properties.Resources.Settings_Disabled;
+            this.FB_Gerer.Enabled = false;
+            this.FB_Gerer.Image = ((System.Drawing.Image)(resources.GetObject("FB_Gerer.Image")));
+            this.FB_Gerer.Location = new System.Drawing.Point(467, 220);
+            this.FB_Gerer.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Gerer.Name = "FB_Gerer";
+            this.FB_Gerer.NeutralImage = global::TP_Final.Properties.Resources.Settings_Neutral;
+            this.FB_Gerer.OverImage = global::TP_Final.Properties.Resources.Settings_Hover;
+            this.FB_Gerer.Size = new System.Drawing.Size(40, 40);
+            this.FB_Gerer.TabIndex = 5;
+            this.FB_Gerer.TabStop = false;
+            this.FB_Gerer.Text = "Gérer les monuments du circuit";
+            this.ToolTip.SetToolTip(this.FB_Gerer, "Gérer les monuments de ce circuit");
+            this.FB_Gerer.UseVisualStyleBackColor = true;
+            this.FB_Gerer.Click += new System.EventHandler(this.FB_Gerer_Click);
+            // 
+            // FB_Circuit_Supp
+            // 
+            this.FB_Circuit_Supp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Circuit_Supp.BackgroundImage = global::TP_Final.Properties.Resources.Delete_Neutral;
+            this.FB_Circuit_Supp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Circuit_Supp.ClickedImage = global::TP_Final.Properties.Resources.Delete_Clicked;
+            this.FB_Circuit_Supp.DisabledImage = global::TP_Final.Properties.Resources.Delete_Disabled;
+            this.FB_Circuit_Supp.Enabled = false;
+            this.FB_Circuit_Supp.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Supp.Image")));
+            this.FB_Circuit_Supp.Location = new System.Drawing.Point(467, 124);
+            this.FB_Circuit_Supp.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Circuit_Supp.Name = "FB_Circuit_Supp";
+            this.FB_Circuit_Supp.NeutralImage = global::TP_Final.Properties.Resources.Delete_Neutral;
+            this.FB_Circuit_Supp.OverImage = global::TP_Final.Properties.Resources.Delete_Hover;
+            this.FB_Circuit_Supp.Size = new System.Drawing.Size(40, 40);
+            this.FB_Circuit_Supp.TabIndex = 3;
+            this.FB_Circuit_Supp.TabStop = false;
+            this.FB_Circuit_Supp.Text = "Afficher les monuments du circuit";
+            this.ToolTip.SetToolTip(this.FB_Circuit_Supp, "Supprimer le circuit sélectionné");
+            this.FB_Circuit_Supp.UseVisualStyleBackColor = true;
+            this.FB_Circuit_Supp.Click += new System.EventHandler(this.FB_Circuit_Supp_Click);
+            // 
+            // FB_Circuit_Ajout
+            // 
+            this.FB_Circuit_Ajout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Circuit_Ajout.BackgroundImage = global::TP_Final.Properties.Resources.Add_Neutral;
+            this.FB_Circuit_Ajout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Circuit_Ajout.ClickedImage = global::TP_Final.Properties.Resources.Add_Clicked;
+            this.FB_Circuit_Ajout.DisabledImage = global::TP_Final.Properties.Resources.Add_Disabled;
+            this.FB_Circuit_Ajout.Enabled = false;
+            this.FB_Circuit_Ajout.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Ajout.Image")));
+            this.FB_Circuit_Ajout.Location = new System.Drawing.Point(467, 28);
+            this.FB_Circuit_Ajout.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Circuit_Ajout.Name = "FB_Circuit_Ajout";
+            this.FB_Circuit_Ajout.NeutralImage = global::TP_Final.Properties.Resources.Add_Neutral;
+            this.FB_Circuit_Ajout.OverImage = global::TP_Final.Properties.Resources.Add_Hover;
+            this.FB_Circuit_Ajout.Size = new System.Drawing.Size(40, 40);
+            this.FB_Circuit_Ajout.TabIndex = 1;
+            this.FB_Circuit_Ajout.TabStop = false;
+            this.FB_Circuit_Ajout.Text = "Ajouter un circuit";
+            this.ToolTip.SetToolTip(this.FB_Circuit_Ajout, "Ajouter un circuit");
+            this.FB_Circuit_Ajout.UseVisualStyleBackColor = true;
+            this.FB_Circuit_Ajout.Click += new System.EventHandler(this.FB_Circuit_Ajout_Click);
+            // 
+            // FB_Circuit_Modif
+            // 
+            this.FB_Circuit_Modif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Circuit_Modif.BackgroundImage = global::TP_Final.Properties.Resources.Edit_Neutral;
+            this.FB_Circuit_Modif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Circuit_Modif.ClickedImage = global::TP_Final.Properties.Resources.Edit_Clicked;
+            this.FB_Circuit_Modif.DisabledImage = global::TP_Final.Properties.Resources.Edit_Disabled;
+            this.FB_Circuit_Modif.Enabled = false;
+            this.FB_Circuit_Modif.Image = ((System.Drawing.Image)(resources.GetObject("FB_Circuit_Modif.Image")));
+            this.FB_Circuit_Modif.Location = new System.Drawing.Point(469, 76);
+            this.FB_Circuit_Modif.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Circuit_Modif.Name = "FB_Circuit_Modif";
+            this.FB_Circuit_Modif.NeutralImage = global::TP_Final.Properties.Resources.Edit_Neutral;
+            this.FB_Circuit_Modif.OverImage = global::TP_Final.Properties.Resources.Edit_Hover;
+            this.FB_Circuit_Modif.Size = new System.Drawing.Size(40, 40);
+            this.FB_Circuit_Modif.TabIndex = 2;
+            this.FB_Circuit_Modif.TabStop = false;
+            this.FB_Circuit_Modif.Text = "Modifier le prix du circuit";
+            this.ToolTip.SetToolTip(this.FB_Circuit_Modif, "Modifier le circuit sélectionné");
+            this.FB_Circuit_Modif.UseVisualStyleBackColor = true;
+            this.FB_Circuit_Modif.Click += new System.EventHandler(this.FB_Circuit_Modif_Click);
+            // 
+            // FB_Info
+            // 
+            this.FB_Info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FB_Info.BackgroundImage = global::TP_Final.Properties.Resources.Details_Neutral;
+            this.FB_Info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FB_Info.ClickedImage = global::TP_Final.Properties.Resources.Details_Clicked;
+            this.FB_Info.DisabledImage = global::TP_Final.Properties.Resources.Details_Disabled;
+            this.FB_Info.Enabled = false;
+            this.FB_Info.Image = ((System.Drawing.Image)(resources.GetObject("FB_Info.Image")));
+            this.FB_Info.Location = new System.Drawing.Point(467, 172);
+            this.FB_Info.Margin = new System.Windows.Forms.Padding(4);
+            this.FB_Info.Name = "FB_Info";
+            this.FB_Info.NeutralImage = global::TP_Final.Properties.Resources.Details_Neutral;
+            this.FB_Info.OverImage = global::TP_Final.Properties.Resources.Details_Hover;
+            this.FB_Info.Size = new System.Drawing.Size(40, 40);
+            this.FB_Info.TabIndex = 4;
+            this.FB_Info.TabStop = false;
+            this.FB_Info.Text = "Afficher les monuments du circuit";
+            this.ToolTip.SetToolTip(this.FB_Info, "Voir les monuments de ce circuit");
+            this.FB_Info.UseVisualStyleBackColor = true;
+            this.FB_Info.Click += new System.EventHandler(this.FB_Circuit_Gerer_Click);
             // 
             // MainForm
             // 

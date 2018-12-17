@@ -49,30 +49,32 @@ namespace TP_Final
             CBX_VilleDepart.Enabled = Connecté;
             CBX_Monument.Enabled = Connecté;
             CBX_Prix.Enabled = Connecté;
-            TBX_VilleDepart.Enabled = Connecté;
+            COMBX_VilleDepart.Enabled = Connecté;
             TBX_Prix.Enabled = Connecté;
-            TBX_Monument.Enabled = Connecté;
+            COMBX_Monument.Enabled = Connecté;
             BTN_Rechercher.Enabled = Connecté;
             TSMI_Circuit.Enabled = Connecté;
             TSMI_Monuments.Enabled = Connecté;
             FB_Circuit_Ajout.Enabled = Connecté;
             BTN_TousMonuments.Enabled = Connecté;
             CBX_MeilleurCircuit.Enabled = Connecté;
+
             if (Connecté)
             {
                 Initialise_DGV_Circuit();
                 Initialise_CBX_Meilleur();
+                LoadVilleDepart();
+                LoadListeMonument();
             }
         }
         void Initialise_DGV_Circuit()
         {
             bool PlusQue1Argument = false;
-            string sVille = "VilleDepart like '%" + TBX_VilleDepart.Text + "%'";
             string sPrix = "Prix < " + TBX_Prix.Text;
-            string sMonument = "NomMonument like '%" + TBX_Monument.Text + "%'";
             string GroupBy = " group by NomCircuit, VilleDepart, VilleArrivee, Prix";
             if (Connecté)
             {
+
                 try
                 {
                     DGV_Circuit.Rows.Clear();
@@ -90,11 +92,13 @@ namespace TP_Final
                             SQL += " where ";
                         if (CBX_Monument.Checked)
                         {
+                            string sMonument = "NomMonument like '%" + COMBX_Monument.SelectedItem.ToString() + "%'";
                             SQL += sMonument;
                             PlusQue1Argument = true;
                         }
                         if (CBX_VilleDepart.Checked)
                         {
+                            string sVille = "VilleDepart = '" + GetCodeDepart() + "'"; // Celui ci est mis là pour ne pas manger d'exception
                             if (PlusQue1Argument)
                                 SQL += " and ";
                             SQL += sVille;
@@ -145,6 +149,7 @@ namespace TP_Final
             DLG.ShowDialog();
             Initialise_DGV_Circuit();
         }
+
         private void SupprimerCircuit()
         {
             if (MessageBox.Show("Êtes vous sûr de vouloir supprimer ce circuit?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -197,6 +202,69 @@ namespace TP_Final
             DLG_AjoutMonument DLG = new DLG_AjoutMonument();
             DLG.Connexion = Connexion;
             DLG.Show();
+
+            LoadListeMonument();
+        }
+
+        private void LoadVilleDepart()
+        {
+            try
+            {
+                string SQL = "SELECT NomVille FROM Villes INNER JOIN Circuits on Villes.CodeVille = Circuits.VilleDepart";
+
+                OracleCommand Command = new OracleCommand(SQL, Connexion);
+                OracleDataReader Reader = Command.ExecuteReader();
+
+                while (Reader.Read())
+                    COMBX_VilleDepart.Items.Add(Reader.GetString(0));
+
+                Reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoadListeMonument()
+        {
+            try
+            {
+                COMBX_Monument.Items.Clear();
+
+                string SQL = "SELECT NomMonument FROM Monuments";
+
+                OracleCommand Command = new OracleCommand(SQL, Connexion);
+                OracleDataReader Reader = Command.ExecuteReader();
+
+                while (Reader.Read())
+                    COMBX_Monument.Items.Add(Reader.GetString(0));
+
+                Reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private string GetCodeDepart()
+        {
+            try
+            {
+                string SQL = "SELECT CodeVille FROM Villes WHERE NomVille like '%" + COMBX_VilleDepart.SelectedItem.ToString() + "%'";
+                OracleCommand Cmd = new OracleCommand(SQL, Connexion);
+                OracleDataReader Reader = Cmd.ExecuteReader();
+
+                while (Reader.Read())
+                    return Reader.GetString(0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         #endregion
@@ -231,11 +299,17 @@ namespace TP_Final
         {
             if (CBX_Meilleur.Checked)
             {
+                if (CBX_MeilleurCircuit.SelectedItem == null)
+                    CBX_MeilleurCircuit.SelectedIndex = 0;
                 CBX_Tous.Checked = false;
                 CBX_VilleDepart.Checked = false;
                 CBX_Prix.Checked = false;
                 CBX_Monument.Checked = false;
                 CBX_Meilleur.Checked = true;
+            }
+            else
+            {
+                CBX_MeilleurCircuit.SelectedItem = null;
             }
             RafraichirBoutonRecherche();
         }
@@ -246,6 +320,25 @@ namespace TP_Final
                 CBX_Tous.Checked = false;
                 CBX_Meilleur.Checked = false;
             }
+            
+            if (CBX_VilleDepart.Checked)
+            {
+                if (COMBX_VilleDepart.SelectedItem == null)
+                    COMBX_VilleDepart.SelectedIndex = 0;
+            }
+            else
+            {
+                COMBX_VilleDepart.SelectedItem = null;
+            }
+
+            if (CBX_Monument.Checked)
+            {
+                if (COMBX_Monument.SelectedItem == null)
+                    COMBX_Monument.SelectedIndex = 0;
+            }
+            else
+                COMBX_Monument.SelectedItem = null;
+
             RafraichirBoutonRecherche();
         }
         private void MI_Connexion_Connecter_Click(object sender, EventArgs e)
@@ -374,6 +467,21 @@ namespace TP_Final
             {
                 MessageBox.Show(SQL.Message);
             }
+        }
+
+        private void CBX_MeilleurCircuit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CBX_Meilleur.Checked = CBX_MeilleurCircuit.SelectedItem != null;
+        }
+
+        private void COMBX_VilleDepart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CBX_VilleDepart.Checked = COMBX_VilleDepart.SelectedItem != null;
+        }
+
+        private void COMBX_Monument_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CBX_Monument.Checked = COMBX_Monument.SelectedItem != null;
         }
     }
 }

@@ -36,10 +36,8 @@
             this.CBX_Meilleur = new System.Windows.Forms.CheckBox();
             this.CBX_Tous = new System.Windows.Forms.CheckBox();
             this.CBX_Monument = new System.Windows.Forms.CheckBox();
-            this.TBX_Monument = new System.Windows.Forms.TextBox();
             this.CBX_Prix = new System.Windows.Forms.CheckBox();
             this.TBX_Prix = new System.Windows.Forms.TextBox();
-            this.TBX_VilleDepart = new System.Windows.Forms.TextBox();
             this.CBX_VilleDepart = new System.Windows.Forms.CheckBox();
             this.BTN_Rechercher = new System.Windows.Forms.Button();
             this.DGV_Circuit = new System.Windows.Forms.DataGridView();
@@ -63,12 +61,14 @@
             this.MI_Monuments_Voir = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMI_APropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.COMBX_VilleDepart = new System.Windows.Forms.ComboBox();
             this.FB_AjoutMonument = new Calculator.FlashButton();
             this.FB_Gerer = new Calculator.FlashButton();
             this.FB_Circuit_Supp = new Calculator.FlashButton();
             this.FB_Circuit_Ajout = new Calculator.FlashButton();
             this.FB_Circuit_Modif = new Calculator.FlashButton();
             this.FB_Info = new Calculator.FlashButton();
+            this.COMBX_Monument = new System.Windows.Forms.ComboBox();
             this.GBX_Recherche.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Circuit)).BeginInit();
             this.MenuStrip.SuspendLayout();
@@ -78,15 +78,15 @@
             // 
             this.GBX_Recherche.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GBX_Recherche.Controls.Add(this.COMBX_Monument);
+            this.GBX_Recherche.Controls.Add(this.COMBX_VilleDepart);
             this.GBX_Recherche.Controls.Add(this.CBX_MeilleurCircuit);
             this.GBX_Recherche.Controls.Add(this.BTN_TousMonuments);
             this.GBX_Recherche.Controls.Add(this.CBX_Meilleur);
             this.GBX_Recherche.Controls.Add(this.CBX_Tous);
             this.GBX_Recherche.Controls.Add(this.CBX_Monument);
-            this.GBX_Recherche.Controls.Add(this.TBX_Monument);
             this.GBX_Recherche.Controls.Add(this.CBX_Prix);
             this.GBX_Recherche.Controls.Add(this.TBX_Prix);
-            this.GBX_Recherche.Controls.Add(this.TBX_VilleDepart);
             this.GBX_Recherche.Controls.Add(this.CBX_VilleDepart);
             this.GBX_Recherche.Controls.Add(this.BTN_Rechercher);
             this.GBX_Recherche.Location = new System.Drawing.Point(13, 318);
@@ -110,6 +110,7 @@
             this.CBX_MeilleurCircuit.Name = "CBX_MeilleurCircuit";
             this.CBX_MeilleurCircuit.Size = new System.Drawing.Size(141, 24);
             this.CBX_MeilleurCircuit.TabIndex = 12;
+            this.CBX_MeilleurCircuit.SelectedIndexChanged += new System.EventHandler(this.CBX_MeilleurCircuit_SelectedIndexChanged);
             // 
             // BTN_TousMonuments
             // 
@@ -167,19 +168,6 @@
             this.CBX_Monument.UseVisualStyleBackColor = true;
             this.CBX_Monument.CheckedChanged += new System.EventHandler(this.CBX_Other_CheckedChanged);
             // 
-            // TBX_Monument
-            // 
-            this.TBX_Monument.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBX_Monument.Enabled = false;
-            this.TBX_Monument.Location = new System.Drawing.Point(136, 142);
-            this.TBX_Monument.Margin = new System.Windows.Forms.Padding(4);
-            this.TBX_Monument.MaximumSize = new System.Drawing.Size(250, 22);
-            this.TBX_Monument.MinimumSize = new System.Drawing.Size(135, 22);
-            this.TBX_Monument.Name = "TBX_Monument";
-            this.TBX_Monument.Size = new System.Drawing.Size(141, 22);
-            this.TBX_Monument.TabIndex = 15;
-            // 
             // CBX_Prix
             // 
             this.CBX_Prix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -206,19 +194,6 @@
             this.TBX_Prix.Name = "TBX_Prix";
             this.TBX_Prix.Size = new System.Drawing.Size(141, 22);
             this.TBX_Prix.TabIndex = 14;
-            // 
-            // TBX_VilleDepart
-            // 
-            this.TBX_VilleDepart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBX_VilleDepart.Enabled = false;
-            this.TBX_VilleDepart.Location = new System.Drawing.Point(136, 82);
-            this.TBX_VilleDepart.Margin = new System.Windows.Forms.Padding(4);
-            this.TBX_VilleDepart.MaximumSize = new System.Drawing.Size(250, 22);
-            this.TBX_VilleDepart.MinimumSize = new System.Drawing.Size(135, 22);
-            this.TBX_VilleDepart.Name = "TBX_VilleDepart";
-            this.TBX_VilleDepart.Size = new System.Drawing.Size(141, 22);
-            this.TBX_VilleDepart.TabIndex = 13;
             // 
             // CBX_VilleDepart
             // 
@@ -441,6 +416,20 @@
             this.TSMI_APropos.Text = "À propos";
             this.TSMI_APropos.Click += new System.EventHandler(this.TSMI_APropos_Click);
             // 
+            // COMBX_VilleDepart
+            // 
+            this.COMBX_VilleDepart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.COMBX_VilleDepart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COMBX_VilleDepart.Enabled = false;
+            this.COMBX_VilleDepart.FormattingEnabled = true;
+            this.COMBX_VilleDepart.Location = new System.Drawing.Point(136, 82);
+            this.COMBX_VilleDepart.MaximumSize = new System.Drawing.Size(250, 0);
+            this.COMBX_VilleDepart.Name = "COMBX_VilleDepart";
+            this.COMBX_VilleDepart.Size = new System.Drawing.Size(141, 24);
+            this.COMBX_VilleDepart.TabIndex = 18;
+            this.COMBX_VilleDepart.SelectedIndexChanged += new System.EventHandler(this.COMBX_VilleDepart_SelectedIndexChanged);
+            // 
             // FB_AjoutMonument
             // 
             this.FB_AjoutMonument.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -572,6 +561,20 @@
             this.FB_Info.UseVisualStyleBackColor = true;
             this.FB_Info.Click += new System.EventHandler(this.FB_Circuit_Gerer_Click);
             // 
+            // COMBX_Monument
+            // 
+            this.COMBX_Monument.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.COMBX_Monument.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COMBX_Monument.Enabled = false;
+            this.COMBX_Monument.FormattingEnabled = true;
+            this.COMBX_Monument.Location = new System.Drawing.Point(136, 140);
+            this.COMBX_Monument.MaximumSize = new System.Drawing.Size(250, 0);
+            this.COMBX_Monument.Name = "COMBX_Monument";
+            this.COMBX_Monument.Size = new System.Drawing.Size(141, 24);
+            this.COMBX_Monument.TabIndex = 19;
+            this.COMBX_Monument.SelectedIndexChanged += new System.EventHandler(this.COMBX_Monument_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -609,9 +612,7 @@
 
         private Calculator.FlashButton FB_Circuit_Ajout;
         private System.Windows.Forms.GroupBox GBX_Recherche;
-        private System.Windows.Forms.TextBox TBX_Monument;
         private System.Windows.Forms.TextBox TBX_Prix;
-        private System.Windows.Forms.TextBox TBX_VilleDepart;
         private System.Windows.Forms.Button BTN_Rechercher;
         private System.Windows.Forms.DataGridView DGV_Circuit;
         private Calculator.FlashButton FB_Circuit_Modif;
@@ -646,6 +647,8 @@
         private System.Windows.Forms.ToolStripMenuItem MI_Monuments_Ajouter;
         private System.Windows.Forms.ToolStripMenuItem MI_Monuments_Voir;
         private System.Windows.Forms.ComboBox CBX_MeilleurCircuit;
+        private System.Windows.Forms.ComboBox COMBX_VilleDepart;
+        private System.Windows.Forms.ComboBox COMBX_Monument;
     }
 }
 
